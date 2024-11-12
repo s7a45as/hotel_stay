@@ -1,0 +1,103 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: homestay-service
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/homestay?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    clean-disabled: false
+    repair-on-migrate: true
+    locations: classpath:db/migration
+    table: flyway_schema_history
+    encoding: UTF-8
+    placeholder-replacement: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:  # 如果有密码，请设置
+      database: 0
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 8
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 8
+          # 连接池中的最小空闲连接
+          min-idle: 0
+        # 关闭超时时间
+        shutdown-timeout: 100ms
+  mail:
+    host: smtp.163.com  # 邮件服务器地址
+    port: 587  # 端口号
+    username: "18589826376@163.com"# 邮箱账号
+    password: "ATRHLQgpRYTBbXsu"# 邮箱授权码
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.homestay.modules.*.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+
+jwt:
+  secret: your-secret-key-must-be-at-least-256-bits-long-for-hs256-algorithm
+  expiration: 604800
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+  packages-to-scan: com.homestay.modules
+  paths-to-match: /**
+
+knife4j:
+  enable: true
+  setting:
+    language: zh-CN
+    enable-swagger-models: true
+    enable-document-manage: true
+    swagger-model-name: 实体类列表
+    enable-version: false
+    enable-reload-cache-parameter: false
+
+upload:
+  # 文件保存路径(根据实际情况配置)
+  save-path: /data/upload
+  # 文件访问URL前缀(根据实际情况配置)
+  access-url: http://localhost:8080/upload
+  # 允许上传的文件类型
+  allow-types: jpg,jpeg,png,gif
+  # 最大文件大小(MB)
+  max-size: 10

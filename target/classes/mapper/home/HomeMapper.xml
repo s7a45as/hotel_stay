@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.home.mapper.HomeMapper">
+
+    <select id="searchHouses" resultType="com.homestay.common.shareentity.House">
+        SELECT h.* 
+        FROM t_house h
+        WHERE h.status = 1
+        <if test="keyword != null and keyword != ''">
+            AND (h.name LIKE CONCAT('%',#{keyword},'%') 
+                 OR h.description LIKE CONCAT('%',#{keyword},'%'))
+        </if>
+        <if test="city != null and city != ''">
+            AND h.city = #{city}
+        </if>
+        <if test="type != null and type != ''">
+            AND h.type = #{type}
+        </if>
+        <if test="minPrice != null">
+            AND h.price >= #{minPrice}
+        </if>
+        <if test="maxPrice != null">
+            AND h.price &lt;= #{maxPrice}
+        </if>
+        ORDER BY h.create_time DESC
+    </select>
+
+</mapper> 
