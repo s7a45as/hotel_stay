@@ -1,11 +1,7 @@
 package com.homestay.modules.auth.controller;
 
 import com.homestay.common.response.Result;
-import com.homestay.modules.auth.dto.LoginDTO;
-import com.homestay.modules.auth.dto.EmailDTO;
-import com.homestay.modules.auth.dto.NormalUserRegisterDTO;
-import com.homestay.modules.auth.dto.ResetPasswordDTO;
-import com.homestay.modules.auth.dto.MerchantRegisterDTO;
+import com.homestay.modules.auth.dto.*;
 import com.homestay.modules.auth.service.AuthService;
 import com.homestay.modules.auth.vo.LoginVO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -83,4 +79,14 @@ public class AuthController {
         authService.registerMerchant(merchantRegisterDTO);
         return Result.success();
     }
+
+    //管理员注册
+    @Operation(summary = "管理员注册", description = "注册新管理员")
+    @ApiResponse(responseCode = "200", description = "注册成功")
+    @PostMapping("/register/admin")
+    public Result<Void> registerAdmin(@Validated @RequestBody AdminRegisterDTO adminRegisterDTO) {
+        authService.registerAdmin(adminRegisterDTO);
+        return Result.success();
+    }
+
 } 

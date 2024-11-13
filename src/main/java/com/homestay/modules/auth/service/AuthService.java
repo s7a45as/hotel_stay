@@ -1,5 +1,6 @@
 package com.homestay.modules.auth.service;
 
+import com.homestay.modules.auth.dto.AdminRegisterDTO;
 import com.homestay.modules.auth.dto.LoginDTO;
 import com.homestay.modules.auth.dto.MerchantRegisterDTO;
 import com.homestay.modules.auth.dto.NormalUserRegisterDTO;
@@ -15,4 +16,5 @@ public interface AuthService {
     boolean resetPassword(String email, String code, String newPassword);
     void logout();
     void registerMerchant(MerchantRegisterDTO merchantRegisterDTO);
+    void registerAdmin(AdminRegisterDTO adminRegisterDTO);
 } 

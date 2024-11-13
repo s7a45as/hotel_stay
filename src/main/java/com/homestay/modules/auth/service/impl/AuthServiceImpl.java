@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.homestay.common.constant.CommonConstants;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
+import com.homestay.modules.auth.dto.AdminRegisterDTO;
 import com.homestay.modules.auth.dto.LoginDTO;
 import com.homestay.modules.auth.dto.MerchantRegisterDTO;
 import com.homestay.modules.auth.dto.NormalUserRegisterDTO;
@@ -45,7 +46,9 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public LoginVO login(LoginDTO loginDTO) {
         LoginVO loginVO = new LoginVO();
-        
+        log.info("用户类型: {}", loginDTO.getType());
+        //输出loginDTO
+        log.info("用户登录信息: {}", loginDTO);
         switch (loginDTO.getType()) {
             case "merchant" -> {
                 // 商家登录
@@ -53,18 +56,21 @@ public class AuthServiceImpl implements AuthService {
                 validateLogin(authMerchant, loginDTO.getPassword());
                 validateMerchantStatus(authMerchant);
                 loginVO = createLoginResponse(authMerchant, CommonConstants.System.MERCHANT_ROLE);
+                log.info("商家登录");
             }
             case "admin" -> {
                 // 管理员登录
                 AdminUser admin = getAdminByUsername(loginDTO.getUsername());
                 validateLogin(admin, loginDTO.getPassword());
                 loginVO = createLoginResponse(admin, CommonConstants.System.ADMIN_ROLE);
+                log.info("管理员登录");
             }
             case "user" -> {
                 // 普通用户登录
                 NormalUser user = getNormalUserByUsername(loginDTO.getUsername());
                 validateLogin(user, loginDTO.getPassword());
                 loginVO = createLoginResponse(user, CommonConstants.System.DEFAULT_ROLE);
+                log.info("普通用户登录");
             }
             default -> throw new BusinessException(ResultCode.INVALID_LOGIN_TYPE);
         }
@@ -139,6 +145,42 @@ public class AuthServiceImpl implements AuthService {
         // 2. 将token加入黑名单
         // 3. 清除用户相关的缓存
         // 4. 记录登出日志
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void registerAdmin(AdminRegisterDTO adminRegisterDTO) {
+        // 验证验证码
+        validateVerifyCode(adminRegisterDTO.getEmail(), adminRegisterDTO.getVerifyCode());
+        
+        // 验证用户名、邮箱、手机号是否已存在
+        if (existsUsername(adminRegisterDTO.getUsername())) {
+            throw new BusinessException(ResultCode.USERNAME_EXIST);
+        }
+        if (existsEmail(adminRegisterDTO.getEmail())) {
+            throw new BusinessException(ResultCode.EMAIL_EXIST);
+        }
+        if (existsPhone(adminRegisterDTO.getPhone())) {
+            throw new BusinessException(ResultCode.PHONE_EXIST);
+        }
+        
+        // 创建管理员用户
+        AdminUser adminUser = new AdminUser();
+        BeanUtils.copyProperties(adminRegisterDTO, adminUser);
+        
+        // 加密密码
+        adminUser.setPassword(passwordEncoder.encode(adminRegisterDTO.getPassword()));
+        
+        // 设置状态为待审核
+        adminUser.setStatus(CommonConstants.System.PENDING_STATUS);
+        
+        // 保存到数据库
+        adminMapper.insert(adminUser);
+        
+        // 发送审核通知邮件给超级管理员
+        sendAdminRegisterNotification(adminRegisterDTO);
+        
+        log.info("管理员注册成功，等待审核: {}", adminRegisterDTO.getUsername());
     }
 
     // 私有辅助方法
@@ -402,6 +444,58 @@ public class AuthServiceImpl implements AuthService {
             case CommonConstants.System.PENDING_STATUS -> 
                 throw new BusinessException(ResultCode.ACCOUNT_PENDING);
             default -> throw new BusinessException(ResultCode.ACCOUNT_ERROR);
+        }
+    }
+
+    /**
+     * 检查手机号是否已存在
+     */
+    private boolean existsPhone(String phone) {
+        return normalUserMapper.exists(new LambdaQueryWrapper<NormalUser>()
+                .eq(NormalUser::getPhone, phone)) ||
+               authMerchantMapper.exists(new LambdaQueryWrapper<AuthMerchant>()
+                .eq(AuthMerchant::getPhone, phone)) ||
+               adminMapper.exists(new LambdaQueryWrapper<AdminUser>()
+                .eq(AdminUser::getPhone, phone));
+    }
+
+    /**
+     * 发送管理员注册通知邮件
+     */
+    private void sendAdminRegisterNotification(AdminRegisterDTO dto) {
+        try {
+            String content = String.format("""
+                <div style="padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+                    <h3 style="color: #1a73e8;">新管理员注册通知</h3>
+                    <p><strong>用户名：</strong>%s</p>
+                    <p><strong>昵称：</strong>%s</p>
+                    <p><strong>邮箱：</strong>%s</p>
+                    <p><strong>手机号：</strong>%s</p>
+                    <p><strong>部门：</strong>%s</p>
+                    <p><strong>职位：</strong>%s</p>
+                    <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 4px;">
+                        <p style="color: #856404; margin: 0;">请尽快审核该管理员的注册申请！</p>
+                    </div>
+                </div>
+                """,
+                dto.getUsername(),
+                dto.getNickname(),
+                dto.getEmail(),
+                dto.getPhone(),
+                dto.getDepartment(),
+                dto.getPosition()
+            );
+            
+            emailUtil.sendVerificationCode(
+                CommonConstants.System.ADMIN_EMAIL,
+                "新管理员注册待审核 - " + dto.getUsername(),
+                content
+            );
+            
+            log.info("管理员注册通知邮件发送成功: {}", dto.getUsername());
+        } catch (Exception e) {
+            log.error("管理员注册通知邮件发送失败: {}", dto.getUsername(), e);
+            // 不抛出异常，避免影响主流程
         }
     }
 } 

@@ -4,8 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.common.constant.CommonConstants;
 import com.homestay.common.exception.BusinessException;
+import com.homestay.modules.admin.dto.AdminAuditDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
 import com.homestay.modules.admin.service.AdminUserService;
+import com.homestay.modules.admin.vo.AdminUserVO;
 import com.homestay.modules.auth.entity.AuthMerchant;
 import com.homestay.modules.auth.entity.BaseUser;
 import com.homestay.modules.auth.entity.NormalUser;
@@ -25,6 +27,16 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     private final NormalUserMapper normalUserMapper;
     private final AuthMerchantMapper authMerchantMapper;
+
+    @Override
+    public void auditAdmin(Long id, AdminAuditDTO auditDTO) {
+
+    }
+
+    @Override
+    public List<AdminUserVO> getPendingAdmins() {
+        return List.of();
+    }
 
     @Override
     public UserPageDTO getUserList(Integer currentPage, Integer pageSize, String username, String phone, Integer status) {
