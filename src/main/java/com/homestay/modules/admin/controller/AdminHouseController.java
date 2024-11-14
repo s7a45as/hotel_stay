@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "管理后台-房源管理", description = "房源管理相关接口")
 @RestController
-@RequestMapping("/api/admin/houses")
+@RequestMapping("/admin/houses")
 @RequiredArgsConstructor
 public class AdminHouseController {
 

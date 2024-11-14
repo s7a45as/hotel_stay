@@ -1,4 +1,4 @@
-package com.homestay.utils;
+package com.homestay.common.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

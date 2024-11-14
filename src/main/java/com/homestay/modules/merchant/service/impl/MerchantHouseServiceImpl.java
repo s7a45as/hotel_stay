@@ -9,7 +9,7 @@ import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.dto.MerchantHouseDTO;
 import com.homestay.modules.merchant.mapper.MerchantHouseMapper;
 import com.homestay.modules.merchant.service.MerchantHouseService;
-import com.homestay.utils.SecurityUtils;
+import com.homestay.common.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "管理后台-仪表盘", description = "管理后台仪表盘相关接口")
 @RestController
-@RequestMapping("/api/admin/dashboard")
+@RequestMapping("/admin/dashboard")
 @RequiredArgsConstructor
 public class AdminDashboardController {
 

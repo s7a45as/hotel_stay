@@ -28,12 +28,15 @@ public class AdminUserServiceImpl implements AdminUserService {
     private final NormalUserMapper normalUserMapper;
     private final AuthMerchantMapper authMerchantMapper;
 
-    @Override
-    public void auditAdmin(Long id, AdminAuditDTO auditDTO) {
 
+    @Override
+    //todo：审核管理员的代码 对应的数据库表为t_admin
+    public void auditAdmin(Long id, AdminAuditDTO auditDTO) {
+        
     }
 
     @Override
+    //todo：获得待审核管理员的代码 对应的数据库表为t_admin
     public List<AdminUserVO> getPendingAdmins() {
         return List.of();
     }

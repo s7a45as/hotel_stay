@@ -17,18 +17,27 @@ import com.homestay.modules.auth.mapper.AuthMerchantMapper;
 import com.homestay.modules.auth.mapper.NormalUserMapper;
 import com.homestay.modules.auth.service.AuthService;
 import com.homestay.modules.auth.vo.LoginVO;
-import com.homestay.utils.EmailUtil;
-import com.homestay.utils.JwtUtil;
-import com.homestay.utils.RedisUtil;
+import com.homestay.common.utils.EmailUtil;
+import com.homestay.common.utils.JwtUtil;
+import com.homestay.common.utils.RedisUtil;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Slf4j
 @Service
@@ -42,13 +51,15 @@ public class AuthServiceImpl implements AuthService {
     private final JwtUtil jwtUtil;
     private final RedisUtil redisUtil;
     private final EmailUtil emailUtil;
+    private final RedisTemplate<String, Object> redisTemplate;
+
 
     @Override
     public LoginVO login(LoginDTO loginDTO) {
         LoginVO loginVO = new LoginVO();
         log.info("用户类型: {}", loginDTO.getType());
-        //输出loginDTO
         log.info("用户登录信息: {}", loginDTO);
+        
         switch (loginDTO.getType()) {
             case "merchant" -> {
                 // 商家登录
@@ -56,6 +67,8 @@ public class AuthServiceImpl implements AuthService {
                 validateLogin(authMerchant, loginDTO.getPassword());
                 validateMerchantStatus(authMerchant);
                 loginVO = createLoginResponse(authMerchant, CommonConstants.System.MERCHANT_ROLE);
+                // 存储token到Redis
+                storeTokenInRedis(loginVO.getToken(), authMerchant.getId());
                 log.info("商家登录");
             }
             case "admin" -> {
@@ -63,6 +76,8 @@ public class AuthServiceImpl implements AuthService {
                 AdminUser admin = getAdminByUsername(loginDTO.getUsername());
                 validateLogin(admin, loginDTO.getPassword());
                 loginVO = createLoginResponse(admin, CommonConstants.System.ADMIN_ROLE);
+                // 存储token到Redis
+                storeTokenInRedis(loginVO.getToken(), admin.getId());
                 log.info("管理员登录");
             }
             case "user" -> {
@@ -70,6 +85,8 @@ public class AuthServiceImpl implements AuthService {
                 NormalUser user = getNormalUserByUsername(loginDTO.getUsername());
                 validateLogin(user, loginDTO.getPassword());
                 loginVO = createLoginResponse(user, CommonConstants.System.DEFAULT_ROLE);
+                // 存储token到Redis
+                storeTokenInRedis(loginVO.getToken(), user.getId());
                 log.info("普通用户登录");
             }
             default -> throw new BusinessException(ResultCode.INVALID_LOGIN_TYPE);
@@ -140,11 +157,42 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void logout() {
-        // TODO: 实现以下功能
-        // 1. 获取当前用户token
-        // 2. 将token加入黑名单
-        // 3. 清除用户相关的缓存
-        // 4. 记录登出日志
+        // 获取当前请求的token
+        String token = getTokenFromRequest();
+        if (token == null) {
+            throw new BusinessException(ResultCode.UNAUTHORIZED);
+        }
+        
+        // 将token加入黑名单
+        String blacklistKey = "token:blacklist:" + token;
+        redisTemplate.opsForValue().set(blacklistKey, true, 2, TimeUnit.DAYS);
+        
+        // 删除Redis中存储的token信息
+        String tokenKey = CommonConstants.Redis.TOKEN_PREFIX + token;
+        redisTemplate.delete(tokenKey);
+        
+        // 清除Security上下文
+        SecurityContextHolder.clearContext();
+        
+        log.info("用户登出成功，token已加入黑名单");
+    }
+
+    /**
+     * 从请求中获取token
+     */
+    private String getTokenFromRequest() {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes == null) {
+            throw new BusinessException(ResultCode.ERROR.getCode(), "获取请求上下文失败");
+        }
+        
+        HttpServletRequest request = attributes.getRequest();
+        String bearerToken = request.getHeader("Authorization");
+        if (!StringUtils.hasText(bearerToken) || !bearerToken.startsWith("Bearer ")) {
+            return null;
+        }
+        
+        return bearerToken.substring(7);
     }
 
     @Override
@@ -497,5 +545,17 @@ public class AuthServiceImpl implements AuthService {
             log.error("管理员注册通知邮件发送失败: {}", dto.getUsername(), e);
             // 不抛出异常，避免影响主流程
         }
+    }
+
+    /**
+     * 将token存储到Redis中
+     * @param token JWT token
+     * @param userId 用户ID
+     */
+    private void storeTokenInRedis(String token, Long userId) {
+        String redisKey = CommonConstants.Redis.TOKEN_PREFIX + token;
+        // 存储token到Redis，设置2天过期时间
+        redisTemplate.opsForValue().set(redisKey, userId, 2, TimeUnit.DAYS);
+        log.info("Token已存储到Redis，key: {}, userId: {}", redisKey, userId);
     }
 } 

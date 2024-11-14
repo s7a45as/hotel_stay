@@ -8,7 +8,7 @@ import com.homestay.modules.merchant.dto.OrderPageDTO;
 import com.homestay.modules.merchant.entity.MerchantOrder;
 import com.homestay.modules.merchant.mapper.MerchantOrderMapper;
 import com.homestay.modules.merchant.service.MerchantOrderService;
-import com.homestay.utils.SecurityUtils;
+import com.homestay.common.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.homestay.utils;
+package com.homestay.common.utils;
 
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;

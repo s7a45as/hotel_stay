@@ -71,7 +71,7 @@ mybatis-plus:
     banner: false
 
 jwt:
-  secret: your-secret-key-must-be-at-least-256-bits-long-for-hs256-algorithm
+  secret: your-secret-key-your-secret-key-your-secret-key-your-secret-key
   expiration: 604800
 
 springdoc:

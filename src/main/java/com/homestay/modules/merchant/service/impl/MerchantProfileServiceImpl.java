@@ -8,7 +8,7 @@ import com.homestay.modules.merchant.dto.UpdatePasswordDTO;
 import com.homestay.modules.merchant.entity.Merchant;
 import com.homestay.modules.merchant.mapper.MerchantMapper;
 import com.homestay.modules.merchant.service.MerchantProfileService;
-import com.homestay.utils.SecurityUtils;
+import com.homestay.common.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;

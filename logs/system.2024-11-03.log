@@ -4772,8 +4772,8 @@ This generated password is for development use only. Your security configuration
 2024-11-02 13:17:42.796 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-11-02 13:17:42.801 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 2024-11-02 13:21:51.120 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-11-02 13:21:51.135 [main] INFO  com.homestay.utils.EmailUtilTest - Starting EmailUtilTest using Java 23 with PID 20140 (started by 45732 in C:\Users\45732\Code\Java\folks_stay)
-2024-11-02 13:21:51.136 [main] INFO  com.homestay.utils.EmailUtilTest - The following 1 profile is active: "dev"
+2024-11-02 13:21:51.135 [main] INFO  com.homestay.common.utils.EmailUtilTest - Starting EmailUtilTest using Java 23 with PID 20140 (started by 45732 in C:\Users\45732\Code\Java\folks_stay)
+2024-11-02 13:21:51.136 [main] INFO  com.homestay.common.utils.EmailUtilTest - The following 1 profile is active: "dev"
 2024-11-02 13:21:52.008 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
 2024-11-02 13:21:52.011 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2024-11-02 13:21:52.048 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
@@ -4794,7 +4794,7 @@ Using generated security password: 7887fdf5-96ee-40e6-b86c-ea8f71a42f28
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
 2024-11-02 13:21:55.764 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@156eeff1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34001c5d, org.springframework.security.web.context.SecurityContextHolderFilter@1e965426, org.springframework.security.web.header.HeaderWriterFilter@192ecf8, org.springframework.web.filter.CorsFilter@30e15628, org.springframework.security.web.authentication.logout.LogoutFilter@66ab088c, com.homestay.common.security.JwtAuthenticationFilter@37ab1b10, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@149238fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a0bdbe2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55d87b73, org.springframework.security.web.session.SessionManagementFilter@2fccd98f, org.springframework.security.web.access.ExceptionTranslationFilter@4add4dff, org.springframework.security.web.access.intercept.AuthorizationFilter@57fec63f]
-2024-11-02 13:21:56.490 [main] INFO  com.homestay.utils.EmailUtilTest - Started EmailUtilTest in 5.72 seconds (process running for 6.568)
+2024-11-02 13:21:56.490 [main] INFO  com.homestay.common.utils.EmailUtilTest - Started EmailUtilTest in 5.72 seconds (process running for 6.568)
 2024-11-02 13:22:17.304 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-11-02 13:22:17.309 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 2024-11-02 13:35:53.178 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final

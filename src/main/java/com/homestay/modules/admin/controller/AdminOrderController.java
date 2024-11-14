@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "管理后台-订单管理", description = "订单管理相关接口")
 @RestController
-@RequestMapping("/api/admin/orders")
+@RequestMapping("/admin/orders")
 @RequiredArgsConstructor
 public class AdminOrderController {
 

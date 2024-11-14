@@ -1,4 +1,4 @@
-package com.homestay.utils;
+package com.homestay.common.utils;
 
 import org.springframework.stereotype.Component;
 
