@@ -1,0 +1,7 @@
+{
+  "code": 200,
+  "data": {
+    "valid": true
+  },
+  "message": "密码重置成功"
+}

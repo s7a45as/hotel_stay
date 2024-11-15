@@ -1,0 +1,25 @@
+{
+  "statistics": {
+    "code": 200,
+    "data": {
+      "totalHouses": 15,
+      "totalOrders": 150,
+      "totalIncome": 50000,
+      "pendingOrders": 5
+    }
+  },
+  "orderTrend": {
+    "code": 200,
+    "data": {
+      "months": ["1月", "2月", "3月", "4月", "5月", "6月"],
+      "orders": [25, 32, 28, 36, 30, 42]
+    }
+  },
+  "incomeTrend": {
+    "code": 200,
+    "data": {
+      "months": ["1月", "2月", "3月", "4月", "5月", "6月"],
+      "income": [5000, 6500, 5800, 7200, 6000, 8500]
+    }
+  }
+}

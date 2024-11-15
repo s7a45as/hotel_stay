@@ -1,0 +1,10 @@
+{
+  "code": 200,
+  "data": {
+    "siteName": "民宿预订系统",
+    "logo": "https://example.com/logo.png",
+    "userAgreement": "#",
+    "privacyPolicy": "#",
+    "helpCenter": "#"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "data": {
+    "totalUsers": 3500,
+    "totalOrders": 1200,
+    "totalHouses": 150,
+    "revenue": 500000
+  }
+}

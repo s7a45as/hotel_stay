@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "data": {
+    "id": "DD202403200001",
+    "orderNo": "1234567890123456",
+    "status": "PAID",
+    "createTime": "2024-03-19 14:30:00",
+    "payTime": "2024-03-19 14:35:00",
+    "amount": 1776,
+    "house": {
+      "id": "1001",
+      "name": "湖景豪华民宿",
+      "image": "https://example.com/houses/1001.jpg",
+      "address": "浙江省杭州市西湖区"
+    },
+    "checkIn": "2024-03-20",
+    "checkOut": "2024-03-22",
+    "nights": 2,
+    "guests": 2,
+    "contactName": "张三",
+    "contactPhone": "13800138000",
+    "specialRequests": "希望能准备些额外的毛巾，谢谢。"
+  }
+}

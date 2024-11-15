@@ -1,0 +1,7 @@
+{
+  "code": 200,
+  "data": {
+    "qrcode": "https://example.com/pay/wechat/DD202403210001/888",
+    "expireTime": 1711238400000
+  }
+}

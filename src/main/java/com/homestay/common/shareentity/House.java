@@ -11,6 +11,7 @@ import java.util.List;
 
 @Data
 @Schema(description = "房源信息")
+@TableName(value = "t_house")
 public class House {
 
     @TableId(type = IdType.AUTO)

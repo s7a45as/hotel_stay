@@ -15,7 +15,7 @@ import java.util.List;
 
 @Tag(name = "首页", description = "首页相关接口")
 @RestController
-@RequestMapping("/api/home")
+@RequestMapping("/home")
 @RequiredArgsConstructor
 public class HomeController {
 

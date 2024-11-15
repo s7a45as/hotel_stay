@@ -1,0 +1,34 @@
+{
+  "code": 200,
+  "data": {
+    "list": [
+      {
+        "id": "DD202403200001",
+        "houseName": "湖景豪华民宿",
+        "houseImage": "https://example.com/houses/1001.jpg",
+        "checkIn": "2024-03-20",
+        "checkOut": "2024-03-22",
+        "nights": 2,
+        "guests": 2,
+        "amount": 1776,
+        "status": "PAID",
+        "createTime": "2024-03-19 14:30:00"
+      },
+      {
+        "id": "DD202403200002",
+        "houseName": "城市中心公寓",
+        "houseImage": "https://example.com/houses/1002.jpg",
+        "checkIn": "2024-03-25",
+        "checkOut": "2024-03-27",
+        "nights": 2,
+        "guests": 1,
+        "amount": 1332,
+        "status": "PENDING",
+        "createTime": "2024-03-19 16:30:00"
+      }
+    ],
+    "total": 100,
+    "currentPage": 1,
+    "pageSize": 10
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "info": {
+    "code": 200,
+    "data": {
+      "id": 1001,
+      "name": "张三",
+      "avatar": "https://example.com/merchant/avatar.jpg",
+      "role": "merchant"
+    }
+  },
+  "menus": {
+    "code": 200,
+    "data": [
+      {
+        "path": "/merchant/dashboard",
+        "name": "MerchantDashboard",
+        "meta": { "title": "控制台", "icon": "DataLine" }
+      },
+      {
+        "path": "/merchant/houses",
+        "name": "MerchantHouses",
+        "meta": { "title": "房源管理", "icon": "House" }
+      },
+      {
+        "path": "/merchant/orders",
+        "name": "MerchantOrders",
+        "meta": { "title": "订单管理", "icon": "Document" }
+      },
+      {
+        "path": "/merchant/profile",
+        "name": "MerchantProfile",
+        "meta": { "title": "商家信息", "icon": "User" }
+      }
+    ]
+  }
+}

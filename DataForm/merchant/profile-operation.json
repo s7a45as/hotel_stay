@@ -1,0 +1,17 @@
+{
+  "update": {
+    "code": 200,
+    "message": "更新成功"
+  },
+  "password": {
+    "code": 200,
+    "message": "密码修改成功"
+  },
+  "avatar": {
+    "code": 200,
+    "data": {
+      "url": "https://example.com/merchant/new-avatar.jpg"
+    },
+    "message": "上传成功"
+  }
+}

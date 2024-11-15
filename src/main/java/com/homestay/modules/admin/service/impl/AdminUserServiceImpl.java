@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.common.constant.CommonConstants;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.modules.admin.dto.AdminAuditDTO;
+import com.homestay.modules.admin.dto.UpdatePasswordDTO;
+import com.homestay.modules.admin.dto.UpdateUserDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
 import com.homestay.modules.admin.service.AdminUserService;
 import com.homestay.modules.admin.vo.AdminUserVO;
@@ -14,6 +16,8 @@ import com.homestay.modules.auth.entity.NormalUser;
 import com.homestay.modules.auth.mapper.AuthMerchantMapper;
 import com.homestay.modules.auth.mapper.NormalUserMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -27,7 +31,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     private final NormalUserMapper normalUserMapper;
     private final AuthMerchantMapper authMerchantMapper;
-
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     //todo：审核管理员的代码 对应的数据库表为t_admin
@@ -123,6 +127,54 @@ public class AdminUserServiceImpl implements AdminUserService {
         // 如果不是普通用户，尝试删除商家
         int merchantCount = authMerchantMapper.deleteById(id);
         if (merchantCount > 0) {
+            return;
+        }
+
+        throw new BusinessException("用户不存在");
+    }
+
+    @Override
+    public void updateUser(Long id, UpdateUserDTO updateUserDTO) {
+        // 先尝试在普通用户表中更新
+        NormalUser normalUser = normalUserMapper.selectById(id);
+        if (normalUser != null) {
+            BeanUtils.copyProperties(updateUserDTO, normalUser);
+            normalUserMapper.updateById(normalUser);
+            return;
+        }
+
+        // 如果不是普通用户，尝试在商家表中更新
+        AuthMerchant merchant = authMerchantMapper.selectById(id);
+        if (merchant != null) {
+            BeanUtils.copyProperties(updateUserDTO, merchant);
+            authMerchantMapper.updateById(merchant);
+            return;
+        }
+
+        throw new BusinessException("用户不存在");
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateUserPassword(Long id, UpdatePasswordDTO passwordDTO) {
+        // 验证两次密码是否一致
+        if (!passwordDTO.getNewPassword().equals(passwordDTO.getConfirmPassword())) {
+            throw new BusinessException("两次输入的密码不一致");
+        }
+
+        // 先尝试在普通用户表中更新
+        NormalUser normalUser = normalUserMapper.selectById(id);
+        if (normalUser != null) {
+            normalUser.setPassword(passwordEncoder.encode(passwordDTO.getNewPassword()));
+            normalUserMapper.updateById(normalUser);
+            return;
+        }
+
+        // 如果不是普通用户，尝试在商家表中更新
+        AuthMerchant merchant = authMerchantMapper.selectById(id);
+        if (merchant != null) {
+            merchant.setPassword(passwordEncoder.encode(passwordDTO.getNewPassword()));
+            authMerchantMapper.updateById(merchant);
             return;
         }
 

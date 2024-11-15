@@ -1,0 +1,32 @@
+{
+  "code": 200,
+  "data": {
+    "siteName": "民宿预订系统",
+    "siteDesc": "提供优质的民宿预订服务",
+    "logo": "https://example.com/logo.png",
+    "favicon": "https://example.com/favicon.ico",
+    "contactPhone": "400-123-4567",
+    "contactEmail": "support@example.com",
+    "address": "浙江省杭州市西湖区",
+    "maxBookingDays": 30,
+    "minAdvanceBookingDays": 1,
+    "maxAdvanceBookingDays": 90,
+    "checkInTime": "14:00",
+    "checkOutTime": "12:00",
+    "depositRate": 30,
+    "cancelPolicy": 1,
+    "refundRules": [
+      { "days": 7, "rate": 100 },
+      { "days": 3, "rate": 50 },
+      { "days": 1, "rate": 20 }
+    ],
+    "emailNotification": true,
+    "smsNotification": true,
+    "notifyBeforeCheckIn": 24,
+    "notifyBeforeCheckOut": 2,
+    "maintenance": false,
+    "maintenanceMessage": "",
+    "registrationEnabled": true,
+    "defaultUserRole": "user"
+  }
+}
