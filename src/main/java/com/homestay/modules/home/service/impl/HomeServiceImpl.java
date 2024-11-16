@@ -22,7 +22,7 @@ public class HomeServiceImpl implements HomeService {
     private final HomeMapper homeMapper;
 
     @Override
-    @Cacheable(value = "cityList", unless = "#result == null")
+    @Cacheable(value = "cityList", key = "'all'", unless = "#result == null")
     public List<homeCity> getCityList() {
         return homeMapper.selectCityList();
     }
@@ -50,7 +50,7 @@ public class HomeServiceImpl implements HomeService {
     }
 
     @Override
-    @Cacheable(value = "popularDestinations", unless = "#result == null")
+    @Cacheable(value = "destinations", key = "'popular'", unless = "#result == null")
     public List<Destination> getPopularDestinations() {
         return homeMapper.selectPopularDestinations();
     }
