@@ -13,6 +13,10 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/admin")
 @RequiredArgsConstructor
+
+//TODO:No static resource admin/settings/payment.
+//TODO:No static resource auth/site-config.
+//TODO:No static resource admin/settings/notification-templates.
 public class AdminSettingsController {
 
     private final AdminSettingsService adminSettingsService;

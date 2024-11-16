@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "房源管理", description = "房源相关接口")
 @RestController
-@RequestMapping("/api/house")
+@RequestMapping("/house")
 @RequiredArgsConstructor
 public class HouseController {
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "房源图片管理", description = "房源图片上传、删除等接口")
 @RestController
-@RequestMapping("/api/houses/images")
+@RequestMapping("/houses/images")
 @RequiredArgsConstructor
 public class HouseImageController {
 

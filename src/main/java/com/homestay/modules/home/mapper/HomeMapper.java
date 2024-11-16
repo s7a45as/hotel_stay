@@ -14,10 +14,10 @@ import java.util.List;
 @Mapper
 public interface HomeMapper extends BaseMapper<House> {
     
-    @Select("SELECT value, label FROM t_city WHERE status = 1")
+    @Select("SELECT value, label FROM t_homecity WHERE status = 1")
     List<homeCity> selectCityList();
     
-    @Select("SELECT * FROM t_destination WHERE status = 1 ORDER BY sort_order")
+    @Select("SELECT * FROM t_destination WHERE status = 1 ORDER BY id")
     List<Destination> selectPopularDestinations();
     
     /**
