@@ -24,6 +24,7 @@ import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,7 +35,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -53,6 +53,8 @@ public class AuthServiceImpl implements AuthService {
     private final EmailUtil emailUtil;
     private final RedisTemplate<String, Object> redisTemplate;
 
+    @Value("${homestay.base-url}")
+    private String baseUrl;
 
     @Override
     public LoginVO login(LoginDTO loginDTO) {
@@ -131,10 +133,11 @@ public class AuthServiceImpl implements AuthService {
         authMerchant.setPassword(passwordEncoder.encode(dto.getPassword()));
         authMerchant.setStatus(CommonConstants.System.PENDING_STATUS);
         
+        // 先保存到数据库获取ID
         authMerchantMapper.insert(authMerchant);
         
         // 发送审核通知邮件
-        sendMerchantRegisterNotification(dto);
+        sendMerchantRegisterNotification(authMerchant);
         
         log.info("商家注册成功，等待审核: {}", dto.getUsername());
     }
@@ -144,7 +147,7 @@ public class AuthServiceImpl implements AuthService {
     public boolean resetPassword(String email, String code, String newPassword) {
         validateVerifyCode(email, code);
         
-        // 尝试在所有用户表中查找并更新密码
+        // 尝试在所有用户表中���找并更新密码
         boolean updated = updatePasswordIfExists(email, newPassword);
         if (!updated) {
             throw new BusinessException(ResultCode.EMAIL_NOT_EXIST);
@@ -197,38 +200,34 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void registerAdmin(AdminRegisterDTO adminRegisterDTO) {
+    public void registerAdmin(AdminRegisterDTO dto) {
         // 验证验证码
-        validateVerifyCode(adminRegisterDTO.getEmail(), adminRegisterDTO.getVerifyCode());
+        validateVerifyCode(dto.getEmail(), dto.getVerifyCode());
         
         // 验证用户名、邮箱、手机号是否已存在
-        if (existsUsername(adminRegisterDTO.getUsername())) {
+        if (existsUsername(dto.getUsername())) {
             throw new BusinessException(ResultCode.USERNAME_EXIST);
         }
-        if (existsEmail(adminRegisterDTO.getEmail())) {
+        if (existsEmail(dto.getEmail())) {
             throw new BusinessException(ResultCode.EMAIL_EXIST);
         }
-        if (existsPhone(adminRegisterDTO.getPhone())) {
+        if (existsPhone(dto.getPhone())) {
             throw new BusinessException(ResultCode.PHONE_EXIST);
         }
         
         // 创建管理员用户
         AdminUser adminUser = new AdminUser();
-        BeanUtils.copyProperties(adminRegisterDTO, adminUser);
-        
-        // 加密密码
-        adminUser.setPassword(passwordEncoder.encode(adminRegisterDTO.getPassword()));
-        
-        // 设置状态为待审核
+        BeanUtils.copyProperties(dto, adminUser);
+        adminUser.setPassword(passwordEncoder.encode(dto.getPassword()));
         adminUser.setStatus(CommonConstants.System.PENDING_STATUS);
         
-        // 保存到数据库
+        // 先保存到数据库获取ID
         adminMapper.insert(adminUser);
         
-        // 发送审核通知邮件给超级管理员
-        sendAdminRegisterNotification(adminRegisterDTO);
+        // 发送审核通知邮件
+        sendAdminRegisterNotification(adminUser);
         
-        log.info("管理员注册成功，等待审核: {}", adminRegisterDTO.getUsername());
+        log.info("管理员注册成功，等待审核: {}", dto.getUsername());
     }
 
     // 私有辅助方法
@@ -384,7 +383,7 @@ public class AuthServiceImpl implements AuthService {
         String key = CommonConstants.Redis.VERIFY_CODE_PREFIX + email;
         String existingCode = (String) redisUtil.get(key);
         
-        // 如果验证码存在且未过期，继续使用
+        // 如果验证码存在且未期，继续使
         if (existingCode != null && redisUtil.getExpire(key) > 0) {
             return existingCode;
         }
@@ -420,40 +419,42 @@ public class AuthServiceImpl implements AuthService {
     /**
      * 发送商家注册通知邮件给管理员
      */
-    private void sendMerchantRegisterNotification(MerchantRegisterDTO dto) {
+    private void sendMerchantRegisterNotification(AuthMerchant merchant) {
         try {
+            String auditUrl = baseUrl + "/admin/audit/merchant/" + merchant.getId() + "?token=" + generateAuditToken(merchant.getId());
+            
             String content = String.format("""
-                <div style="padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
-                    <h3 style="color: #1a73e8;">新商家注册通知</h3>
+                <h3 style="color: #1a73e8;">新商家注册通知</h3>
+                <div style="margin: 20px 0;">
                     <p><strong>商家名称：</strong>%s</p>
                     <p><strong>联系人：</strong>%s</p>
                     <p><strong>联系电话：</strong>%s</p>
                     <p><strong>联系邮箱：</strong>%s</p>
                     <p><strong>营业执照号：</strong>%s</p>
                     <p><strong>商家地址：</strong>%s</p>
-                    <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 4px;">
-                        <p style="color: #856404; margin: 0;">请尽快审核该商家的注册申请！</p>
-                    </div>
+                </div>
+                <div style="padding: 15px; background-color: #fff3cd; border-radius: 4px;">
+                    <p style="color: #856404; margin: 0;">请点击下方按钮审核该商家的注册申请</p>
                 </div>
                 """,
-                dto.getBusinessName(),
-                dto.getContactPerson(),
-                dto.getPhone(),
-                dto.getEmail(),
-                dto.getBusinessLicense(),
-                dto.getBusinessAddress()
+                merchant.getBusinessName(),
+                merchant.getContactPerson(),
+                merchant.getPhone(),
+                merchant.getEmail(),
+                merchant.getBusinessLicense(),
+                merchant.getBusinessAddress()
             );
             
-            emailUtil.sendVerificationCode(
+            emailUtil.sendAuditEmail(
                 CommonConstants.System.ADMIN_EMAIL,
-                "新商家注册待审核 - " + dto.getBusinessName(),
-                content
+                "新商家注册待审核 - " + merchant.getBusinessName(),
+                content,
+                auditUrl
             );
             
-            log.info("商家注册通知邮件发送成功: {}", dto.getBusinessName());
+            log.info("商家注册通知邮件发送成功: {}", merchant.getBusinessName());
         } catch (Exception e) {
-            log.error("商家注册通知邮件发送失败: {}", dto.getBusinessName(), e);
-            // 不抛出异常，避免影响主流程
+            log.error("商家注册通知邮件发送失败: {}", merchant.getBusinessName(), e);
         }
     }
 
@@ -510,40 +511,42 @@ public class AuthServiceImpl implements AuthService {
     /**
      * 发送管理员注册通知邮件
      */
-    private void sendAdminRegisterNotification(AdminRegisterDTO dto) {
+    private void sendAdminRegisterNotification(AdminUser admin) {
         try {
+            String auditUrl = baseUrl + "/admin/audit/admin/" + admin.getId() + "?token=" + generateAuditToken(admin.getId());
+            
             String content = String.format("""
-                <div style="padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
-                    <h3 style="color: #1a73e8;">新管理员注册通知</h3>
+                <h3 style="color: #1a73e8;">新管理员注册通知</h3>
+                <div style="margin: 20px 0;">
                     <p><strong>用户名：</strong>%s</p>
                     <p><strong>昵称：</strong>%s</p>
                     <p><strong>邮箱：</strong>%s</p>
                     <p><strong>手机号：</strong>%s</p>
                     <p><strong>部门：</strong>%s</p>
                     <p><strong>职位：</strong>%s</p>
-                    <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 4px;">
-                        <p style="color: #856404; margin: 0;">请尽快审核该管理员的注册申请！</p>
-                    </div>
+                </div>
+                <div style="padding: 15px; background-color: #fff3cd; border-radius: 4px;">
+                    <p style="color: #856404; margin: 0;">请点击下方按钮审核该管理员的注册申请</p>
                 </div>
                 """,
-                dto.getUsername(),
-                dto.getNickname(),
-                dto.getEmail(),
-                dto.getPhone(),
-                dto.getDepartment(),
-                dto.getPosition()
+                admin.getUsername(),
+                admin.getNickname(),
+                admin.getEmail(),
+                admin.getPhone(),
+                admin.getDepartment(),
+                admin.getPosition()
             );
             
-            emailUtil.sendVerificationCode(
+            emailUtil.sendAuditEmail(
                 CommonConstants.System.ADMIN_EMAIL,
-                "新管理员注册待审核 - " + dto.getUsername(),
-                content
+                "新管理员注册待审核 - " + admin.getUsername(),
+                content,
+                auditUrl
             );
             
-            log.info("管理员注册通知邮件发送成功: {}", dto.getUsername());
+            log.info("管理员注册通知邮件发送成功: {}", admin.getUsername());
         } catch (Exception e) {
-            log.error("管理员注册通知邮件发送失败: {}", dto.getUsername(), e);
-            // 不抛出异常，避免影响主流程
+            log.error("管理员注册通知邮件发送失败: {}", admin.getUsername(), e);
         }
     }
 
@@ -557,5 +560,16 @@ public class AuthServiceImpl implements AuthService {
         // 存储token到Redis，设置2天过期时间
         redisTemplate.opsForValue().set(redisKey, userId, 2, TimeUnit.DAYS);
         log.info("Token已存储到Redis，key: {}, userId: {}", redisKey, userId);
+    }
+
+    /**
+     * 生成审核token
+     */
+    private String generateAuditToken(Long id) {
+        // 生成24小时有效的审核token
+        String token = jwtUtil.generateAuditToken(id.toString());
+        String key = "audit:token:" + id;
+        redisTemplate.opsForValue().set(key, token, 24, TimeUnit.HOURS);
+        return token;
     }
 } 

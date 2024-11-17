@@ -17,8 +17,8 @@ public class MerchantRegisterDTO {
     
     @Schema(description = "密码", required = true)
     @NotBlank(message = "密码不能为空")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,20}$", 
-            message = "密码必须包含大小写字母和数字，长度在6-20之间")
+//    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,20}$",
+//            message = "密码必须包含大小写字母和数字，长度在6-20之间")
     private String password;
     
     @Schema(description = "昵称", required = true)

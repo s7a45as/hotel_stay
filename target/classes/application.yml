@@ -70,9 +70,10 @@ mybatis-plus:
       logic-not-delete-value: 0
     banner: false
 
+
 jwt:
-  secret: your-secret-key-your-secret-key-your-secret-key-your-secret-key
-  expiration: 604800
+    secret: your-256-bit-secret-key-here
+    expiration: 86400  # 24小时，单位：秒
 
 springdoc:
   swagger-ui:
@@ -101,3 +102,7 @@ upload:
   allow-types: jpg,jpeg,png,gif
   # 最大文件大小(MB)
   max-size: 10
+
+homestay:
+  base-url: http://localhost:8080  # 开发环境配置
+  # base-url: https://your-domain.com  # 生产环境配置

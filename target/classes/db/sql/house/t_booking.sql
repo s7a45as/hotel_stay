@@ -1,0 +1,21 @@
+CREATE TABLE `t_booking` (
+  `id` varchar(20) NOT NULL COMMENT '预订ID',
+  `house_id` bigint NOT NULL COMMENT '房源ID',
+  `user_id` bigint NOT NULL COMMENT '用户ID',
+  `check_in_time` datetime NOT NULL COMMENT '入住时间',
+  `check_out_time` datetime NOT NULL COMMENT '退房时间',
+  `guest_count` int NOT NULL DEFAULT '1' COMMENT '入住人数',
+  `contact_name` varchar(50) NOT NULL COMMENT '联系人姓名',
+  `contact_phone` varchar(20) NOT NULL COMMENT '联系人电话',
+  `special_requests` text COMMENT '特殊要求',
+  `total_price` decimal(10,2) NOT NULL COMMENT '订单总价',
+  `status` tinyint NOT NULL DEFAULT '0' COMMENT '订单状态(0:待支付 1:已支付 2:已取消 3:已完成)',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `version` int NOT NULL DEFAULT '0' COMMENT '版本号',
+  `deleted` tinyint NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`id`),
+  KEY `idx_house_id` (`house_id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_status` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='预订表'; 

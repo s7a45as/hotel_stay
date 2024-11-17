@@ -4,18 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.common.constant.CommonConstants;
 import com.homestay.common.exception.BusinessException;
+import com.homestay.common.response.ResultCode;
 import com.homestay.modules.admin.dto.AdminAuditDTO;
 import com.homestay.modules.admin.dto.UpdatePasswordDTO;
 import com.homestay.modules.admin.dto.UpdateUserDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
 import com.homestay.modules.admin.service.AdminUserService;
 import com.homestay.modules.admin.vo.AdminUserVO;
-import com.homestay.modules.auth.entity.AuthMerchant;
-import com.homestay.modules.auth.entity.BaseUser;
-import com.homestay.modules.auth.entity.NormalUser;
+import com.homestay.modules.auth.entity.*;
+import com.homestay.modules.auth.mapper.AdminMapper;
 import com.homestay.modules.auth.mapper.AuthMerchantMapper;
 import com.homestay.modules.auth.mapper.NormalUserMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,22 +28,61 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AdminUserServiceImpl implements AdminUserService {
 
+    private final AdminMapper adminMapper;
     private final NormalUserMapper normalUserMapper;
     private final AuthMerchantMapper authMerchantMapper;
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    //todo：审核管理员的代码 对应的数据库表为t_admin
-    public void auditAdmin(Long id, AdminAuditDTO auditDTO) {
-        
+    @Transactional(rollbackFor = Exception.class)
+    public void auditAdmin(AdminAuditDTO auditDTO) {
+        AdminUser admin = adminMapper.selectById(auditDTO.getId());
+        if (admin == null) {
+            throw new BusinessException(ResultCode.USER_NOT_EXIST);
+        }
+
+        // 设置审核状态
+        admin.setStatus(auditDTO.getApproved() ? 1 : 2);
+        admin.setRemark(auditDTO.getRemark());
+
+        adminMapper.updateById(admin);
+        log.info("管理员审核完成: {}, 结果: {}", admin.getUsername(), auditDTO.getApproved());
     }
 
     @Override
-    //todo：获得待审核管理员的代码 对应的数据库表为t_admin
+    @Transactional(rollbackFor = Exception.class)
+    public void auditMerchant(AdminAuditDTO auditDTO) {
+        AuthMerchant merchant = authMerchantMapper.selectById(auditDTO.getId());
+        if (merchant == null) {
+            throw new BusinessException(ResultCode.USER_NOT_EXIST);
+        }
+
+        // 设置审核状态
+        merchant.setStatus(auditDTO.getApproved() ? 1 : 0);
+        merchant.setAuditRemark(auditDTO.getRemark());
+
+        authMerchantMapper.updateById(merchant);
+        log.info("商家审核完成: {}, 结果: {}", merchant.getUsername(), auditDTO.getApproved());
+    }
+
+    @Override
     public List<AdminUserVO> getPendingAdmins() {
-        return List.of();
+        // 查询待审核的管理员
+        LambdaQueryWrapper<AdminUser> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(AdminUser::getStatus, 0);
+        List<AdminUser> adminUsers = adminMapper.selectList(wrapper);
+        
+        // 转换为VO
+        return adminUsers.stream()
+                .map(adminUser -> {
+                    AdminUserVO vo = new AdminUserVO();
+                    BeanUtils.copyProperties(adminUser, vo);
+                    return vo;
+                })
+                .toList();
     }
 
     @Override
@@ -143,7 +183,7 @@ public class AdminUserServiceImpl implements AdminUserService {
             return;
         }
 
-        // 如果不是普通用户，尝试在商家表中更新
+        // 如果不是普通用户，��试在商家表中更新
         AuthMerchant merchant = authMerchantMapper.selectById(id);
         if (merchant != null) {
             BeanUtils.copyProperties(updateUserDTO, merchant);

@@ -24,7 +24,7 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
 	... 13 common frames omitted
 2024-11-06 15:03:03.811 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.HouseMapper]
+org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.HouseMapper]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate(ClassPathMapperScanner.java:345)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)

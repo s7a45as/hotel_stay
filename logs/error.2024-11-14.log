@@ -1,5 +1,5 @@
 2024-11-12 09:27:01.074 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.HouseMapper]
+org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.HouseMapper]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate(ClassPathMapperScanner.java:345)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
@@ -56,7 +56,7 @@ org.springframework.context.annotation.ConflictingBeanDefinitionException: Annot
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
 2024-11-12 09:32:16.375 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'orderMapper' for bean class [com.homestay.modules.adminOrder.mapper.OrderMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.AdminOrderMapper]
+org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'orderMapper' for bean class [com.homestay.modules.adminOrder.mapper.OrderMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.AdminOrderMapper]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate(ClassPathMapperScanner.java:345)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
@@ -75,7 +75,7 @@ org.springframework.context.annotation.ConflictingBeanDefinitionException: Annot
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
 2024-11-12 09:32:42.549 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'orderMapper' for bean class [com.homestay.modules.adminOrder.mapper.OrderMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.AdminOrderMapper]
+org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'orderMapper' for bean class [com.homestay.modules.adminOrder.mapper.OrderMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.AdminOrderMapper]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate(ClassPathMapperScanner.java:345)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
@@ -94,7 +94,7 @@ org.springframework.context.annotation.ConflictingBeanDefinitionException: Annot
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
 2024-11-12 09:33:35.571 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -115,7 +115,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -132,7 +132,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.authMerchant.entity.Merchant'.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1409)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
@@ -190,7 +190,7 @@ Caused by: org.apache.ibatis.type.TypeException: The alias 'Merchant' is already
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
 	... 59 common frames omitted
 2024-11-12 10:14:04.481 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -211,7 +211,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -228,7 +228,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Order' is already mapped to the value 'com.homestay.modules.adminOrder.entity.Order'.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1409)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
@@ -286,7 +286,7 @@ Caused by: org.apache.ibatis.type.TypeException: The alias 'Order' is already ma
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
 	... 59 common frames omitted
 2024-11-12 10:15:18.477 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardController' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\controller\AdminDashboardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -307,7 +307,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
 	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminDashboardServiceImpl' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\service\impl\AdminDashboardServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
@@ -324,7 +324,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
 	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\admin\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminOrderMapper' defined in file [C:\Users\45732\Code\Java\folks_stay\folks_stay\target\classes\com\homestay\modules\adminUser\mapper\AdminOrderMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: The alias 'Merchant' is already mapped to the value 'com.homestay.modules.auth.entity.AuthMerchant'.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1409)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
@@ -2927,7 +2927,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:17:42.415 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/statistics.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/statistics.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3030,7 +3030,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:17:42.435 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/orderTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/orderTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3133,7 +3133,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:17:42.435 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/userTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/userTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3236,7 +3236,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:34.037 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/statistics.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/statistics.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3339,7 +3339,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:34.094 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/orderTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/orderTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3442,7 +3442,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:34.094 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/userTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/userTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3545,7 +3545,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:44.965 [http-nio-8080-exec-9] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/statistics.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/statistics.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3648,7 +3648,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:44.990 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/userTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/userTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3751,7 +3751,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:44.990 [http-nio-8080-exec-8] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/orderTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/orderTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3854,7 +3854,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:48.137 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/statistics.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/statistics.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3957,7 +3957,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:48.161 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/orderTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/orderTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4060,7 +4060,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:48.161 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/userTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/userTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4163,7 +4163,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:50.348 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/orders.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/orders.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4266,7 +4266,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:20:52.045 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/users.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/users.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4369,7 +4369,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:26:46.844 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/users.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/users.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4472,7 +4472,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:26:52.978 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/users.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/users.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4575,7 +4575,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:26:55.000 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/settings.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/settings.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4678,7 +4678,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:26:56.621 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/orders.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/orders.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4781,7 +4781,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:27:05.561 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/orders.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/orders.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4884,7 +4884,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:28:11.621 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/orders.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/orders.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -4987,7 +4987,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:28:12.597 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/users.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/users.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -5090,7 +5090,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-14 10:23:00.728 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/statistics.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/statistics.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -5193,7 +5193,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-14 10:23:00.761 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/userTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/userTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -5296,7 +5296,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-14 10:23:00.761 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/dashboard/orderTrend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/dashboard/orderTrend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -5401,7 +5401,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-11-14 10:23:54.432 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
 org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'homestay.house' doesn't exist
-### The error may exist in com/homestay/modules/admin/mapper/AdminHouseMapper.java (best guess)
+### The error may exist in com/homestay/modules/adminUser/mapper/AdminHouseMapper.java (best guess)
 ### The error may involve defaultParameterMap
 ### The error occurred while setting parameters
 ### SQL: SELECT COUNT( * ) AS total FROM house  WHERE deleted=0
@@ -5417,8 +5417,8 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
 	at jdk.proxy2/jdk.proxy2.$Proxy100.selectCount(Unknown Source)
-	at com.homestay.modules.admin.service.impl.AdminDashboardServiceImpl.getStatistics(AdminDashboardServiceImpl.java:39)
-	at com.homestay.modules.admin.controller.AdminDashboardController.getStatistics(AdminDashboardController.java:25)
+	at com.homestay.modules.adminUser.service.impl.AdminDashboardServiceImpl.getStatistics(AdminDashboardServiceImpl.java:39)
+	at com.homestay.modules.adminUser.controller.AdminDashboardController.getStatistics(AdminDashboardController.java:25)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
@@ -5559,7 +5559,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'homestay.house' doesn't exis
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
 	... 115 common frames omitted
 2024-11-14 10:24:52.604 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource admin/users.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource adminUser/users.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)

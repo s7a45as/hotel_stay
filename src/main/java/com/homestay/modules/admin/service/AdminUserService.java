@@ -1,6 +1,7 @@
 package com.homestay.modules.admin.service;
 
 import com.homestay.modules.admin.dto.AdminAuditDTO;
+import com.homestay.modules.admin.dto.MerchantAuditDTO;
 import com.homestay.modules.admin.dto.UpdatePasswordDTO;
 import com.homestay.modules.admin.dto.UpdateUserDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
@@ -46,11 +47,14 @@ public interface AdminUserService {
     void updateUserStatus(Long id, Integer status);
 
     /**
-     * 审核管理员
-     * @param id 管理员ID
-     * @param auditDTO 审核信息
+     * 审核管理员注册
      */
-    void auditAdmin(Long id, AdminAuditDTO auditDTO);
+    void auditAdmin(AdminAuditDTO auditDTO);
+
+    /**
+     * 审核商家注册
+     */
+    void auditMerchant(AdminAuditDTO auditDTO);
 
     /**
      * 获取待审核管理员列表

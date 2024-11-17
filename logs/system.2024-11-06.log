@@ -33,12 +33,12 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 2024-11-06 15:03:03.662 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
 2024-11-06 15:03:03.664 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2024-11-06 15:03:03.699 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2024-11-06 15:03:03.792 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.HouseMapper]
+2024-11-06 15:03:03.792 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.HouseMapper]
 2024-11-06 15:03:03.798 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-11-06 15:03:03.811 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.admin.mapper.HouseMapper]
+org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'houseMapper' for bean class [com.homestay.modules.house.mapper.HouseMapper] conflicts with existing, non-compatible bean definition of same name and class [com.homestay.modules.adminUser.mapper.HouseMapper]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.mybatis.spring.mapper.ClassPathMapperScanner.checkCandidate(ClassPathMapperScanner.java:345)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)

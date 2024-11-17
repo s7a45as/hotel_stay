@@ -5,16 +5,13 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-@Schema(description = "管理员审核参数")
-public class AdminAuditDTO {
+@Schema(description = "商家审核DTO")
+public class MerchantAuditDTO {
     
-    @Schema(description = "审核结果", required = true)
+    @Schema(description = "审核结果(1:通过 2:拒绝)")
     @NotNull(message = "审核结果不能为空")
-    private Boolean approved;
+    private Integer result;
     
     @Schema(description = "审核备注")
     private String remark;
-    
-    private Long id;
-    private Integer status;
 } 
