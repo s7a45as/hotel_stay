@@ -3907,12 +3907,12 @@ Caused by: java.io.NotSerializableException: com.homestay.modules.home.entity.ho
 	... 125 common frames omitted
 2024-11-16 10:23:57.734 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
 org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'order clause'
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'userOrder clause'
 ### The error may exist in com/homestay/modules/home/mapper/HomeMapper.java (best guess)
 ### The error may involve defaultParameterMap
 ### The error occurred while setting parameters
 ### SQL: SELECT * FROM t_destination WHERE status = 1 ORDER BY sort_order
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'order clause'
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'userOrder clause'
 ; bad SQL grammar []
 	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246)
 	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
@@ -4050,7 +4050,7 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'order clause'
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'sort_order' in 'userOrder clause'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)

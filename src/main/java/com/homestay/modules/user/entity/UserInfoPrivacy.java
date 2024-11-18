@@ -6,9 +6,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user_privacy")
+@TableName("user_info_privacy")
 @Schema(description = "用户隐私设置")
-public class UserPrivacy {
+public class UserInfoPrivacy {
     
     @TableId(type = IdType.AUTO)
     private Long id;

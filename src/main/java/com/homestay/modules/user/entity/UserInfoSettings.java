@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @TableName("user_settings")
 @Schema(description = "用户设置")
-public class UserSettings {
+public class UserInfoSettings {
     
     @TableId(type = IdType.AUTO)
     private Long id;

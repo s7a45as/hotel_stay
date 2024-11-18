@@ -3,7 +3,7 @@ package com.homestay.modules.user.service.impl;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.modules.user.dto.UserSettingsDTO;
-import com.homestay.modules.user.entity.UserSettings;
+import com.homestay.modules.user.entity.UserInfoSettings;
 import com.homestay.modules.user.mapper.UserSettingsMapper;
 import com.homestay.modules.user.service.UserSettingsService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class UserSettingsServiceImpl implements UserSettingsService {
     @Override
     public UserSettingsDTO getUserSettings() {
         Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserSettings settings = userSettingsMapper.selectByUserId(userId);
+        UserInfoSettings settings = userSettingsMapper.selectByUserId(userId);
         if (settings == null) {
             throw new BusinessException(ResultCode.DATA_NOT_EXIST);
         }
@@ -45,9 +45,9 @@ public class UserSettingsServiceImpl implements UserSettingsService {
     @Override
     public void updateUserSettings(UserSettingsDTO settingsDTO) {
         Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserSettings settings = userSettingsMapper.selectByUserId(userId);
+        UserInfoSettings settings = userSettingsMapper.selectByUserId(userId);
         if (settings == null) {
-            settings = new UserSettings();
+            settings = new UserInfoSettings();
             settings.setUserId(userId);
         }
         

@@ -1338,7 +1338,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 14:42:39.388 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource auth/login/user.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource auth/login/userInfo.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -2515,7 +2515,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'homestay.t_city' doesn't exi
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
 	... 132 common frames omitted
 2024-11-13 15:17:30.703 [http-nio-8080-exec-8] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/menus.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/menus.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -2618,7 +2618,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:17:30.703 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/profile.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/profile.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -2721,7 +2721,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-13 15:17:30.703 [http-nio-8080-exec-9] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/info.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/info.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)

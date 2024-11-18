@@ -987,7 +987,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-17 08:59:42.755 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/menus.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/menus.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -1090,7 +1090,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-17 08:59:42.755 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/info.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/info.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -1193,7 +1193,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-17 08:59:42.755 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/profile.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource userInfo/profile.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -3358,7 +3358,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-17 09:19:58.002 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/dashboard/order-trend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/dashboard/userOrder-trend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -5624,7 +5624,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
 2024-11-17 09:20:59.996 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/dashboard/order-trend.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/dashboard/userOrder-trend.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)

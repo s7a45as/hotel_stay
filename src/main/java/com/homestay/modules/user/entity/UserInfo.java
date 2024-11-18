@@ -6,9 +6,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user")
+@TableName("user_info")
 @Schema(description = "用户实体")
-public class User {
+public class UserInfo {
     
     @TableId(type = IdType.AUTO)
     @Schema(description = "用户ID")

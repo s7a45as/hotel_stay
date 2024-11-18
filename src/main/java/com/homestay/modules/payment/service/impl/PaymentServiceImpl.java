@@ -1,7 +1,7 @@
 package com.homestay.modules.payment.service.impl;
 
 import com.homestay.common.exception.BusinessException;
-import com.homestay.modules.order.entity.Order;
+import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
 import com.homestay.modules.payment.dto.PaymentQRCodeDTO;
 import com.homestay.modules.payment.dto.PaymentRequestDTO;
@@ -20,8 +20,8 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PaymentQRCodeDTO generatePayQRCode(PaymentRequestDTO request) {
         // 1. 验证订单
-        Order order = orderMapper.selectById(request.getOrderId());
-        if (order == null) {
+        UserOrder userOrder = orderMapper.selectById(request.getOrderId());
+        if (userOrder == null) {
             throw new BusinessException("订单不存在");
         }
         
@@ -29,7 +29,7 @@ public class PaymentServiceImpl implements PaymentService {
         return PaymentQRCodeDTO.builder()
                 .qrCodeUrl("https://example.com/pay/" + request.getOrderId())
                 .orderId(request.getOrderId())
-                .amount(order.getAmount())
+                .amount(userOrder.getAmount())
                 .expireTime(System.currentTimeMillis() + 30 * 60 * 1000) // 30分钟有效期
                 .build();
     }
@@ -37,15 +37,15 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PaymentStatusDTO getPaymentStatus(String orderId) {
         // 1. 查询订单
-        Order order = orderMapper.selectById(orderId);
-        if (order == null) {
+        UserOrder userOrder = orderMapper.selectById(orderId);
+        if (userOrder == null) {
             throw new BusinessException("订单不存在");
         }
         
         // 2. 返回支付状态
         return PaymentStatusDTO.builder()
                 .orderId(orderId)
-                .status(order.getStatus())
+                .status(userOrder.getStatus())
                 .build();
     }
 
@@ -53,35 +53,35 @@ public class PaymentServiceImpl implements PaymentService {
     @Transactional(rollbackFor = Exception.class)
     public void handlePaymentCallback(String orderId, String status) {
         // 1. 查询订单
-        Order order = orderMapper.selectById(orderId);
-        if (order == null) {
+        UserOrder userOrder = orderMapper.selectById(orderId);
+        if (userOrder == null) {
             throw new BusinessException("订单不存在");
         }
         
         // 2. 处理支付结果
         if ("SUCCESS".equals(status)) {
-            order.setStatus(1); // 已支付
+            userOrder.setStatus(1); // 已支付
         } else if ("FAIL".equals(status)) {
-            order.setStatus(0); // 支付失败
+            userOrder.setStatus(0); // 支付失败
         } else {
             throw new BusinessException("无效的支付状态");
         }
         
         // 3. 更新订单状态
-        orderMapper.updateById(order);
+        orderMapper.updateById(userOrder);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void pay(String orderId) {
         // 1. 获取订单信息
-        Order order = orderMapper.selectById(orderId);
-        if (order == null) {
+        UserOrder userOrder = orderMapper.selectById(orderId);
+        if (userOrder == null) {
             throw new BusinessException("订单不存在");
         }
         
         // 2. 检查订单状态
-        if (order.getStatus() != 0) { // 0: 待支付
+        if (userOrder.getStatus() != 0) { // 0: 待支付
             throw new BusinessException("订单状态不正确");
         }
         
@@ -89,21 +89,21 @@ public class PaymentServiceImpl implements PaymentService {
         // TODO: 实现实际的支付逻辑
         
         // 4. 更新订单状态为已支付
-        order.setStatus(1); // 1: 已支付
-        orderMapper.updateById(order);
+        userOrder.setStatus(1); // 1: 已支付
+        orderMapper.updateById(userOrder);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void applyRefund(String orderId, String reason) {
         // 1. 获取订单信息
-        Order order = orderMapper.selectById(orderId);
-        if (order == null) {
+        UserOrder userOrder = orderMapper.selectById(orderId);
+        if (userOrder == null) {
             throw new BusinessException("订单不存在");
         }
         
         // 2. 检查订单状态
-        if (order.getStatus() != 1) { // 1: 已支付
+        if (userOrder.getStatus() != 1) { // 1: 已支付
             throw new BusinessException("订单状态不正确");
         }
         
@@ -111,8 +111,8 @@ public class PaymentServiceImpl implements PaymentService {
         // TODO: 实现实际的退款逻辑
         
         // 4. 更新订单状态为已取消
-        order.setStatus(2); // 2: 已取消
-//        order.setRefundReason(reason);
-        orderMapper.updateById(order);
+        userOrder.setStatus(2); // 2: 已取消
+//        userOrder.setRefundReason(reason);
+        orderMapper.updateById(userOrder);
     }
 } 

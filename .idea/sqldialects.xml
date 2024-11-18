@@ -20,5 +20,19 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/t_favorite.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/t_house_facility.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/t_house_image.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/order/data/t_order.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/order/data/t_order_payment.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/order/t_order.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/order/t_order_payment.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/payment/data/t_payment.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/payment/data/t_refund.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/payment/t_payment.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/payment/t_refund.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/data/t_user_privacy.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/data/t_user_profile.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/data/t_user_settings.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/t_user_privacy.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/t_user_profile.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/profile/t_user_settings.sql" dialect="MySQL" />
   </component>
 </project>

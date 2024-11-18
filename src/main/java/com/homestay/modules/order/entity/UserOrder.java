@@ -9,9 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("t_order")
+@TableName("t_user_order")
 @Schema(description = "订单实体")
-public class Order {
+public class UserOrder {
     
     @TableId(type = IdType.ASSIGN_ID)
     @Schema(description = "订单ID")

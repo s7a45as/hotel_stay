@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "用户-隐私设置", description = "用户隐私设置相关接口")
 @RestController
-@RequestMapping("/api/user/privacy")
+@RequestMapping("/user/privacy")
 @RequiredArgsConstructor
 public class UserPrivacyController {
 

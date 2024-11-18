@@ -22,7 +22,7 @@ CREATE TABLE `t_system_settings` (
   `maintenance` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否维护中',
   `maintenance_message` varchar(255) DEFAULT NULL COMMENT '维护信息',
   `registration_enabled` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否开放注册',
-  `default_user_role` varchar(20) NOT NULL DEFAULT 'user' COMMENT '默认用户角色',
+  `default_user_role` varchar(20) NOT NULL DEFAULT 'userInfo' COMMENT '默认用户角色',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)

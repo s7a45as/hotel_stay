@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "用户-设置", description = "用户设置相关接口")
 @RestController
-@RequestMapping("/api/user/settings")
+@RequestMapping("/user/settings")
 @RequiredArgsConstructor
 public class UserSettingsController {
 

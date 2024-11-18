@@ -9,7 +9,7 @@ import com.homestay.common.shareentity.House;
 import com.homestay.modules.house.service.HouseService;
 import com.homestay.modules.order.dto.OrderCreateDTO;
 import com.homestay.modules.order.dto.OrderDetailDTO;
-import com.homestay.modules.order.entity.Order;
+import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
 import com.homestay.modules.order.service.UserOrderService;
 import com.homestay.modules.payment.service.PaymentService;
@@ -52,29 +52,29 @@ public class UserOrderServiceImpl implements UserOrderService {
         }
         
         // 创建订单
-        Order order = new Order();
-        BeanUtils.copyProperties(createDTO, order);
-        order.setUserId(getCurrentUserId());
-        order.setNights((int) days);
-        order.setAmount(house.getPrice().multiply(new BigDecimal(days)));
-        order.setStatus(BookingConstants.Status.PENDING_PAYMENT);
+        UserOrder userOrder = new UserOrder();
+        BeanUtils.copyProperties(createDTO, userOrder);
+        userOrder.setUserId(getCurrentUserId());
+        userOrder.setNights((int) days);
+        userOrder.setAmount(house.getPrice().multiply(new BigDecimal(days)));
+        userOrder.setStatus(BookingConstants.Status.PENDING_PAYMENT);
         
-        orderMapper.insert(order);
+        orderMapper.insert(userOrder);
         
         return new HashMap<String, Object>() {{
-            put("orderId", order.getId());
-            put("amount", order.getAmount());
+            put("orderId", userOrder.getId());
+            put("amount", userOrder.getAmount());
         }};
     }
 
     @Override
     public OrderDetailDTO getOrderDetail(String orderId) {
-        Order order = getOrderById(orderId);
+        UserOrder userOrder = getOrderById(orderId);
         OrderDetailDTO detailDTO = new OrderDetailDTO();
-        BeanUtils.copyProperties(order, detailDTO);
+        BeanUtils.copyProperties(userOrder, detailDTO);
         
         // 设置房源信息
-        House house = houseService.getById(order.getHouseId());
+        House house = houseService.getById(userOrder.getHouseId());
         OrderDetailDTO.HouseInfo houseInfo = new OrderDetailDTO.HouseInfo();
         BeanUtils.copyProperties(house, houseInfo);
         detailDTO.setHouse(houseInfo);
@@ -84,11 +84,11 @@ public class UserOrderServiceImpl implements UserOrderService {
 
     @Override
     public Page<?> getOrderList(Integer currentPage, Integer pageSize, Integer status) {
-        Page<Order> page = new Page<>(currentPage, pageSize);
-        LambdaQueryWrapper<Order> wrapper = new LambdaQueryWrapper<Order>()
-                .eq(Order::getUserId, getCurrentUserId())
-                .eq(status != null, Order::getStatus, status)
-                .orderByDesc(Order::getCreateTime);
+        Page<UserOrder> page = new Page<>(currentPage, pageSize);
+        LambdaQueryWrapper<UserOrder> wrapper = new LambdaQueryWrapper<UserOrder>()
+                .eq(UserOrder::getUserId, getCurrentUserId())
+                .eq(status != null, UserOrder::getStatus, status)
+                .orderByDesc(UserOrder::getCreateTime);
                 
         return orderMapper.selectPage(page, wrapper);
     }
@@ -96,35 +96,35 @@ public class UserOrderServiceImpl implements UserOrderService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void cancelOrder(String orderId) {
-        Order order = getOrderById(orderId);
-        if (order.getStatus() != BookingConstants.Status.PENDING_PAYMENT) {
+        UserOrder userOrder = getOrderById(orderId);
+        if (userOrder.getStatus() != BookingConstants.Status.PENDING_PAYMENT) {
             throw new BusinessException("只能取消待支付的订单");
         }
         
-        order.setStatus(BookingConstants.Status.CANCELLED);
-        orderMapper.updateById(order);
+        userOrder.setStatus(BookingConstants.Status.CANCELLED);
+        orderMapper.updateById(userOrder);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void applyRefund(String orderId) {
-        Order order = getOrderById(orderId);
-        if (order.getStatus() != BookingConstants.Status.PAID) {
+        UserOrder userOrder = getOrderById(orderId);
+        if (userOrder.getStatus() != BookingConstants.Status.PAID) {
             throw new BusinessException("只能申请已支付订单的退款");
         }
         
         paymentService.applyRefund(orderId, "用户申请退款");
     }
     
-    private Order getOrderById(String orderId) {
-        Order order = orderMapper.selectById(orderId);
-        if (order == null) {
+    private UserOrder getOrderById(String orderId) {
+        UserOrder userOrder = orderMapper.selectById(orderId);
+        if (userOrder == null) {
             throw new BusinessException(ResultCode.DATA_NOT_EXIST.getCode(), "订单不存在");
         }
-        if (!order.getUserId().equals(getCurrentUserId())) {
+        if (!userOrder.getUserId().equals(getCurrentUserId())) {
             throw new BusinessException(ResultCode.FORBIDDEN);
         }
-        return order;
+        return userOrder;
     }
     
     private Long getCurrentUserId() {
