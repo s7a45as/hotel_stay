@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "商家后台-仪表盘", description = "商家仪表盘相关接口")
 @RestController
-@RequestMapping("/api/merchant/dashboard")
+@RequestMapping("/merchant/dashboard")
 @RequiredArgsConstructor
 public class MerchantDashboardController {
 

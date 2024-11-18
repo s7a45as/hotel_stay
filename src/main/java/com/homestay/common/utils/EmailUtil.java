@@ -63,14 +63,22 @@ public class EmailUtil {
             <div style="padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
                 %s
                 <div style="margin-top: 20px; text-align: center;">
-                    <a href="%s" style="display: inline-block; padding: 10px 20px; background-color: #007bff; 
-                        color: #ffffff; text-decoration: none; border-radius: 5px;">
-                        点击此处进行审核
-                    </a>
-                </div>
-                <div style="margin-top: 10px; font-size: 12px; color: #6c757d; text-align: center;">
-                    如果按钮无法点击，请复制以下链接到浏览器访问：<br>
-                    <span style="color: #007bff;">%s</span>
+                    <div style="margin: 10px 0;">
+                        <a href="%s&approved=true" style="display: inline-block; padding: 10px 20px; 
+                            background-color: #28a745; color: #ffffff; text-decoration: none; 
+                            border-radius: 5px; margin: 0 10px;">
+                            通过审核
+                        </a>
+                        <a href="%s&approved=false" style="display: inline-block; padding: 10px 20px; 
+                            background-color: #dc3545; color: #ffffff; text-decoration: none; 
+                            border-radius: 5px; margin: 0 10px;">
+                            拒绝审核
+                        </a>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 12px; color: #6c757d;">
+                        如果按钮无法点击，请复制以下链接到浏览器访问：<br>
+                        <span style="color: #007bff;">%s</span>
+                    </div>
                 </div>
                 <p style="color: #999999; font-size: 12px; margin-top: 20px; text-align: center;">
                     此链接有效期为24小时，请及时处理。
@@ -78,8 +86,9 @@ public class EmailUtil {
             </div>
             """, 
             content,
-            auditUrl,
-            auditUrl
+            auditUrl,  // 通过审核链接
+            auditUrl,  // 拒绝审核链接
+            auditUrl   // 原始链接
         );
         
         sendEmail(recipientEmail, title, htmlContent);

@@ -5,6 +5,9 @@ import com.homestay.modules.merchant.dto.UpdatePasswordDTO;
 import com.homestay.modules.merchant.entity.Merchant;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+import java.util.Map;
+
 public interface MerchantProfileService {
 
     /**
@@ -26,4 +29,9 @@ public interface MerchantProfileService {
      * 上传头像
      */
     String uploadAvatar(MultipartFile file);
+
+    /**
+     * 获取商家菜单列表
+     */
+    List<Map<String, Object>> getMenus();
 } 

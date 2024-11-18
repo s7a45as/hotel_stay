@@ -5,10 +5,10 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Schema(description = "管理员信息")
+@Schema(description = "管理员用户信息VO")
 public class AdminUserVO {
     
-    @Schema(description = "管理员ID")
+    @Schema(description = "用户ID")
     private Long id;
     
     @Schema(description = "用户名")
@@ -34,4 +34,20 @@ public class AdminUserVO {
     
     @Schema(description = "创建时间")
     private LocalDateTime createTime;
+
+    // 商家特有字段
+    @Schema(description = "商家名称")
+    private String businessName;
+    
+    @Schema(description = "联系人")
+    private String contactPerson;
+    
+    @Schema(description = "营业执照号")
+    private String businessLicense;
+    
+    @Schema(description = "商家地址")
+    private String businessAddress;
+    
+    @Schema(description = "审核备注")
+    private String auditRemark;
 } 

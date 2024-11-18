@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "商家后台-订单管理", description = "商家订单管理相关接口")
 @RestController
-@RequestMapping("/api/merchant/orders")
+@RequestMapping("/merchant/orders")
 @RequiredArgsConstructor
 public class MerchantOrderController {
 

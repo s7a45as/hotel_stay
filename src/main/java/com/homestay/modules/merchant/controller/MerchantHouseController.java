@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Tag(name = "商家后台-房源管理", description = "商家房源管理相关接口")
 @RestController
-@RequestMapping("/api/merchant/houses")
+@RequestMapping("/merchant/houses")
 @RequiredArgsConstructor
 public class MerchantHouseController {
 

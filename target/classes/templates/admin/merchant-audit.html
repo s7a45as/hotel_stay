@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商家审核</title>
+    <style>
+        .audit-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .info-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .value {
+            margin-left: 10px;
+            color: #212529;
+        }
+        .audit-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .remark-input {
+            width: 100%;
+            min-height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .approve-btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .reject-btn {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="audit-container">
+        <h2>商家审核</h2>
+        
+        <!-- 商家信息展示 -->
+        <div class="merchant-info">
+            <div class="info-item">
+                <span class="label">商家名称：</span>
+                <span class="value" th:text="${merchant.businessName}"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">联系人：</span>
+                <span class="value" th:text="${merchant.contactPerson}"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">联系电话：</span>
+                <span class="value" th:text="${merchant.phone}"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">联系邮箱：</span>
+                <span class="value" th:text="${merchant.email}"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">营业执照号：</span>
+                <span class="value" th:text="${merchant.businessLicense}"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">商家地址：</span>
+                <span class="value" th:text="${merchant.businessAddress}"></span>
+            </div>
+        </div>
+
+        <!-- 审核表单 -->
+        <div class="audit-form">
+            <h3>审核意见</h3>
+            <textarea id="remark" class="remark-input" placeholder="请输入审核意见..."></textarea>
+            <div class="button-group">
+                <button class="approve-btn" onclick="submitAudit(true)">通过审核</button>
+                <button class="reject-btn" onclick="submitAudit(false)">拒绝审核</button>
+            </div>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        // 获取模型中的数据
+        const merchantId = [[${id}]];
+        const token = [[${token}]];
+
+        async function submitAudit(approved) {
+            const remark = document.getElementById('remark').value;
+            
+            try {
+                const response = await fetch(`/admin/audit/merchant/${merchantId}?token=${token}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        approved: approved,
+                        remark: remark
+                    })
+                });
+
+                if (response.ok) {
+                    alert(approved ? '审核通过成功！' : '审核拒绝成功！');
+                    window.close();
+                } else {
+                    const error = await response.json();
+                    alert('审核失败：' + error.message);
+                }
+            } catch (error) {
+                alert('审核失败：' + error.message);
+            }
+        }
+    </script>
+</body>
+</html> 

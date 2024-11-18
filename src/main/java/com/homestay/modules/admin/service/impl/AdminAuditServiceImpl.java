@@ -9,7 +9,7 @@ import com.homestay.modules.admin.dto.AdminAuditDTO;
 import com.homestay.modules.admin.dto.UpdatePasswordDTO;
 import com.homestay.modules.admin.dto.UpdateUserDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
-import com.homestay.modules.admin.service.AdminUserService;
+import com.homestay.modules.admin.service.AdminAuditService;
 import com.homestay.modules.admin.vo.AdminUserVO;
 import com.homestay.modules.auth.entity.*;
 import com.homestay.modules.auth.mapper.AdminMapper;
@@ -29,7 +29,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class AdminUserServiceImpl implements AdminUserService {
+public class AdminAuditServiceImpl implements AdminAuditService {
 
     private final AdminMapper adminMapper;
     private final NormalUserMapper normalUserMapper;
@@ -74,7 +74,7 @@ public class AdminUserServiceImpl implements AdminUserService {
         LambdaQueryWrapper<AdminUser> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(AdminUser::getStatus, 0);
         List<AdminUser> adminUsers = adminMapper.selectList(wrapper);
-        
+
         // 转换为VO
         return adminUsers.stream()
                 .map(adminUser -> {
@@ -158,7 +158,7 @@ public class AdminUserServiceImpl implements AdminUserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void deleteUser(Long id) {
-        // 先尝试删除普通用户
+        // 先尝试删除普通户
         int normalUserCount = normalUserMapper.deleteById(id);
         if (normalUserCount > 0) {
             return;
@@ -174,6 +174,24 @@ public class AdminUserServiceImpl implements AdminUserService {
     }
 
     @Override
+    public AdminUserVO getAdminAuditDetail(Long id) {
+        // 1. 查询管理员信息
+        AdminUser adminUser = adminMapper.selectById(id);
+        if (adminUser == null) {
+            throw new BusinessException(ResultCode.USER_NOT_EXIST);
+        }
+
+        // 2. 转换为VO对象
+        AdminUserVO vo = new AdminUserVO();
+        BeanUtils.copyProperties(adminUser, vo);
+
+        // 3. 记录日志
+        log.info("获取管理员审核详情: {}", adminUser.getUsername());
+        
+        return vo;
+    }
+
+    @Override
     public void updateUser(Long id, UpdateUserDTO updateUserDTO) {
         // 先尝试在普通用户表中更新
         NormalUser normalUser = normalUserMapper.selectById(id);
@@ -183,7 +201,7 @@ public class AdminUserServiceImpl implements AdminUserService {
             return;
         }
 
-        // 如果不是普通用户，��试在商家表中更新
+        // 如果不是普通用户，试在商家表中更新
         AuthMerchant merchant = authMerchantMapper.selectById(id);
         if (merchant != null) {
             BeanUtils.copyProperties(updateUserDTO, merchant);
@@ -219,6 +237,24 @@ public class AdminUserServiceImpl implements AdminUserService {
         }
 
         throw new BusinessException("用户不存在");
+    }
+
+    @Override
+    public AdminUserVO getMerchantAuditDetail(Long id) {
+        // 1. 查询商家信息
+        AuthMerchant merchant = authMerchantMapper.selectById(id);
+        if (merchant == null) {
+            throw new BusinessException(ResultCode.MERCHANT_NOT_EXIST);
+        }
+
+        // 2. 转换为VO对象
+        AdminUserVO vo = new AdminUserVO();
+        BeanUtils.copyProperties(merchant, vo);
+
+        // 3. 记录日志
+        log.info("获取商家审核详情: {}", merchant.getBusinessName());
+        
+        return vo;
     }
 
     /**

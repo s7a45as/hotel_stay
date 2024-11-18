@@ -147,7 +147,7 @@ public class AuthServiceImpl implements AuthService {
     public boolean resetPassword(String email, String code, String newPassword) {
         validateVerifyCode(email, code);
         
-        // 尝试在所有用户表中���找并更新密码
+        // 尝试在所有用户表中找并更新密码
         boolean updated = updatePasswordIfExists(email, newPassword);
         if (!updated) {
             throw new BusinessException(ResultCode.EMAIL_NOT_EXIST);
@@ -421,7 +421,11 @@ public class AuthServiceImpl implements AuthService {
      */
     private void sendMerchantRegisterNotification(AuthMerchant merchant) {
         try {
-            String auditUrl = baseUrl + "/admin/audit/merchant/" + merchant.getId() + "?token=" + generateAuditToken(merchant.getId());
+            String auditUrl = String.format("%s/admin/audit/merchant/%d?token=%s", 
+                baseUrl, 
+                merchant.getId(), 
+                generateAuditToken(merchant.getId())
+            );
             
             String content = String.format("""
                 <h3 style="color: #1a73e8;">新商家注册通知</h3>
@@ -513,7 +517,11 @@ public class AuthServiceImpl implements AuthService {
      */
     private void sendAdminRegisterNotification(AdminUser admin) {
         try {
-            String auditUrl = baseUrl + "/admin/audit/admin/" + admin.getId() + "?token=" + generateAuditToken(admin.getId());
+            String auditUrl = String.format("%s/admin/audit/admin/%d?token=%s", 
+                baseUrl, 
+                admin.getId(), 
+                generateAuditToken(admin.getId())
+            );
             
             String content = String.format("""
                 <h3 style="color: #1a73e8;">新管理员注册通知</h3>

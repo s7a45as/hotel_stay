@@ -55,6 +55,20 @@ spring:
           starttls:
             enable: true
             required: true
+  thymeleaf:
+    # 模板路径
+    prefix: classpath:/templates/
+    # 模板后缀
+    suffix: .html
+    # 模板模式
+    mode: HTML
+    # 编码
+    encoding: UTF-8
+    # 是否开启缓存
+    cache: false
+    # 内容类型
+    servlet:
+      content-type: text/html
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
@@ -72,7 +86,7 @@ mybatis-plus:
 
 
 jwt:
-    secret: your-256-bit-secret-key-here
+    secret: 12345678901234567890123456789012214132123412314234514
     expiration: 86400  # 24小时，单位：秒
 
 springdoc:

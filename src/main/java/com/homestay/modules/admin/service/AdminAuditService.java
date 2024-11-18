@@ -1,7 +1,6 @@
 package com.homestay.modules.admin.service;
 
 import com.homestay.modules.admin.dto.AdminAuditDTO;
-import com.homestay.modules.admin.dto.MerchantAuditDTO;
 import com.homestay.modules.admin.dto.UpdatePasswordDTO;
 import com.homestay.modules.admin.dto.UpdateUserDTO;
 import com.homestay.modules.admin.dto.UserPageDTO;
@@ -12,7 +11,7 @@ import java.util.List;
 /**
  * 管理员用户服务接口
  */
-public interface AdminUserService {
+public interface AdminAuditService {
 
     /**
      * 获取用户列表
@@ -67,4 +66,18 @@ public interface AdminUserService {
      * @param id 用户ID
      */
     void deleteUser(Long id);
+
+    /**
+     * 获取待审核管理员详情
+     * @param id 管理员ID
+     * @return 管理员详情
+     */
+    AdminUserVO getAdminAuditDetail(Long id);
+
+    /**
+     * 获取待审核商家详情
+     * @param id 商家ID
+     * @return 商家详情
+     */
+    AdminUserVO getMerchantAuditDetail(Long id);
 } 
