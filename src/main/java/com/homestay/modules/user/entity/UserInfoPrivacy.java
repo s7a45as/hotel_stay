@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user_info_privacy")
+@TableName("t_user_privacy")
 @Schema(description = "用户隐私设置")
 public class UserInfoPrivacy {
     

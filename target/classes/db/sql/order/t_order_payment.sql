@@ -1,0 +1,20 @@
+CREATE TABLE `t_order_payment` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `order_id` varchar(32) NOT NULL COMMENT '订单ID',
+  `payment_no` varchar(64) NOT NULL COMMENT '支付流水号',
+  `payment_method` varchar(20) NOT NULL COMMENT '支付方式(ALIPAY-支付宝 WECHAT-微信支付)',
+  `amount` decimal(10,2) NOT NULL COMMENT '支付金额',
+  `status` tinyint NOT NULL DEFAULT '0' COMMENT '支付状态(0:待支付 1:支付成功 2:支付失败 3:已退款)',
+  `pay_time` datetime DEFAULT NULL COMMENT '支付时间',
+  `refund_time` datetime DEFAULT NULL COMMENT '退款时间',
+  `refund_amount` decimal(10,2) DEFAULT NULL COMMENT '退款金额',
+  `refund_reason` varchar(255) DEFAULT NULL COMMENT '退款原因',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `version` int NOT NULL DEFAULT '0' COMMENT '版本号',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_order_id` (`order_id`),
+  UNIQUE KEY `uk_payment_no` (`payment_no`),
+  KEY `idx_status` (`status`),
+  KEY `idx_create_time` (`create_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='订单支付表'; 

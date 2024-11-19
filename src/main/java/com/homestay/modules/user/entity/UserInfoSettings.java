@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user_settings")
+@TableName("t_user_settings")
 @Schema(description = "用户设置")
 public class UserInfoSettings {
     

@@ -35,6 +35,9 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -383,7 +386,7 @@ public class AuthServiceImpl implements AuthService {
         String key = CommonConstants.Redis.VERIFY_CODE_PREFIX + email;
         String existingCode = (String) redisUtil.get(key);
         
-        // 如果验证码存在且未期，继续使
+        // 如果��证码在且未期，续使
         if (existingCode != null && redisUtil.getExpire(key) > 0) {
             return existingCode;
         }
@@ -417,7 +420,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     /**
-     * 发送商家注册通知邮件给管理员
+     * 发送商家注册通邮件给管理员
      */
     private void sendMerchantRegisterNotification(AuthMerchant merchant) {
         try {
@@ -564,10 +567,23 @@ public class AuthServiceImpl implements AuthService {
      * @param userId 用户ID
      */
     private void storeTokenInRedis(String token, Long userId) {
-        String redisKey = CommonConstants.Redis.TOKEN_PREFIX + token;
-        // 存储token到Redis，设置2天过期时间
-        redisTemplate.opsForValue().set(redisKey, userId, 2, TimeUnit.DAYS);
-        log.info("Token已存储到Redis，key: {}, userId: {}", redisKey, userId);
+        // 使用userId作为key的一部分，便于按用户查看
+        String userTokenKey = String.format("token:user:%d", userId);
+        String tokenKey = String.format("token:auth:%s", token);
+        
+        // token基本信息
+        Map<String, Object> tokenInfo = new HashMap<>();
+        tokenInfo.put("userId", userId);
+        tokenInfo.put("token", token);
+        tokenInfo.put("createTime", LocalDateTime.now().toString());
+        tokenInfo.put("expireTime", LocalDateTime.now().plusDays(2).toString());
+        tokenInfo.put("lastAccessTime", LocalDateTime.now().toString());
+        
+        // 存储token信息，使用两个key便于查询
+        redisTemplate.opsForValue().set(userTokenKey, tokenInfo, 2, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set(tokenKey, tokenInfo, 2, TimeUnit.DAYS);
+        
+        log.info("Token已存储到Redis: userKey={}, tokenKey={}, userId={}", userTokenKey, tokenKey, userId);
     }
 
     /**
