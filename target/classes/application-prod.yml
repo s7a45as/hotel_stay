@@ -1,0 +1,11 @@
+spring:
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  
+logging:
+  level:
+    com.homestay: info
+    org.springframework.web: info 

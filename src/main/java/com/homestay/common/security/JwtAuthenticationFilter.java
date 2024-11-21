@@ -34,52 +34,65 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                   FilterChain filterChain) throws ServletException, IOException {
         try {
             String authHeader = request.getHeader("Authorization");
-            
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 filterChain.doFilter(request, response);
                 return;
             }
             
             String token = authHeader.substring(7);
+            log.info("收到的token: {}", token);
             
             // 检查token是否在黑名单中
             String blacklistKey = String.format("token:blacklist:%s", token);
             if (Boolean.TRUE.equals(redisTemplate.hasKey(blacklistKey))) {
+                log.warn("Token在黑名单中");
                 throw new JwtException("Token已失效");
             }
 
-
             // 从Redis中获取token信息
             String tokenKey = String.format("token:auth:%s", token);
-            System.out.println(token);
             Object tokenInfo = redisTemplate.opsForValue().get(tokenKey);
             
             if (tokenInfo == null) {
+                log.warn("Redis中未找到token信息");
                 throw new JwtException("Token不存在或已过期");
             }
             
-            // 验证token
-            if (jwtUtil.validateToken(token)) {
-                // 从Redis中获取userId
-                Map<String, Object> tokenMap = (Map<String, Object>) tokenInfo;
-                Long userId = Long.valueOf(tokenMap.get("userId").toString());
+            log.info("Redis中的token信息: {}", tokenInfo);
 
-                // 更新最后访问时间
-                tokenMap.put("lastAccessTime", LocalDateTime.now().toString());
-                redisTemplate.opsForValue().set(tokenKey, tokenMap, 2, TimeUnit.DAYS);
-                redisTemplate.opsForValue().set(String.format("token:user:%d", userId), tokenMap, 2, TimeUnit.DAYS);
-                
-                UsernamePasswordAuthenticationToken authentication = 
-                    new UsernamePasswordAuthenticationToken(userId, null, new ArrayList<>());
-                    
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-                
-                log.debug("Token验证成功，用户ID: {}", userId);
+            // 验证token
+            if (!jwtUtil.validateToken(token)) {
+                log.warn("Token验证失败");
+                throw new JwtException("Token验证失败");
             }
+
+            // 从Redis中获取userId
+            Map<String, Object> tokenMap = (Map<String, Object>) tokenInfo;
+            Long userId = Long.valueOf(tokenMap.get("userId").toString());
+            
+            // 检查token是否过期
+            String expireTimeStr = (String) tokenMap.get("expireTime");
+            LocalDateTime expireTime = LocalDateTime.parse(expireTimeStr);
+            if (LocalDateTime.now().isAfter(expireTime)) {
+                log.warn("Token已过期，过期时间: {}", expireTimeStr);
+                throw new JwtException("Token已过期");
+            }
+
+            // 更新最后访问时间
+            tokenMap.put("lastAccessTime", LocalDateTime.now().toString());
+            redisTemplate.opsForValue().set(tokenKey, tokenMap, 2, TimeUnit.DAYS);
+            redisTemplate.opsForValue().set(String.format("token:user:%d", userId), tokenMap, 2, TimeUnit.DAYS);
+            
+            UsernamePasswordAuthenticationToken authentication = 
+                new UsernamePasswordAuthenticationToken(userId, null, new ArrayList<>());
+                
+            authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            
+            log.info("Token验证成功，用户ID: {}", userId);
             
         } catch (Exception e) {
-            log.error("Token验证失败: {}", e.getMessage());
+            log.error("Token验证失败: {}", e.getMessage(), e);
             SecurityContextHolder.clearContext();
         }
         

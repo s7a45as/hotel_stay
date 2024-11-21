@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.user.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.homestay.modules.user.entity.UserInfo">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="nickname" property="nickname"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="avatar" property="avatar"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="address" property="address"/>
+        <result column="bio" property="bio"/>
+        <result column="interests" property="interests"/>
+        <result column="preferences" property="preferences"/>
+        <result column="status" property="status"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="last_login_ip" property="lastLoginIp"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, username, password, nickname, email, phone, avatar, gender, birthday, address, 
+        bio, interests, preferences, status, last_login_time, last_login_ip, create_time, 
+        update_time, version, deleted
+    </sql>
+
+    <!-- 根据ID更新用户信息 -->
+    <update id="updateById">
+        UPDATE sys_user
+        <set>
+            <if test="et.nickname != null">nickname = #{et.nickname},</if>
+            <if test="et.phone != null">phone = #{et.phone},</if>
+            <if test="et.email != null">email = #{et.email},</if>
+            <if test="et.gender != null">gender = #{et.gender},</if>
+            <if test="et.birthday != null">birthday = #{et.birthday},</if>
+            <if test="et.address != null">address = #{et.address},</if>
+            <if test="et.bio != null">bio = #{et.bio},</if>
+            <if test="et.avatar != null">avatar = #{et.avatar},</if>
+            <if test="et.interests != null">interests = #{et.interests},</if>
+            <if test="et.preferences != null">preferences = #{et.preferences},</if>
+            <if test="et.status != null">status = #{et.status},</if>
+            <if test="et.lastLoginTime != null">last_login_time = #{et.lastLoginTime},</if>
+            <if test="et.lastLoginIp != null">last_login_ip = #{et.lastLoginIp},</if>
+            update_time = NOW(),
+            version = version + 1
+        </set>
+        WHERE id = #{et.id} 
+        AND deleted = 0
+        AND version = #{et.version}
+    </update>
+
+    <!-- 根据邮箱查询用户 -->
+    <select id="selectByEmail" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+        WHERE email = #{email} 
+        AND deleted = 0
+    </select>
+
+    <!-- 根据手机号查询用户 -->
+    <select id="selectByPhone" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+        WHERE phone = #{phone} 
+        AND deleted = 0
+    </select>
+
+    <!-- 根据ID查询用户 -->
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List"/>
+        FROM sys_user
+        WHERE id = #{id} 
+        AND deleted = 0
+    </select>
+
+</mapper> 

@@ -15,11 +15,7 @@ public interface UserProfileService {
      */
     void updateUserProfile(UserProfileDTO userProfileDTO);
     
-    /**
-     * 更新用户密码
-     */
-    void updatePassword(String oldPassword, String newPassword);
-    
+
     /**
      * 上传用户头像
      */

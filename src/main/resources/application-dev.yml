@@ -1,0 +1,15 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**,public/**
+    livereload:
+      enabled: true
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    com.homestay: debug
+    org.springframework.web: debug 

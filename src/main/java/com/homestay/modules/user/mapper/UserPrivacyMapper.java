@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserPrivacyMapper extends BaseMapper<UserInfoPrivacy> {
     
-    @Select("SELECT * FROM user_privacy WHERE user_id = #{userId}")
+    @Select("SELECT * FROM t_user_privacy WHERE user_id = #{userId}")
     UserInfoPrivacy selectByUserId(Long userId);
 } 

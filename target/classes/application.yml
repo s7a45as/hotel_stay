@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: homestay-service
-  profiles:
-    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/homestay?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
@@ -33,21 +31,16 @@ spring:
       timeout: 10s
       lettuce:
         pool:
-          # 连接池最大连接数
           max-active: 8
-          # 连接池最大阻塞等待时间（使用负值表示没有限制）
           max-wait: -1ms
-          # 连接池中的最大空闲连接
           max-idle: 8
-          # 连接池中的最小空闲连接
           min-idle: 0
-        # 关闭超时时间
         shutdown-timeout: 100ms
   mail:
-    host: smtp.163.com  # 邮件服务器地址
-    port: 587  # 端口号
-    username: "18589826376@163.com"# 邮箱账号
-    password: "ATRHLQgpRYTBbXsu"# 邮箱授权码
+    host: smtp.163.com
+    port: 587
+    username: "18589826376@163.com"
+    password: "ATRHLQgpRYTBbXsu"
     properties:
       mail:
         smtp:
@@ -56,17 +49,11 @@ spring:
             enable: true
             required: true
   thymeleaf:
-    # 模板路径
     prefix: classpath:/templates/
-    # 模板后缀
     suffix: .html
-    # 模板模式
     mode: HTML
-    # 编码
     encoding: UTF-8
-    # 是否开启缓存
     cache: false
-    # 内容类型
     servlet:
       content-type: text/html
 
@@ -84,10 +71,9 @@ mybatis-plus:
       logic-not-delete-value: 0
     banner: false
 
-
 jwt:
-    secret: 12345678901234567890123456789012214132123412314234514
-    expiration: 86400  # 24小时，单位：秒
+  secret: 12345678901234567890123456789012214132123412314234514
+  expiration: 86400
 
 springdoc:
   swagger-ui:
@@ -108,15 +94,10 @@ knife4j:
     enable-reload-cache-parameter: false
 
 upload:
-  # 文件保存路径(根据实际情况配置)
   save-path: /data/upload
-  # 文件访问URL前缀(根据实际情况配置)
   access-url: http://localhost:8080/upload
-  # 允许上传的文件类型
   allow-types: jpg,jpeg,png,gif
-  # 最大文件大小(MB)
   max-size: 10
 
 homestay:
-  base-url: http://localhost:8080  # 开发环境配置
-  # base-url: https://your-domain.com  # 生产环境配置
+  base-url: http://localhost:8080

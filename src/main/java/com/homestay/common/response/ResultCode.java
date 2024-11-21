@@ -1,11 +1,13 @@
 package com.homestay.common.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
  * API 统一返回状态码
  */
 @Getter
+@AllArgsConstructor
 public enum ResultCode {
     
     // 通用状态码 1xx
@@ -74,13 +76,29 @@ public enum ResultCode {
     TOKEN_INVALID(8003, "Token无效"),
     TOKEN_SIGNATURE_ERROR(8004, "Token签名错误"),
     ROLE_NOT_EXIST(8005, "角色不存在"),
-    PERMISSION_DENIED(8006, "权限不足");
+    PERMISSION_DENIED(8006, "权限不足"),
+    
+    // 参数相关错误 1000-1999
+    PARAM_ERROR(1000, "参数错误"),
+    PARAM_IS_NULL(1001, "参数为空"),
+    PARAM_TYPE_ERROR(1002, "参数类型错误"),
+    PARAM_NOT_COMPLETE(1003, "参数缺失"),
+    
+    // 用户相关错误 2000-2999
+    USER_PASSWORD_ERROR(2001, "密码错误"),
+    USER_ACCOUNT_EXPIRED(2002, "账号已过期"),
+    USER_ACCOUNT_LOCKED(2003, "账号已被锁定"),
+    USER_ACCOUNT_NOT_EXIST(2004, "账号不存在"),
+    USER_ACCOUNT_ALREADY_EXIST(2005, "账号已存在"),
+    USER_ACCOUNT_USE_BY_OTHERS(2006, "账号下线"),
+    
+    // 业务相关错误 3000-3999
+    UPDATE_ERROR(3000, "更新失败"),
+    DELETE_ERROR(3001, "删除失败"),
+    ADD_ERROR(3002, "添加失败"),
+    QUERY_ERROR(3003, "查询失败");
     
     private final Integer code;
     private final String message;
-    
-    ResultCode(Integer code, String message) {
-        this.code = code;
-        this.message = message;
-    }
-} 
+
+}

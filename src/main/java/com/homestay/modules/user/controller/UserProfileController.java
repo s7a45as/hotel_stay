@@ -6,6 +6,7 @@ import com.homestay.modules.user.service.UserProfileService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,6 +19,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
+@Slf4j
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
@@ -29,18 +31,13 @@ public class UserProfileController {
     }
 
     @Operation(summary = "更新用户个人信息")
-    @PutMapping("/profile")
+    @PostMapping("/profile/update")
     public Result<Void> updateUserProfile(@RequestBody UserProfileDTO userProfileDTO) {
+        log.info(String.valueOf(userProfileDTO));
         userProfileService.updateUserProfile(userProfileDTO);
         return Result.success();
     }
 
-    @Operation(summary = "更新用户密码")
-    @PutMapping("/password")
-    public Result<Void> updatePassword(@RequestParam String oldPassword, @RequestParam String newPassword) {
-        userProfileService.updatePassword(oldPassword, newPassword);
-        return Result.success();
-    }
 
     @Operation(summary = "上传用户头像")
     @PostMapping("/avatar")
