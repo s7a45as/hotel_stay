@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -26,7 +27,12 @@ public class BookingDTO {
     @Future(message = "退房时间必须是将来时间")
     @Schema(description = "退房时间")
     private LocalDateTime checkOutTime;
-    
+
+    @NotNull(message = "总订单金额")
+    @Schema(description = "订单金额")
+    private BigDecimal amount;
+
+
     @NotNull(message = "入住人数不能为空")
     @Min(value = 1, message = "入住人数必须大于0")
     @Schema(description = "入住人数")

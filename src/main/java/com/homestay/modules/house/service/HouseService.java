@@ -26,11 +26,12 @@ public interface HouseService extends IService<House> {
      * 切换收藏状态
      */
     void toggleFavorite(Long id);
-    
-    /**
-     * 创建预订
-     */
-    String createBooking(BookingDTO bookingDTO);
+
+    /*
+    *
+    * 创建预订
+    * */
+    boolean createBooking(BookingDTO bookingDTO);
     
     /**
      * 获取房源分类

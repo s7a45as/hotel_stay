@@ -18,6 +18,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.homestay.common.utils.SecurityUtil;
+import com.homestay.modules.order.vo.OrderListVO;
 
 import java.math.BigDecimal;
 import java.time.temporal.ChronoUnit;
@@ -84,13 +85,21 @@ public class UserOrderServiceImpl implements UserOrderService {
 
     @Override
     public Page<?> getOrderList(Integer currentPage, Integer pageSize, Integer status) {
-        Page<UserOrder> page = new Page<>(currentPage, pageSize);
-        LambdaQueryWrapper<UserOrder> wrapper = new LambdaQueryWrapper<UserOrder>()
-                .eq(UserOrder::getUserId, getCurrentUserId())
-                .eq(status != null, UserOrder::getStatus, status)
-                .orderByDesc(UserOrder::getCreateTime);
-                
-        return orderMapper.selectPage(page, wrapper);
+        Page<OrderListVO> page = new Page<>(currentPage, pageSize);
+        Page<OrderListVO> result = orderMapper.selectOrderList(page, getCurrentUserId(), status);
+        
+        // 转换订单状态为可读文本
+        result.getRecords().forEach(order -> {
+            order.setStatus(switch (order.getStatus()) {
+                case "0" -> "PENDING_PAYMENT";
+                case "1" -> "PAID";
+                case "2" -> "CANCELLED";
+                case "3" -> "COMPLETED";
+                default -> order.getStatus();
+            });
+        });
+        
+        return result;
     }
 
     @Override

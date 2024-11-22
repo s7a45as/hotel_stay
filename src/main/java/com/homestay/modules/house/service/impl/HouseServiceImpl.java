@@ -8,18 +8,16 @@ import com.homestay.common.response.ResultCode;
 import com.homestay.common.shareentity.House;
 import com.homestay.common.utils.SecurityUtil;
 import com.homestay.modules.house.dto.*;
-import com.homestay.modules.house.entity.houseBooking;
 import com.homestay.modules.house.entity.Favorite;
 import com.homestay.modules.house.entity.HouseImage;
-import com.homestay.modules.house.entity.Facility;
-import com.homestay.modules.house.mapper.BookingMapper;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.mapper.FavoriteMapper;
 import com.homestay.modules.house.mapper.HouseImageMapper;
 import com.homestay.modules.house.mapper.HouseFacilityMapper;
 import com.homestay.modules.house.service.HouseService;
+import com.homestay.modules.order.entity.UserOrder;
+import com.homestay.modules.order.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,9 +41,9 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     private final HouseImageMapper houseImageMapper;
     private final HouseFacilityMapper houseFacilityMapper;
     private final FavoriteMapper favoriteMapper;
-    private final BookingMapper bookingMapper;
     private final SecurityUtil securityUtil; // 用于获取当前登录用户
     private final HouseMapper houseMapper;
+    private  final OrderMapper  orderMapper; // 用于创建预订单
 
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
@@ -86,7 +84,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         
         // 标签筛选
         if (query.getTags() != null && !query.getTags().isEmpty()) {
-            // 标准化处理标签字符串
+            // 标准化处理标签符串
             String cleanTags = query.getTags().replaceAll("[\"']", "");
             List<String> tagList = Arrays.asList(cleanTags.split(","));
             wrapper.exists("SELECT 1 FROM house_tag ht WHERE ht.house_id = house.id AND ht.name IN (" + 
@@ -176,7 +174,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 //        // 4. 获取当前用户ID
 //        Long currentUserId = securityUtil.getCurrentUserId();
 //
-//        // 5. 查询是否已收藏
+//        // 5. ��询是否已收藏
 //        boolean isFavorite = false;
 //        if (currentUserId != null) {
 //            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
@@ -227,64 +225,94 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public String createBooking(BookingDTO bookingDTO) {
-        // 1. 参数校验
-        if (bookingDTO.getCheckOutTime().isBefore(bookingDTO.getCheckInTime())) {
-            throw new BusinessException(ResultCode.VALIDATE_FAILED, "退房时间不能早于入住时间");
+    public boolean createBooking(BookingDTO bookingDTO) {
+        try {
+            // 1. 获取当前用户ID并验证
+            Long currentUserId = securityUtil.getCurrentUserId();
+            if (currentUserId == null) {
+                throw new BusinessException(ResultCode.UNAUTHORIZED, "用户未登录");
+            }
+
+            // 2. 验证房源是否存在并检查可用性
+            House house = this.getById(bookingDTO.getHouseId());
+            if (house == null) {
+                throw new BusinessException(ResultCode.DATA_NOT_EXIST, "房源不存在");
+            }
+
+            // 3. 验证入住人数
+            if (bookingDTO.getGuestCount() > house.getMaxGuests()) {
+                throw new BusinessException(ResultCode.VALIDATE_FAILED, 
+                    String.format("超出最大入住人数限制,最多允许%d人入住", house.getMaxGuests()));
+            }
+
+            // 4. 验证入住日期
+            long days = ChronoUnit.DAYS.between(
+                bookingDTO.getCheckInTime().toLocalDate(), 
+                bookingDTO.getCheckOutTime().toLocalDate()
+            );
+            if (days <= 0) {
+                throw new BusinessException(ResultCode.VALIDATE_FAILED, "退房时间必须大于入住时间");
+            }
+            if (days > 90) { // 假设最大入住天数为90天
+                throw new BusinessException(ResultCode.VALIDATE_FAILED, "最大入住天数不能超过90天");
+            }
+
+            // 5. 验证日期是否可预订
+            LambdaQueryWrapper<UserOrder> orderWrapper = new LambdaQueryWrapper<>();
+            orderWrapper.eq(UserOrder::getHouseId, bookingDTO.getHouseId())
+                       .ne(UserOrder::getStatus, 2) // 排除已取消的订单
+                       .and(w -> w.between(UserOrder::getCheckIn, 
+                                         bookingDTO.getCheckInTime().toLocalDate(),
+                                         bookingDTO.getCheckOutTime().toLocalDate())
+                               .or()
+                               .between(UserOrder::getCheckOut,
+                                      bookingDTO.getCheckInTime().toLocalDate(),
+                                      bookingDTO.getCheckOutTime().toLocalDate()));
+            
+            Long count = orderMapper.selectCount(orderWrapper);
+            if (count > 0) {
+                throw new BusinessException(ResultCode.VALIDATE_FAILED, "所选日期已被预订");
+            }
+
+            // 6. 验证订单金额
+            BigDecimal expectedAmount = house.getPrice().multiply(BigDecimal.valueOf(days));
+            if (expectedAmount.compareTo(bookingDTO.getAmount()) != 0) {
+                throw new BusinessException(ResultCode.VALIDATE_FAILED, 
+                    String.format("订单金额计算有误，期望金额：%s，实际金额：%s", 
+                        expectedAmount.toString(), bookingDTO.getAmount().toString()));
+            }
+
+            // 7. 创建订单实体
+            UserOrder userOrder = new UserOrder();
+            userOrder.setId(generateOrderId());
+            userOrder.setUserId(currentUserId);
+            userOrder.setHouseId(bookingDTO.getHouseId());
+            userOrder.setAmount(bookingDTO.getAmount());  // 直接使用 BookingDTO 中的 BigDecimal
+            userOrder.setCheckIn(bookingDTO.getCheckInTime().toLocalDate());
+            userOrder.setCheckOut(bookingDTO.getCheckOutTime().toLocalDate());
+            userOrder.setNights((int) days);
+            userOrder.setGuests(bookingDTO.getGuestCount());
+            userOrder.setContactName(bookingDTO.getContactName());
+            userOrder.setContactPhone(bookingDTO.getContactPhone());
+            userOrder.setSpecialRequests(bookingDTO.getSpecialRequests());
+            userOrder.setStatus(0); // 设置初始状态为待支付
+            userOrder.setCreateTime(LocalDateTime.now());
+            userOrder.setUpdateTime(LocalDateTime.now());
+
+            // 8. 保存订单到数据库
+            int result = orderMapper.insert(userOrder);
+            return result > 0;
+
+        } catch (BusinessException e) {
+            // 业务异常直接抛出,由全局异常处理器处理
+            throw e;
+        } catch (Exception e) {
+            // 其他异常包装成BusinessException
+            log.error("创建订单失败: ", e);
+            throw new BusinessException(ResultCode.ERROR, "创建订单失败", e);
         }
-        
-        // 2. 检查房源是否存在
-        House house = houseMapper.selectById(bookingDTO.getHouseId());
-        if (house == null) {
-            throw new BusinessException(ResultCode.DATA_NOT_EXIST, "房源不存在");
-        }
-        
-        // 3. 检查房源状态
-        if (house.getStatus() != 1) {
-            throw new BusinessException(ResultCode.OPERATION_FAILED, "房源已下架");
-        }
-        
-        // 4. 检查入住人数是否超出限制
-        if (bookingDTO.getGuestCount() > house.getMaxGuests()) {
-            throw new BusinessException(ResultCode.VALIDATE_FAILED, "入住人数超出房源限制");
-        }
-        
-        // 5. 检查时间冲突
-        int conflictCount = bookingMapper.checkBookingConflict(
-            bookingDTO.getHouseId(), 
-            bookingDTO.getCheckInTime(), 
-            bookingDTO.getCheckOutTime()
-        );
-        if (conflictCount > 0) {
-            throw new BusinessException(ResultCode.OPERATION_FAILED, "所选时间段已被预订");
-        }
-        
-        // 6. 计算订单总价
-        long days = ChronoUnit.DAYS.between(
-            bookingDTO.getCheckInTime().toLocalDate(), 
-            bookingDTO.getCheckOutTime().toLocalDate()
-        );
-        BigDecimal totalPrice = house.getPrice().multiply(new BigDecimal(days));
-        
-        // 7. 创建预订记录
-        houseBooking houseBooking = new houseBooking();
-        houseBooking.setId(generateOrderId());
-        houseBooking.setHouseId(bookingDTO.getHouseId());
-        houseBooking.setUserId(securityUtil.getCurrentUserId());
-        houseBooking.setCheckInTime(bookingDTO.getCheckInTime());
-        houseBooking.setCheckOutTime(bookingDTO.getCheckOutTime());
-        houseBooking.setGuestCount(bookingDTO.getGuestCount());
-        houseBooking.setContactName(bookingDTO.getContactName());
-        houseBooking.setContactPhone(bookingDTO.getContactPhone());
-        houseBooking.setSpecialRequests(bookingDTO.getSpecialRequests());
-        houseBooking.setTotalPrice(totalPrice);
-        houseBooking.setStatus(0); // 待支付状态
-        
-        bookingMapper.insert(houseBooking);
-        
-        return houseBooking.getId();
     }
-    
+
     /**
      * 生成订单号
      */
@@ -296,27 +324,27 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     @Override
     public Object getCategories() {
         List<Map<String, Object>> categories = new ArrayList<>();
-        
+
         Map<String, Object> category1 = new HashMap<>();
         category1.put("label", "单人间");
         category1.put("value", "1");
         categories.add(category1);
-        
+
         Map<String, Object> category2 = new HashMap<>();
         category2.put("label", "双人间");
         category2.put("value", "2");
         categories.add(category2);
-        
+
         Map<String, Object> category3 = new HashMap<>();
         category3.put("label", "家庭房");
         category3.put("value", "3");
         categories.add(category3);
-        
+
         Map<String, Object> category4 = new HashMap<>();
         category4.put("label", "别墅");
         category4.put("value", "4");
         categories.add(category4);
-        
+
         return categories;
     }
 } 

@@ -1,6 +1,7 @@
 package com.homestay.modules.house.controller;
 
 import com.homestay.common.response.Result;
+import com.homestay.common.response.ResultCode;
 import com.homestay.modules.house.dto.BookingDTO;
 import com.homestay.modules.house.dto.HouseDetailDTO;
 import com.homestay.modules.house.dto.HouseListDTO;
@@ -8,6 +9,7 @@ import com.homestay.modules.house.dto.HouseQueryDTO;
 import com.homestay.modules.house.service.HouseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -68,10 +70,11 @@ public class HouseController {
     }
 
     @Operation(summary = "创建预订")
-    @PostMapping("/booking/")
-    public Result<String> createBooking(@RequestBody BookingDTO booking) {
-        String orderId = houseService.createBooking(booking);
-        return Result.success(orderId);
+    @PostMapping("/booking")
+    public Result<?> createBooking(@RequestBody @Valid BookingDTO booking) {
+        log.info("创建预订请求: {}", booking);
+        boolean success = houseService.createBooking(booking);
+        return success ? Result.success("预订创建成功") : Result.error(ResultCode.ERROR.getCode(), "预订创建失败");
     }
 
     @Operation(summary = "获取房源类型列表")

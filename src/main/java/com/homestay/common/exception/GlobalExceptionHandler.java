@@ -88,4 +88,22 @@ public class GlobalExceptionHandler {
         log.error("系统异常: ", e);
         return Result.error(ResultCode.ERROR.getCode(), "系统异常，请联系管理员");
     }
+
+    /**
+     * 添加订单相关的特定异常处理
+     */
+    @ExceptionHandler(OrderException.class)
+    public Result<?> handleOrderException(OrderException e) {
+        log.warn("订单异常: {}", e.getMessage());
+        return Result.error(e.getCode(), e.getMessage());
+    }
+
+    /**
+     * 添加预订相关的特定异常处理
+     */
+    @ExceptionHandler(BookingException.class)
+    public Result<?> handleBookingException(BookingException e) {
+        log.warn("预订异常: {}", e.getMessage());
+        return Result.error(e.getCode(), e.getMessage());
+    }
 } 
