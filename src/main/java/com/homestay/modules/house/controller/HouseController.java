@@ -9,12 +9,14 @@ import com.homestay.modules.house.service.HouseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "房源管理", description = "房源相关接口")
 @RestController
 @RequestMapping("/house")
 @RequiredArgsConstructor
+@Slf4j
 public class HouseController {
 
     private final HouseService houseService;
@@ -54,6 +56,7 @@ public class HouseController {
     @Operation(summary = "获取房源详情")
     @GetMapping("/detail/{id}")
     public Result<HouseDetailDTO> getHouseDetail(@PathVariable Long id) {
+        log.info(id.toString());
         return Result.success(houseService.getHouseDetail(id));
     }
 

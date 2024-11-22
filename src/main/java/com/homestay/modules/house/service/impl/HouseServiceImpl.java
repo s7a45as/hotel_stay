@@ -162,34 +162,33 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         if (house == null) {
             throw new BusinessException(ResultCode.DATA_NOT_EXIST);
         }
-        
-        // 2. 获取房源图片
-        List<HouseImage> images = houseImageMapper.selectByHouseId(id);
-        house.setImages(images.stream().map(HouseImage::getUrl).collect(Collectors.toList()));
-        
-        // 3. 获取房源设施
-        List<Facility> facilities = houseFacilityMapper.selectFacilitiesByHouseId(id);
-        // 将Facility对象转换为设施名称列表
-        house.setFacilities(facilities.stream()
-                .map(Facility::getName)  // 假设Facility类有getName()方法
-                .collect(Collectors.toList()));
-        
-        // 4. 获取当前用户ID
-        Long currentUserId = securityUtil.getCurrentUserId();
-        
-        // 5. 查询是否已收藏
-        boolean isFavorite = false;
-        if (currentUserId != null) {
-            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
-        }
-        
-        // 6. 获取收藏数量
-        int favoriteCount = favoriteMapper.getFavoriteCount(id);
+//        // 2. 获取房源图片
+//        List<HouseImage> images = houseImageMapper.selectByHouseId(id);
+//        house.setImages(images.stream().map(HouseImage::getUrl).collect(Collectors.toList()));
+//
+//        // 3. 获取房源设施
+//        List<Facility> facilities = houseFacilityMapper.selectFacilitiesByHouseId(id);
+//        // 将Facility对象转换为设施名称列表
+//        house.setFacilities(facilities.stream()
+//                .map(Facility::getName)  // 假设Facility类有getName()方法
+//                .collect(Collectors.toList()));
+//
+//        // 4. 获取当前用户ID
+//        Long currentUserId = securityUtil.getCurrentUserId();
+//
+//        // 5. 查询是否已收藏
+//        boolean isFavorite = false;
+//        if (currentUserId != null) {
+//            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
+//        }
+//
+//        // 6. 获取收藏数量
+//        int favoriteCount = favoriteMapper.getFavoriteCount(id);
         
         return HouseDetailDTO.builder()
                 .house(house)
-                .isFavorite(isFavorite)
-                .favoriteCount(favoriteCount)
+//                .isFavorite(isFavorite)
+//                .favoriteCount(favoriteCount)
                 .build();
     }
 
