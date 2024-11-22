@@ -12,4 +12,5 @@ spring:
 logging:
   level:
     com.homestay: debug
-    org.springframework.web: debug 
+    org.springframework.web: debug
+

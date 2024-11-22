@@ -21,7 +21,33 @@ public class HouseController {
 
     @Operation(summary = "获取房源列表")
     @GetMapping("/list")
-    public Result<HouseListDTO> getHouseList(HouseQueryDTO query) {
+    public Result<HouseListDTO> getHouseList(
+        @RequestParam(defaultValue = "1") Integer page,
+        @RequestParam(defaultValue = "10") Integer pageSize,
+        @RequestParam(required = false) String city,
+        @RequestParam(required = false) Integer guestCount,
+        @RequestParam(required = false) String checkInDate,
+        @RequestParam(required = false) String checkOutDate,
+        @RequestParam(required = false) Integer minPrice,
+        @RequestParam(required = false) Integer maxPrice,
+        @RequestParam(required = false) String roomTypes,
+        @RequestParam(required = false) String amenities,
+        @RequestParam(required = false) String tags
+    ) {
+        // 将参数封装到 HouseQueryDTO 中，同时进行标准化处理
+        HouseQueryDTO query = new HouseQueryDTO();
+        query.setPage(page);
+        query.setPageSize(pageSize);
+        query.setCity(city != null ? city.replaceAll("[\"']", "").trim() : null);
+        query.setGuestCount(guestCount);
+        query.setCheckInDate(checkInDate);
+        query.setCheckOutDate(checkOutDate);
+        query.setMinPrice(minPrice);
+        query.setMaxPrice(maxPrice);
+        query.setRoomTypes(roomTypes != null ? roomTypes.replaceAll("[\"']", "") : null);
+        query.setAmenities(amenities != null ? amenities.replaceAll("[\"']", "") : null);
+        query.setTags(tags != null ? tags.replaceAll("[\"']", "") : null);
+        
         return Result.success(houseService.getHouseList(query));
     }
 

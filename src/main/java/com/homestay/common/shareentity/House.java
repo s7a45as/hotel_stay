@@ -18,6 +18,9 @@ public class House {
     @Schema(description = "房源ID")
     private Long id;
 
+    @Schema(description = "房源标题")
+    private String title;
+
     @Schema(description = "房源名称")
     private String name;
 
@@ -65,6 +68,19 @@ public class House {
     @TableField(typeHandler = JacksonTypeHandler.class)
     private List<String> images;
 
+    @Schema(description = "评分")
+    private Double rating;
+
+    @Schema(description = "评价数量")
+    private Integer reviewCount;
+
+    @Schema(description = "特色标签")
+    @TableField(typeHandler = JacksonTypeHandler.class)
+    private List<String> features;
+
+    @Schema(description = "房源图片")
+    private String image;
+
     @Schema(description = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
@@ -76,14 +92,5 @@ public class House {
     @Schema(description = "是否删除")
     @TableLogic
     private Integer deleted;
-
-    @Schema(description = "房源图片")
-    private String image;
-
-    @Schema(description = "评分")
-    private Double rating;
-
-    @Schema(description = "特色标签")
-    private List<String> features;
 
 } 

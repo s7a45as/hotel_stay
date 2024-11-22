@@ -28,6 +28,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,53 +51,108 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     public HouseListDTO getHouseList(HouseQueryDTO query) {
         // 构建查询条件
         LambdaQueryWrapper<House> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(query.getCategoryId() != null, House::getCategory, query.getCategoryId())
-                .like(query.getLocation() != null, House::getLocation, query.getLocation());
-                
-        // 价格范围查询
-        if (query.getPriceRange() != null && query.getPriceRange().length == 2) {
-            wrapper.between(House::getPrice, query.getPriceRange()[0], query.getPriceRange()[1]);
+        
+        // 城市筛选 - 标准化处理
+        if (query.getCity() != null) {
+            // 移除引号，去除首尾空格
+            String city = query.getCity().replaceAll("[\"']", "").trim();
+            wrapper.eq(House::getCity, city);
         }
         
-        // 排序
-        if ("price-asc".equals(query.getSortBy())) {
-            wrapper.orderByAsc(House::getPrice);
-        } else if ("price-desc".equals(query.getSortBy())) {
-            wrapper.orderByDesc(House::getPrice);
-        } else {
-            wrapper.orderByDesc(House::getCreateTime);
+        // 价格范围筛选
+        wrapper.ge(query.getMinPrice() != null, House::getPrice, query.getMinPrice())
+              .le(query.getMaxPrice() != null, House::getPrice, query.getMaxPrice());
+        
+        // 入住人数筛选
+        wrapper.ge(query.getGuestCount() != null, House::getMaxGuests, query.getGuestCount());
+        
+        // 房型筛选
+        if (query.getRoomTypes() != null && !query.getRoomTypes().isEmpty()) {
+            // 标准化处理房型字符串
+            String cleanRoomTypes = query.getRoomTypes().replaceAll("[\"']", "");
+            List<String> roomTypeList = Arrays.asList(cleanRoomTypes.split(","));
+            wrapper.in(House::getType, roomTypeList);
+        }
+        
+        // 设施筛选
+        if (query.getAmenities() != null && !query.getAmenities().isEmpty()) {
+            // 标准化处理设施字符串
+            String cleanAmenities = query.getAmenities().replaceAll("[\"']", "");
+            List<String> amenityList = Arrays.asList(cleanAmenities.split(","));
+            wrapper.exists("SELECT 1 FROM house_facility hf WHERE hf.house_id = house.id AND hf.name IN (" + 
+                String.join(",", Collections.nCopies(amenityList.size(), "?")) + ")", 
+                amenityList.toArray());
+        }
+        
+        // 标签筛选
+        if (query.getTags() != null && !query.getTags().isEmpty()) {
+            // 标准化处理标签字符串
+            String cleanTags = query.getTags().replaceAll("[\"']", "");
+            List<String> tagList = Arrays.asList(cleanTags.split(","));
+            wrapper.exists("SELECT 1 FROM house_tag ht WHERE ht.house_id = house.id AND ht.name IN (" + 
+                String.join(",", Collections.nCopies(tagList.size(), "?")) + ")", 
+                tagList.toArray());
+        }
+        
+        // 日期可用性筛选
+        if (query.getCheckInDate() != null && query.getCheckOutDate() != null) {
+            wrapper.notExists(
+                "SELECT 1 FROM house_booking hb WHERE hb.house_id = house.id " +
+                "AND hb.status != -1 " + // 排除已取消的订单
+                "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() + 
+                "' OR hb.check_in_time >= '" + query.getCheckOutDate() + "')"
+            );
         }
         
         // 分页查询
         Page<House> page = new Page<>(query.getPage(), query.getPageSize());
         Page<House> result = houseMapper.selectPage(page, wrapper);
         
-        // 查询结果处理并转换为DTO
-        List<HouseDTO> houseDTOList = result.getRecords().stream()
+        // 转换为 DTO
+        List<HouseItemDTO> houseDTOList = result.getRecords().stream()
                 .map(house -> {
-                    HouseDTO dto = new HouseDTO();
-                    BeanUtils.copyProperties(house, dto);
+                    HouseItemDTO dto = HouseItemDTO.builder()
+                            .id(house.getId())
+                            .title(house.getTitle())
+                            .price(house.getPrice().intValue())
+                            .city(house.getCity())
+                            .type(house.getType())
+                            .rating(house.getRating())
+                            .reviewCount(house.getReviewCount())
+                            .build();
                     
                     // 设置封面图
                     HouseImage coverImage = houseImageMapper.selectCoverImage(house.getId());
                     if (coverImage != null) {
-                        dto.setImage(coverImage.getUrl());
+                        dto.setCoverImage(coverImage.getUrl());
                     }
                     
-                    // 设置设施列表
-                    List<Facility> facilities = houseFacilityMapper.selectFacilitiesByHouseId(house.getId());
-                    // 这里需要根据实际情况处理设施信息的转换
+                    // 设置标签
+                    List<TagDTO> tags = getHouseTags(house.getId());
+                    dto.setTags(tags);
                     
                     return dto;
                 })
                 .collect(Collectors.toList());
         
         return HouseListDTO.builder()
-                .list(houseDTOList)  // 使用转换后的DTO列表
+                .list(houseDTOList)
                 .total(result.getTotal())
-                .currentPage(query.getPage())
-                .pageSize(query.getPageSize())
                 .build();
+    }
+
+    // 辅助方法：获取房源标签
+    private List<TagDTO> getHouseTags(Long houseId) {
+        // 这里需要实现从数据库查询房源标签的逻辑
+        // 示例实现：
+        return houseMapper.selectHouseTags(houseId).stream()
+                .map(tag -> {
+                    TagDTO tagDTO = new TagDTO();
+                    tagDTO.setType(tag.getType());
+                    tagDTO.setText(tag.getText());
+                    return tagDTO;
+                })
+                .collect(Collectors.toList());
     }
 
     @Override

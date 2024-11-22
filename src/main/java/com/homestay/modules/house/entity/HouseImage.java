@@ -21,7 +21,8 @@ public class HouseImage {
     private String url;
     
     @Schema(description = "图片类型(0:普通图片 1:封面图)")
-    private Integer type;
+    @TableField("image_type")
+    private Integer imageType;
     
     @Schema(description = "排序")
     private Integer sort;

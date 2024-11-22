@@ -3,13 +3,16 @@ package com.homestay.modules.house.service.impl;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.common.shareentity.House;
 import com.homestay.common.utils.SecurityUtil;
-import com.homestay.modules.house.dto.HouseDTO;
+import com.homestay.modules.house.dto.HouseItemDTO;
 import com.homestay.modules.house.dto.HouseListDTO;
+import com.homestay.modules.house.dto.TagDTO;
+import com.homestay.modules.house.entity.HouseImage;
+import com.homestay.modules.house.entity.Tag;
 import com.homestay.modules.house.mapper.FavoriteMapper;
+import com.homestay.modules.house.mapper.HouseImageMapper;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.service.FavoriteService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +24,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 
     private final FavoriteMapper favoriteMapper;
     private final HouseMapper houseMapper;
+    private final HouseImageMapper houseImageMapper;
     private final SecurityUtil securityUtil;
 
     @Override
@@ -29,28 +33,46 @@ public class FavoriteServiceImpl implements FavoriteService {
         Long currentUserId = securityUtil.getCurrentUserId();
         
         // 2. 分页查询收藏的房源
-         Page<House> result = houseMapper.selectFavoritesByUserId(currentUserId, new Page<>(page, pageSize));
+        Page<House> result = houseMapper.selectFavoritesByUserId(currentUserId, new Page<>(page, pageSize));
         
         // 3. 转换为DTO
-        List<HouseDTO> houseDTOList = result.getRecords().stream()
-                .map(this::convertToDTO)
+        List<HouseItemDTO> houseDTOList = result.getRecords().stream()
+                .map(house -> {
+                    HouseItemDTO dto = HouseItemDTO.builder()
+                            .id(house.getId())
+                            .title(house.getTitle())
+                            .price(house.getPrice().intValue())
+                            .city(house.getCity())
+                            .type(house.getType())
+                            .rating(house.getRating())
+                            .reviewCount(house.getReviewCount())
+                            .build();
+                    
+                    // 设置封面图
+                    HouseImage coverImage = houseImageMapper.selectCoverImage(house.getId());
+                    if (coverImage != null) {
+                        dto.setCoverImage(coverImage.getUrl());
+                    }
+                    
+                    // 设置标签
+                    List<Tag> tags = houseMapper.selectHouseTags(house.getId());
+                    if (tags != null && !tags.isEmpty()) {
+                        dto.setTags(tags.stream()
+                                .map(tag -> TagDTO.builder()
+                                        .type(tag.getType())
+                                        .text(tag.getText())
+                                        .build())
+                                .collect(Collectors.toList()));
+                    }
+                    
+                    return dto;
+                })
                 .collect(Collectors.toList());
         
-        // 4. 使用builder模式构建返回结果
+        // 4. 构建返回结果
         return HouseListDTO.builder()
-                .total(result.getTotal())
-                .currentPage(page)
-                .pageSize(pageSize)
                 .list(houseDTOList)
+                .total(result.getTotal())
                 .build();
-    }
-    
-    /**
-     * 将House实体转换为HouseDTO
-     */
-    private HouseDTO convertToDTO(House house) {
-        HouseDTO dto = new HouseDTO();
-        BeanUtils.copyProperties(house, dto);
-        return dto;
     }
 } 

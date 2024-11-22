@@ -12,12 +12,12 @@ public interface HouseImageMapper extends BaseMapper<HouseImage> {
     /**
      * 获取房源图片列表
      */
-    @Select("SELECT * FROM t_house_image WHERE house_id = #{houseId} AND deleted = 0 ORDER BY type DESC, sort ASC")
+    @Select("SELECT * FROM t_house_image WHERE house_id = #{houseId} AND deleted = 0 ORDER BY image_type DESC, sort ASC")
     List<HouseImage> selectByHouseId(Long houseId);
     
     /**
      * 获取房源封面图
      */
-    @Select("SELECT * FROM t_house_image WHERE house_id = #{houseId} AND type = 1 AND deleted = 0 LIMIT 1")
+    @Select("SELECT * FROM t_house_image WHERE house_id = #{houseId} AND image_type = 1 AND deleted = 0 LIMIT 1")
     HouseImage selectCoverImage(Long houseId);
 } 

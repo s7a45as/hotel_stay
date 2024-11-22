@@ -28,7 +28,25 @@ CREATE TABLE `t_house` (
                            KEY `idx_city` (`city`),
                            KEY `idx_create_time` (`create_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='房源表';
+-- 修改 t_house 表，添加新字段
+ALTER TABLE t_house
+    ADD COLUMN title VARCHAR(255) COMMENT '房源标题',
+    ADD COLUMN review_count INT DEFAULT 0 COMMENT '评价数量';
 
+-- 创建标签表
+CREATE TABLE tag (
+                     id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                     type VARCHAR(50) COMMENT '标签类型',
+                     text VARCHAR(100) COMMENT '标签文本'
+);
+
+-- 创建房源标签关联表
+CREATE TABLE house_tag (
+                           id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                           house_id BIGINT COMMENT '房源ID',
+                           tag_id BIGINT COMMENT '标签ID',
+                           UNIQUE KEY uk_house_tag (house_id, tag_id)
+);
 -- 插入测试数据
 INSERT INTO `t_house` (
     `name`, `type`, `address`, `city`, `district`, `location`,
