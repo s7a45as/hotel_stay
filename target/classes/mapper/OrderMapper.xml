@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.order.mapper.OrderMapper">
+    
+    <select id="selectOrderList" resultType="com.homestay.modules.order.vo.OrderListVO">
+        SELECT 
+            o.id,
+            h.name as house_name,
+            COALESCE(hi.url, h.image) as house_image,
+            o.check_in,
+            o.check_out,
+            o.nights,
+            o.guests,
+            o.amount,
+            o.status,
+            o.create_time
+        FROM t_user_order o
+        LEFT JOIN t_house h ON o.house_id = h.id
+        LEFT JOIN t_house_image hi ON h.id = hi.house_id AND hi.is_cover = 1 AND hi.deleted = 0
+        WHERE o.user_id = #{userId}
+        <if test="status != null">
+            AND o.status = #{status}
+        </if>
+        ORDER BY o.create_time DESC
+    </select>
+    
+</mapper> 
