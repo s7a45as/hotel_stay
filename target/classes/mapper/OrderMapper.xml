@@ -25,4 +25,29 @@
         ORDER BY o.create_time DESC
     </select>
     
+    <select id="getOrderDetail" resultType="com.homestay.modules.order.vo.OrderDetailVO">
+        SELECT 
+            o.id,
+            o.status,
+            o.create_time,
+            o.pay_time,
+            o.amount,
+            o.check_in,
+            o.check_out,
+            o.nights,
+            o.guests,
+            o.contact_name,
+            o.contact_phone,
+            o.special_requests,
+            h.id as "house.id",
+            h.name as "house.name",
+            COALESCE(hi.url, h.image) as "house.image",
+            h.address as "house.address"
+        FROM t_user_order o
+        LEFT JOIN t_house h ON o.house_id = h.id
+        LEFT JOIN t_house_image hi ON h.id = hi.house_id AND hi.is_cover = 1 AND hi.deleted = 0
+        WHERE o.id = #{orderId}
+        AND o.deleted = 0
+    </select>
+    
 </mapper> 

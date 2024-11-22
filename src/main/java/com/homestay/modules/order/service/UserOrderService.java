@@ -1,7 +1,7 @@
 package com.homestay.modules.order.service;
 
 import com.homestay.modules.order.dto.OrderCreateDTO;
-import com.homestay.modules.order.dto.OrderDetailDTO;
+import com.homestay.modules.order.vo.OrderDetailVO;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 public interface UserOrderService {
@@ -14,7 +14,7 @@ public interface UserOrderService {
     /**
      * 获取订单详情
      */
-    OrderDetailDTO getOrderDetail(String orderId);
+    OrderDetailVO getOrderDetail(String orderId);
     
     /**
      * 获取订单列表

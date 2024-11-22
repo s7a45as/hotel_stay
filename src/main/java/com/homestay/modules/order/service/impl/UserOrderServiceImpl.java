@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.homestay.common.utils.SecurityUtil;
 import com.homestay.modules.order.vo.OrderListVO;
+import com.homestay.modules.order.vo.OrderDetailVO;
+
+import com.homestay.modules.order.enums.OrderStatusEnum;
 
 import java.math.BigDecimal;
 import java.time.temporal.ChronoUnit;
@@ -32,6 +35,7 @@ public class UserOrderServiceImpl implements UserOrderService {
     private final HouseService houseService;
     private final PaymentService paymentService;
     private final SecurityUtil securityUtil;
+
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -69,18 +73,29 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     @Override
-    public OrderDetailDTO getOrderDetail(String orderId) {
+    public OrderDetailVO getOrderDetail(String orderId) {
+        // 1. 验证订单存在且属于当前用户
         UserOrder userOrder = getOrderById(orderId);
-        OrderDetailDTO detailDTO = new OrderDetailDTO();
-        BeanUtils.copyProperties(userOrder, detailDTO);
-        
-        // 设置房源信息
-        House house = houseService.getById(userOrder.getHouseId());
-        OrderDetailDTO.HouseInfo houseInfo = new OrderDetailDTO.HouseInfo();
-        BeanUtils.copyProperties(house, houseInfo);
-        detailDTO.setHouse(houseInfo);
-        
-        return detailDTO;
+        if (userOrder == null) {
+            throw new BusinessException(ResultCode.DATA_NOT_EXIST.getCode(), "订单不存在");
+        }
+
+        // 2. 从数据库获取订单详情（包含房源信息）
+        OrderDetailVO orderDetail = orderMapper.getOrderDetail(orderId);
+        if (orderDetail == null) {
+            throw new BusinessException(ResultCode.DATA_NOT_EXIST.getCode(), "订单详情不存在");
+        }
+
+        // 3. 转换订单状态为可读文本
+        OrderStatusEnum orderStatus = OrderStatusEnum.fromCode(Integer.valueOf(orderDetail.getStatus()));
+        orderDetail.setStatus(orderStatus.name());
+
+        // 4. 验证订单所属用户
+        if (!userOrder.getUserId().equals(getCurrentUserId())) {
+            throw new BusinessException(ResultCode.FORBIDDEN.getCode(), "无权访问此订单");
+        }
+
+        return orderDetail;
     }
 
     @Override
@@ -90,13 +105,8 @@ public class UserOrderServiceImpl implements UserOrderService {
         
         // 转换订单状态为可读文本
         result.getRecords().forEach(order -> {
-            order.setStatus(switch (order.getStatus()) {
-                case "0" -> "PENDING_PAYMENT";
-                case "1" -> "PAID";
-                case "2" -> "CANCELLED";
-                case "3" -> "COMPLETED";
-                default -> order.getStatus();
-            });
+            OrderStatusEnum orderStatus = OrderStatusEnum.fromCode(Integer.valueOf(order.getStatus()));
+            order.setStatus(orderStatus.name());
         });
         
         return result;

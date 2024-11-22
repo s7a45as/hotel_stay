@@ -20,9 +20,10 @@ public class OrderDetailVO {
     @Schema(description = "订单ID")
     private String id;
     
-    @Schema(description = "订单状态")
+    @Schema(description = "订单状态", example = "PENDING_PAYMENT")
     private String status;
-    
+
+
     @Schema(description = "创建时间")
     private LocalDateTime createTime;
     
@@ -56,19 +57,5 @@ public class OrderDetailVO {
     @Schema(description = "特殊要求")
     private String specialRequests;
     
-    @Data
-    @Schema(description = "房源信息")
-    public static class HouseInfo {
-        @Schema(description = "房源ID")
-        private Long id;
-        
-        @Schema(description = "房源名称")
-        private String name;
-        
-        @Schema(description = "房源图片")
-        private String image;
-        
-        @Schema(description = "房源地址")
-        private String address;
-    }
+
 } 

@@ -4,6 +4,7 @@ import com.homestay.common.response.Result;
 import com.homestay.modules.order.dto.OrderCreateDTO;
 import com.homestay.modules.order.dto.OrderDetailDTO;
 import com.homestay.modules.order.service.UserOrderService;
+import com.homestay.modules.order.vo.OrderDetailVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -25,8 +26,8 @@ public class UserOrderController {
     }
 
     @Operation(summary = "获取订单详情")
-    @GetMapping("/{orderId}")
-    public Result<OrderDetailDTO> getOrderDetail(@PathVariable String orderId) {
+    @GetMapping("/detail/{orderId}")
+    public Result<OrderDetailVO> getOrderDetail(@PathVariable String orderId) {
         return Result.success(userOrderService.getOrderDetail(orderId));
     }
 

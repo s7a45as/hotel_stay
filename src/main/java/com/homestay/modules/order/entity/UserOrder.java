@@ -61,5 +61,7 @@ public class UserOrder {
     @Schema(description = "更新时间")
     private LocalDateTime updateTime;
 
-
+    @TableLogic
+    @Schema(description = "是否删除(0:未删除 1:已删除)")
+    private Integer deleted;
 }
