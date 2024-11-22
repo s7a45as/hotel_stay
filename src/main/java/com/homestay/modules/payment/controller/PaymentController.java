@@ -1,7 +1,7 @@
 package com.homestay.modules.payment.controller;
 
 import com.homestay.common.response.Result;
-import com.homestay.modules.payment.dto.PaymentQRCodeDTO;
+import com.homestay.modules.payment.vo.PaymentQRCodeVo;
 import com.homestay.modules.payment.dto.PaymentRequestDTO;
 import com.homestay.modules.payment.dto.PaymentStatusDTO;
 import com.homestay.modules.payment.service.PaymentService;
@@ -21,7 +21,7 @@ public class PaymentController {
 
     @Operation(summary = "生成支付二维码")
     @PostMapping("/qrcode")
-    public Result<PaymentQRCodeDTO> generatePayQRCode(@Valid @RequestBody PaymentRequestDTO request) {
+    public Result<PaymentQRCodeVo> generatePayQRCode(@Valid @RequestBody PaymentRequestDTO request) {
         return Result.success(paymentService.generatePayQRCode(request));
     }
 

@@ -1,6 +1,6 @@
 package com.homestay.modules.payment.service;
 
-import com.homestay.modules.payment.dto.PaymentQRCodeDTO;
+import com.homestay.modules.payment.vo.PaymentQRCodeVo;
 import com.homestay.modules.payment.dto.PaymentRequestDTO;
 import com.homestay.modules.payment.dto.PaymentStatusDTO;
 
@@ -12,7 +12,7 @@ public interface PaymentService {
      * @param request 支付请求参数
      * @return 支付二维码信息
      */
-    PaymentQRCodeDTO generatePayQRCode(PaymentRequestDTO request);
+    PaymentQRCodeVo generatePayQRCode(PaymentRequestDTO request);
 
     /**
      * 查询支付状态

@@ -14371,3 +14371,320 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'o.deleted' in 'wher
 2024-11-22 18:11:43.712 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
 2024-11-22 18:11:43.712 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
 2024-11-22 18:11:43.712 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:19:03.077 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-22 18:19:11.037 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-22 18:22:36.779 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:36.779 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:36.779 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:45.613 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:45.613 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:45.613 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:50.682 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoClassDefFoundError: com/homestay/modules/payment/dto/PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1104)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NoClassDefFoundError: com/homestay/modules/payment/dto/PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	at com.homestay.modules.payment.dto.PaymentQRCodeDTO.builder(PaymentQRCodeDTO.java:9)
+	at com.homestay.modules.payment.service.impl.PaymentServiceImpl.generatePayQRCode(PaymentServiceImpl.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.homestay.modules.payment.service.impl.PaymentServiceImpl$$SpringCGLIB$$0.generatePayQRCode(<generated>)
+	at com.homestay.modules.payment.controller.PaymentController.generatePayQRCode(PaymentController.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	... 98 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.homestay.modules.payment.dto.PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 115 common frames omitted
+2024-11-22 18:22:51.453 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoClassDefFoundError: com/homestay/modules/payment/dto/PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1104)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NoClassDefFoundError: com/homestay/modules/payment/dto/PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	at com.homestay.modules.payment.dto.PaymentQRCodeDTO.builder(PaymentQRCodeDTO.java:9)
+	at com.homestay.modules.payment.service.impl.PaymentServiceImpl.generatePayQRCode(PaymentServiceImpl.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.homestay.modules.payment.service.impl.PaymentServiceImpl$$SpringCGLIB$$0.generatePayQRCode(<generated>)
+	at com.homestay.modules.payment.controller.PaymentController.generatePayQRCode(PaymentController.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	... 98 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.homestay.modules.payment.dto.PaymentQRCodeDTO$PaymentQRCodeDTOBuilder
+	... 115 common frames omitted
+2024-11-22 18:22:55.443 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:55.443 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:22:55.443 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:29.600 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:29.600 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:29.600 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:39.409 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:39.409 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:28:39.409 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:30:33.688 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:30:33.688 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:30:33.688 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:31:47.408 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:31:47.408 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:31:47.408 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:16.358 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:16.358 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:16.359 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:48.918 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 参数校验异常: 支付方式不能为空
+2024-11-22 18:33:50.802 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:50.802 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:50.802 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:33:55.019 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 参数校验异常: 支付方式不能为空
+2024-11-22 18:35:30.785 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:35:37.928 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:38:02.789 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:38:06.901 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:38:54.490 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:39:41.468 [http-nio-8080-exec-8] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:39:48.488 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:40:24.824 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:24.825 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:24.825 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:36.257 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:40:44.085 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:40:49.359 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 获取收款码失败, 原始异常: 无
+2024-11-22 18:40:54.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:54.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:54.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:40:54.427 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 2 of constructor in com.homestay.modules.order.service.impl.UserOrderServiceImpl required a bean of type 'com.homestay.modules.payment.service.PaymentService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.homestay.modules.payment.service.PaymentService' in your configuration.
+
+2024-11-22 18:41:07.942 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.updateById] is ignored, because it exists, maybe from xml file
+2024-11-22 18:41:07.943 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-22 18:41:07.943 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
