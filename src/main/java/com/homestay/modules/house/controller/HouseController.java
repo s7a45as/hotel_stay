@@ -68,7 +68,7 @@ public class HouseController {
     }
 
     @Operation(summary = "创建预订")
-    @PostMapping("/booking")
+    @PostMapping("/booking/")
     public Result<String> createBooking(@RequestBody BookingDTO booking) {
         String orderId = houseService.createBooking(booking);
         return Result.success(orderId);

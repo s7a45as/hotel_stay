@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("t_booking")
+@TableName("t_order")
 @Schema(description = "预订信息")
 public class houseBooking {
     
