@@ -56,6 +56,10 @@ spring:
     cache: false
     servlet:
       content-type: text/html
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml

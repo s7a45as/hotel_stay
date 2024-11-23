@@ -5912,3 +5912,990 @@ This generated password is for development use only. Your security configuration
 2024-11-23 18:46:49.490 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
 2024-11-23 18:46:49.491 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
 2024-11-23 18:46:49.501 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:15.038 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:48:15.038 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:48:15.043 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:15.108 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:48:15.108 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:48:15.109 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:46:49.415887300, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:48:15.109 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:46:49.415887300, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:48:15.113 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:48:15.113 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:48:15.113 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:48:15.113 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:48:15.113 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:48:15.113 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:48:15.113 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:48:15.113 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:48:15.114 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:15.118 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:48:15.119 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:48:15.119 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:15.140 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:48:15.140 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:48:15.142 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:19.115 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:48:19.115 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:48:19.121 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:19.189 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:48:19.189 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:48:19.191 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:48:15.111720400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:48:19.191 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:48:15.111720400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:48:19.193 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:48:19.193 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:48:19.194 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:48:19.194 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:48:19.194 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:48:19.194 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:48:19.194 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:48:19.194 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:48:19.195 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:19.198 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:48:19.198 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:48:19.200 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:19.291 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:48:19.292 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:48:19.308 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:48:23.710 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:48:23.710 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:48:19.192663800, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:48:23.710 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:48:23.710 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/user/avatar/upload", parameters={multipart}
+2024-11-23 18:48:23.723 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-11-23 18:48:23.723 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:110)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1227)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2825)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2685)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:773)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:315)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:315)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:315)
+	at jakarta.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:315)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	... 102 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:96)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:292)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2784)
+	... 109 common frames omitted
+2024-11-23 18:48:23.723 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:48:23.723 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-11-23 18:48:23.723 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2024-11-23 18:48:23.728 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:49:44.476 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-11-23 18:49:44.479 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:49:44.591 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2024-11-23 18:49:44.596 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2024-11-23 18:49:44.668 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15892 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:49:44.668 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:49:44.668 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:49:44.900 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:49:44.900 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:49:44.911 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:49:45.044 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:49:45.070 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:49:45.070 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 402 ms
+2024-11-23 18:49:45.144 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:49:45.144 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:49:45.144 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:49:45.229 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:49:45.229 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:49:45.551 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7b1df96f-51bf-404c-88ad-3aaf6c7a7efd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-23 18:49:45.594 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 83 mappings in 'requestMappingHandlerMapping'
+2024-11-23 18:49:45.602 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-23 18:49:45.968 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-23 18:49:46.006 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2085cd2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c4c6696, org.springframework.security.web.context.SecurityContextHolderFilter@679f8a28, org.springframework.security.web.header.HeaderWriterFilter@7a0132ea, org.springframework.web.filter.CorsFilter@65eb2b90, org.springframework.security.web.authentication.logout.LogoutFilter@6d8cd672, com.homestay.common.security.JwtAuthenticationFilter@365b0a9d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e10f799, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5df516d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d360e3, org.springframework.security.web.session.SessionManagementFilter@2db0d6e0, org.springframework.security.web.access.ExceptionTranslationFilter@5b98fe5, org.springframework.security.web.access.intercept.AuthorizationFilter@93c34c1]
+2024-11-23 18:49:46.051 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-23 18:49:46.059 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-23 18:49:46.231 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-23 18:49:46.257 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:49:46.257 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-23 18:49:46.261 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 1.624 seconds (process running for 462.29)
+2024-11-23 18:49:46.261 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-23 18:50:09.901 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 2 deletions, 1 modification)
+2024-11-23 18:50:09.902 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:50:09.973 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15892 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:50:09.973 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:50:09.973 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:50:10.136 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:50:10.136 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:50:10.144 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:50:10.237 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:50:10.238 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:50:10.238 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:50:10.238 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:50:10.238 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:50:10.238 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:50:10.250 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:50:10.250 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 275 ms
+2024-11-23 18:50:10.283 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:50:10.283 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:50:10.283 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:50:10.363 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:10.363 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:10.514 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5460a901] failed
+2024-11-23 18:50:10.518 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-11-23 18:50:10.522 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-23 18:50:10.540 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5460a901] failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5460a901] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:383)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/homestay/common/utils/UploadUtils
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3621)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2786)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:378)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.homestay.common.utils.UploadUtils
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 39 common frames omitted
+2024-11-23 18:50:28.152 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15892 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:50:28.153 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:50:28.153 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:50:28.336 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:50:28.336 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:50:28.347 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:50:28.479 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:50:28.480 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:50:28.481 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:50:28.481 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:50:28.481 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:50:28.481 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:50:28.497 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:50:28.497 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 344 ms
+2024-11-23 18:50:28.537 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:50:28.537 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:50:28.537 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:50:28.601 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:28.604 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:28.809 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2d4d70f4] failed
+2024-11-23 18:50:28.812 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-11-23 18:50:28.813 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-23 18:50:28.817 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2d4d70f4] failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2d4d70f4] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:383)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/homestay/common/utils/UploadUtils
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3621)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2786)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:378)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.homestay.common.utils.UploadUtils
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 39 common frames omitted
+2024-11-23 18:50:39.234 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15892 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:50:39.234 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:50:39.234 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:50:39.423 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:50:39.423 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:50:39.431 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:50:39.548 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:50:39.548 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:50:39.548 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:50:39.548 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:50:39.548 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:50:39.550 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:50:39.569 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:50:39.569 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 333 ms
+2024-11-23 18:50:39.623 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:50:39.623 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:50:39.623 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:50:39.697 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:39.702 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:39.944 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7eb2ca06] failed
+2024-11-23 18:50:39.949 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-11-23 18:50:39.957 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-23 18:50:39.957 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7eb2ca06] failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'houseImageServiceImpl': Resolution of declared constructors on bean Class [com.homestay.modules.house.service.impl.HouseImageServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7eb2ca06] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:383)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/homestay/common/utils/UploadUtils
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3621)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2786)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:378)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.homestay.common.utils.UploadUtils
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	... 39 common frames omitted
+2024-11-23 18:50:51.331 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15892 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:50:51.331 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:50:51.331 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:50:51.514 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:50:51.515 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:50:51.524 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:50:51.626 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:50:51.627 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:50:51.627 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:50:51.627 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:50:51.627 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:50:51.628 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:50:51.640 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:50:51.640 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 308 ms
+2024-11-23 18:50:51.678 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:50:51.678 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:50:51.678 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:50:51.746 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:51.746 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:50:51.907 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'houseImageController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseImageController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.homestay.modules.house.service.HouseImageService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-23 18:50:51.909 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-11-23 18:50:51.912 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-23 18:50:51.916 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.homestay.modules.house.controller.HouseImageController required a bean of type 'com.homestay.modules.house.service.HouseImageService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.homestay.modules.house.service.HouseImageService' in your configuration.
+
+2024-11-23 18:51:24.728 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-23 18:51:24.751 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 2072 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-23 18:51:24.752 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-23 18:51:24.752 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-23 18:51:24.799 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-23 18:51:24.799 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-23 18:51:25.475 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-23 18:51:25.476 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-23 18:51:25.510 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-11-23 18:51:26.026 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-23 18:51:26.029 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-23 18:51:26.032 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-23 18:51:26.037 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:51:26.038 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-23 18:51:26.039 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-23 18:51:26.071 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-23 18:51:26.071 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1272 ms
+2024-11-23 18:51:26.318 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-23 18:51:26.318 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-23 18:51:26.318 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-23 18:51:26.583 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-23 18:51:26.583 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-23 18:51:27.073 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5daf641a-8e69-4e11-a64d-ddeb7a1a4929
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-23 18:51:27.192 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 83 mappings in 'requestMappingHandlerMapping'
+2024-11-23 18:51:27.201 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-23 18:51:27.637 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-23 18:51:27.670 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3110ffa9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cbb9264, org.springframework.security.web.context.SecurityContextHolderFilter@193a38ea, org.springframework.security.web.header.HeaderWriterFilter@46e3e4a7, org.springframework.web.filter.CorsFilter@331dd483, org.springframework.security.web.authentication.logout.LogoutFilter@76bea991, com.homestay.common.security.JwtAuthenticationFilter@9f30cb7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5df71dd6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37d69bd0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2964abfc, org.springframework.security.web.session.SessionManagementFilter@f82a81e, org.springframework.security.web.access.ExceptionTranslationFilter@71aab2bb, org.springframework.security.web.access.intercept.AuthorizationFilter@77cf4d32]
+2024-11-23 18:51:27.742 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-23 18:51:27.770 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-23 18:51:28.044 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-23 18:51:28.078 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-23 18:51:28.094 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-23 18:51:28.101 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 3.721 seconds (process running for 4.211)
+2024-11-23 18:51:34.204 [http-nio-8080-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-23 18:51:34.204 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-23 18:51:34.204 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-11-23 18:51:34.204 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-11-23 18:51:34.205 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-11-23 18:51:34.207 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@100d50f7
+2024-11-23 18:51:34.207 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@3876afa3
+2024-11-23 18:51:34.208 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-23 18:51:34.209 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2024-11-23 18:51:34.234 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:51:34.234 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:51:34.241 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:51:34.246 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:51:34.280 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:51:34.602 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:48:23.710670, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:51:34.602 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:48:23.710670, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:51:34.681 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:51:34.681 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:51:34.682 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:51:34.682 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:51:34.682 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:51:34.682 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:51:34.711 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-23 18:51:34.718 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:51:34.719 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:51:34.726 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:51:35.039 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@522ca338
+2024-11-23 18:51:35.041 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-23 18:51:35.108 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:51:35.109 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:51:35.113 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:51:35.131 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:51:35.131 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:51:35.135 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:51:39.324 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:51:39.326 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:51:34.666008400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:51:39.328 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:51:39.329 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/user/avatar/upload", parameters={multipart}
+2024-11-23 18:51:39.351 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#uploadAvatar(MultipartFile)
+2024-11-23 18:51:39.366 [http-nio-8080-exec-3] INFO  c.homestay.common.utils.UploadUtils - Upload path: C:\Users\45732\Code\Java\hotel_stay\upload\avatar\2024\11\23
+2024-11-23 18:51:39.366 [http-nio-8080-exec-3] INFO  c.homestay.common.utils.UploadUtils - Target path: C:\Users\45732\Code\Java\hotel_stay\upload\avatar\2024\11\23\4d64fd5ee3d64d43b7ff838fe8b17db3.jpg
+2024-11-23 18:51:39.381 [http-nio-8080-exec-3] INFO  c.homestay.common.utils.UploadUtils - File access URL: http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg
+2024-11-23 18:51:39.442 [http-nio-8080-exec-3] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 用户头像更新成功, userId: 1000, oldAvatar: http://localhost:8080/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png, newAvatar: http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg
+2024-11-23 18:51:39.449 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:51:39.449 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b (truncated)...]
+2024-11-23 18:51:39.449 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:51:43.229 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:51:43.230 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:51:43.250 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:52:08.863 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:52:08.864 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:52:08.873 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:52:11.525 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/8607e5ff8f574423a12651589ab65802.png", parameters={}
+2024-11-23 18:52:11.526 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:52:11.528 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:52:11.588 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:52:11.588 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:52:11.591 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:51:39.327105600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:52:11.591 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:51:39.327105600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:52:11.593 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:52:11.593 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:52:11.594 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:52:11.594 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:52:11.594 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:52:11.594 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:52:11.594 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:52:11.595 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:52:11.595 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:52:11.599 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:52:11.599 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:52:11.600 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:52:11.632 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:52:11.632 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:52:11.645 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:18.904 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:53:18.905 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:53:18.912 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:18.988 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:53:18.988 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:53:18.990 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:52:11.592879400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:53:18.990 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:52:11.592879400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:53:18.992 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:53:18.992 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:53:18.994 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:53:18.994 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:53:18.994 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:53:18.994 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:53:18.995 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:53:18.995 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:53:18.995 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:19.002 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:53:19.003 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:53:19.005 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:19.049 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:53:19.050 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:53:19.055 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:31.255 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:53:31.259 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:53:18.991808600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:53:31.259 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:53:31.263 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - POST "/user/profile/update", parameters={}
+2024-11-23 18:53:31.263 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#updateUserProfile(UserProfileDTO)
+2024-11-23 18:53:31.291 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024 (truncated)...]
+2024-11-23 18:53:31.291 [http-nio-8080-exec-9] INFO  c.h.m.u.c.UserProfileController - UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024-11-11T16:00, address=浙江省杭州市西湖区西溪路128号, bio=我是一名程序员, avatar=http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg)
+2024-11-23 18:53:31.291 [http-nio-8080-exec-9] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 开始更新用户信息: UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024-11-11T16:00, address=浙江省杭州市西湖区西溪路128号, bio=我是一名程序员, avatar=http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg)
+2024-11-23 18:53:31.291 [http-nio-8080-exec-9] DEBUG c.h.m.u.s.i.UserProfileServiceImpl - 当前用户ID: 1000
+2024-11-23 18:53:31.333 [http-nio-8080-exec-9] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 更新影响行数: 1
+2024-11-23 18:53:31.333 [http-nio-8080-exec-9] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 用户信息更新成功, userId: 1000, 昵称: moyu -> moyu, 手机: 18589826376 -> 18589826376, 邮箱: 3645700191@qq.com -> 3645700191@qq.com
+2024-11-23 18:53:31.340 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:53:31.340 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=null)]
+2024-11-23 18:53:31.340 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:53:31.354 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:53:31.354 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:53:31.259660700, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:53:31.357 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:53:31.357 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:53:31.357 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:53:31.361 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:53:31.361 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:53:31.361 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:38.964 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:38.966 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:53:31.357990400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:38.969 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:38.970 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:54:38.970 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:54:38.975 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:38.975 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:54:38.976 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:39.001 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:54:39.002 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:54:39.008 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:42.766 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:54:42.767 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:54:42.773 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:42.831 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:42.831 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:42.833 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:38.967686500, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:42.833 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:38.967686500, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:42.837 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:42.837 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:42.837 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:54:42.837 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:54:42.837 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:54:42.837 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:54:42.838 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:42.838 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:54:42.838 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:42.843 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:42.843 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:54:42.844 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:42.926 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:54:42.926 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:54:42.931 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:46.936 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:46.938 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:42.836181300, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:46.938 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:46.941 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/user/profile/update", parameters={}
+2024-11-23 18:54:46.942 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#updateUserProfile(UserProfileDTO)
+2024-11-23 18:54:46.942 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024 (truncated)...]
+2024-11-23 18:54:46.942 [http-nio-8080-exec-7] INFO  c.h.m.u.c.UserProfileController - UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024-11-04T16:00, address=浙江省杭州市西湖区西溪路128号, bio=我是一名程序员, avatar=http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg)
+2024-11-23 18:54:46.942 [http-nio-8080-exec-7] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 开始更新用户信息: UserProfileDTO(nickname=moyu, phone=18589826376, email=3645700191@qq.com, gender=male, birthday=2024-11-04T16:00, address=浙江省杭州市西湖区西溪路128号, bio=我是一名程序员, avatar=http://localhost:8080/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg)
+2024-11-23 18:54:46.942 [http-nio-8080-exec-7] DEBUG c.h.m.u.s.i.UserProfileServiceImpl - 当前用户ID: 1000
+2024-11-23 18:54:46.952 [http-nio-8080-exec-7] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 更新影响行数: 1
+2024-11-23 18:54:46.952 [http-nio-8080-exec-7] INFO  c.h.m.u.s.i.UserProfileServiceImpl - 用户信息更新成功, userId: 1000, 昵称: moyu -> moyu, 手机: 18589826376 -> 18589826376, 邮箱: 3645700191@qq.com -> 3645700191@qq.com
+2024-11-23 18:54:46.955 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:46.955 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=null)]
+2024-11-23 18:54:46.955 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:46.969 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:46.969 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:46.938988800, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:46.969 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:46.972 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:54:46.972 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:54:46.975 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:46.976 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:54:46.976 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:49.682 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:49.684 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:46.969465400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:49.686 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:49.686 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/order/list?current=1&size=10", parameters={masked}
+2024-11-23 18:54:49.687 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.order.controller.UserOrderController#getOrderList(Integer, Integer, Integer)
+2024-11-23 18:54:49.721 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:49.721 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=com.baomidou.mybatisplus.extension.plugins.pagination.Page@7056c (truncated)...]
+2024-11-23 18:54:49.731 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:51.528 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:54:51.528 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:54:51.533 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:51.564 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:51.564 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:51.565 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:49.685670200, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:51.565 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:49.685670200, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:51.568 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:51.568 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:51.568 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:54:51.568 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:54:51.568 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:54:51.568 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:54:51.569 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:51.569 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:54:51.569 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:51.573 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:51.573 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:54:51.573 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:51.614 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:54:51.615 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:54:51.622 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:54:52.648 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:54:52.650 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:51.565354600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:54:52.652 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:54:52.652 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:54:52.652 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:54:52.660 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:54:52.661 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:54:52.661 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:54:52.661 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:54:52.661 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:54:52.661 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:55:53.496 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:55:53.499 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:54:52.650412400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:55:53.499 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:55:53.499 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:55:53.499 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:55:53.504 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:55:53.504 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:55:53.504 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:55:53.524 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:55:53.524 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:55:53.530 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:55:54.665 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:55:54.667 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:55:53.499751800, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:55:54.674 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:55:54.675 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:55:54.675 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:55:54.678 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:01.143 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:01.143 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:01.157 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:01.197 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:01.197 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:01.198 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:55:54.672150800, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:01.198 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:55:54.672150800, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:01.201 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:01.201 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:01.201 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:57:01.201 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:57:01.201 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:57:01.201 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:57:01.202 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:01.202 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:57:01.203 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:01.204 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:57:01.204 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:57:01.204 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:01.204 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:57:01.205 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:57:01.205 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:10.476 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:10.479 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:01.199358400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:10.480 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:10.480 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/order/list?current=1&size=10", parameters={masked}
+2024-11-23 18:57:10.484 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.order.controller.UserOrderController#getOrderList(Integer, Integer, Integer)
+2024-11-23 18:57:10.495 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:10.495 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=com.baomidou.mybatisplus.extension.plugins.pagination.Page@6f42a (truncated)...]
+2024-11-23 18:57:10.495 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:12.409 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:12.410 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:12.414 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:12.453 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:12.453 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:12.454 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:10.480579500, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:12.454 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:10.480579500, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:12.456 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:12.456 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:12.456 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:57:12.456 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:57:12.456 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:57:12.456 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:57:12.456 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:12.456 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:57:12.457 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:12.459 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:12.460 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:57:12.460 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:12.508 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:12.508 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:12.515 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:15.825 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:15.827 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:12.455833200, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:15.828 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:15.828 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:57:15.828 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:57:15.832 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:17.254 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:17.258 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:15.828421400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:17.260 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:17.261 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/order/list?current=1&size=10", parameters={masked}
+2024-11-23 18:57:17.261 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.order.controller.UserOrderController#getOrderList(Integer, Integer, Integer)
+2024-11-23 18:57:17.271 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:17.271 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=com.baomidou.mybatisplus.extension.plugins.pagination.Page@3553c (truncated)...]
+2024-11-23 18:57:17.271 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:19.086 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:19.087 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:19.092 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:19.118 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:19.118 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:19.119 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:17.259444200, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:19.119 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:17.259444200, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:19.121 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:19.121 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:19.121 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:57:19.121 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:57:19.121 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:57:19.121 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:57:19.121 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:19.121 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:57:19.122 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:19.123 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:57:19.123 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:57:19.124 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:19.124 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:57:19.125 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:57:19.125 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:21.647 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:21.647 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:19.120992100, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:21.651 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:21.651 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 18:57:21.651 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 18:57:21.656 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:21.656 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 18:57:21.657 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:21.678 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:21.679 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:21.684 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:22.552 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:22.553 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:21.647670500, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:22.554 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:22.554 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:57:22.554 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:57:22.558 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:30.460 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:57:30.461 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:57:30.467 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:30.522 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:30.522 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:57:30.523 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:22.553383100, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:30.523 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:22.553383100, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:57:30.525 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:30.525 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:57:30.525 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:57:30.525 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:57:30.525 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:57:30.525 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:57:30.526 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:30.526 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:57:30.527 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:57:30.530 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:57:30.530 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:57:30.530 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:57:30.530 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:57:30.530 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:57:30.531 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:58:08.428 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:58:08.429 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:58:08.435 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:58:08.473 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:58:08.473 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:58:08.474 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:30.524667600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:58:08.474 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:57:30.524667600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:58:08.478 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:58:08.478 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:58:08.479 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:58:08.479 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:58:08.479 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:58:08.479 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:58:08.480 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:58:08.480 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:58:08.480 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:58:08.486 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:58:08.487 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserSettingsDTO(notifications=UserSettingsDTO.NotificationSettin (truncated)...]
+2024-11-23 18:58:08.490 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:59:43.490 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 18:59:43.491 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 18:59:43.511 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:59:43.543 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:59:43.543 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 18:59:43.544 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:58:08.475727400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:59:43.544 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:58:08.475727400, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 18:59:43.545 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:59:43.545 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 18:59:43.546 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/settings", parameters={}
+2024-11-23 18:59:43.546 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 18:59:43.546 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserSettingsController#getUserSettings()
+2024-11-23 18:59:43.546 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 18:59:43.546 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:59:43.546 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 18:59:43.547 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 18:59:43.548 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-23 18:59:43.548 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无
+2024-11-23 18:59:43.549 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 18:59:43.549 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=6002, message=错误码: 6002, 错误信息: 数据不存在, 原始异常: 无, data=null)]
+2024-11-23 18:59:43.550 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 6002, 错误信息: 数据不存在, 原始异常: 无]
+2024-11-23 18:59:43.550 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:31.122 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 19:01:31.123 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T18:59:43.545090600, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 19:01:31.123 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 19:01:31.123 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 19:01:31.123 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 19:01:31.130 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 19:01:31.131 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 19:01:31.131 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:31.173 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 19:01:31.173 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 19:01:31.186 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:32.537 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 19:01:32.538 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 19:01:32.543 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:32.547 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 19:01:32.547 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU
+2024-11-23 19:01:32.548 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T19:01:31.123112100, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 19:01:32.548 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-25T17:29:01.087038600, lastAccessTime=2024-11-23T19:01:31.123112100, createTime=2024-11-23T17:29:01.087038600, userId=1000, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDAwIiwiaWF0IjoxNzMyMzU0MTQxLCJleHAiOjE3MzI0NDA1NDF9.C-JCGhG8sNZlv4SnOAg2R_ahmPR4nYoBDQq3r0ILSoU}
+2024-11-23 19:01:32.550 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 19:01:32.550 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/info", parameters={}
+2024-11-23 19:01:32.550 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 1000
+2024-11-23 19:01:32.550 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserInfo()
+2024-11-23 19:01:32.550 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/user/profile", parameters={}
+2024-11-23 19:01:32.550 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.user.controller.UserProfileController#getUserProfile()
+2024-11-23 19:01:32.551 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 19:01:32.551 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=user/info)]
+2024-11-23 19:01:32.551 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:32.553 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-23 19:01:32.553 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=UserProfileDTO(nickname=moyu, phone=18589826376, email=364570019 (truncated)...]
+2024-11-23 19:01:32.553 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-23 19:01:32.597 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/avatar/2024/11/23/4d64fd5ee3d64d43b7ff838fe8b17db3.jpg", parameters={}
+2024-11-23 19:01:32.598 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-23 19:01:32.603 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

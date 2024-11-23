@@ -11,6 +11,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartException;
+
 
 import java.util.List;
 import java.util.Set;
@@ -105,5 +108,40 @@ public class GlobalExceptionHandler {
     public Result<?> handleBookingException(BookingException e) {
         log.warn("预订异常: {}", e.getMessage());
         return Result.error(e.getCode(), e.getMessage());
+    }
+
+    /**
+     * 处理文件上传大小超限异常
+     */
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public Result<Void> handleMaxUploadSizeExceededException(MaxUploadSizeExceededException e) {
+        log.error("文件上传大小超出限制", e);
+        String message = "文件大小不能超过" + 
+            (e.getMaxUploadSize() / (1024 * 1024)) + "MB";
+        return Result.error(ResultCode.UPLOAD_FILE_SIZE_EXCEED.getCode(), message);
+    }
+
+    /**
+     * 处理单个文件大小超限异常
+     */
+    @ExceptionHandler(FileSizeLimitExceededException.class)
+    public Result<Void> handleFileSizeLimitExceededException(FileSizeLimitExceededException e) {
+        log.error("单个文件大小超出限制: 允许{}MB, 实际{}MB", 
+                e.getPermittedSize() / (1024 * 1024), 
+                e.getActualSize() / (1024 * 1024));
+        
+        String message = String.format("单个文件大小不能超过%dMB", 
+                e.getPermittedSize() / (1024 * 1024));
+                
+        return Result.error(ResultCode.UPLOAD_FILE_SIZE_EXCEED.getCode(), message);
+    }
+
+    /**
+     * 处理文件上传相关的其他异常
+     */
+    @ExceptionHandler(MultipartException.class)
+    public Result<Void> handleMultipartException(MultipartException e) {
+        log.error("文件上传失败", e);
+        return Result.error(ResultCode.UPLOAD_ERROR.getCode(), "文件上传失败，请检查文件大小或格式");
     }
 } 

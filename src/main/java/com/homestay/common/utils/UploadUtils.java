@@ -1,6 +1,7 @@
 package com.homestay.common.utils;
 
 import com.homestay.common.exception.BusinessException;
+import com.homestay.common.exception.FileSizeLimitExceededException;
 import com.homestay.common.response.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +27,9 @@ public class UploadUtils {
     @Value("${homestay.base-url}")
     private String baseUrl;
 
+    @Value("${spring.servlet.multipart.max-file-size:5MB}")
+    private String maxFileSize;
+
     public String upload(MultipartFile file, String directory) {
         try {
             // 检查文件是否为空
@@ -33,9 +37,15 @@ public class UploadUtils {
                 throw new BusinessException(ResultCode.UPLOAD_FILE_EMPTY);
             }
 
-            // 检查文件大小（5MB）
-            if (file.getSize() > 5 * 1024 * 1024) {
-                throw new BusinessException(ResultCode.UPLOAD_FILE_SIZE_EXCEED);
+            // 获取配置的最大文件大小（默认5MB）
+            long maxSize = parseSize(maxFileSize);
+            
+            // 检查文件大小
+            if (file.getSize() > maxSize) {
+                throw new FileSizeLimitExceededException(
+                    maxSize,
+                    file.getSize()
+                );
             }
 
             // 获取文件后缀
@@ -87,5 +97,22 @@ public class UploadUtils {
                "jpeg".equals(suffix) || 
                "png".equals(suffix) || 
                "gif".equals(suffix);
+    }
+
+    /**
+     * 解析配置的文件大小字符串，转换为字节数
+     */
+    private long parseSize(String size) {
+        size = size.toUpperCase();
+        if (size.endsWith("KB")) {
+            return Long.parseLong(size.substring(0, size.length() - 2)) * 1024;
+        }
+        if (size.endsWith("MB")) {
+            return Long.parseLong(size.substring(0, size.length() - 2)) * 1024 * 1024;
+        }
+        if (size.endsWith("GB")) {
+            return Long.parseLong(size.substring(0, size.length() - 2)) * 1024 * 1024 * 1024;
+        }
+        return Long.parseLong(size);
     }
 } 
