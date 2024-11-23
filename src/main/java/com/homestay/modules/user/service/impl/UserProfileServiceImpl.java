@@ -180,8 +180,38 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public String uploadAvatar(MultipartFile file) {
-        return uploadUtils.upload(file, "avatar");
+        // 上传文件并获取URL
+        String avatarUrl = uploadUtils.upload(file, "avatar");
+        
+        // 获取当前用户ID
+        Long userId = getCurrentUserId();
+        
+        try {
+            // 先查询用户信息，获取version
+            UserInfo currentUser = userMapper.selectById(userId);
+            if (currentUser == null) {
+                throw new BusinessException(ResultCode.USER_NOT_EXIST);
+            }
+            
+            // 更新数据库
+            int rows = userMapper.updateAvatar(userId, avatarUrl, currentUser.getVersion());
+            if (rows <= 0) {
+                log.error("更新用户头像失败, userId: {}, avatarUrl: {}", userId, avatarUrl);
+                throw new BusinessException(ResultCode.UPDATE_ERROR, "更新用户头像失败");
+            }
+            
+            log.info("用户头像更新成功, userId: {}, oldAvatar: {}, newAvatar: {}", 
+                    userId, currentUser.getAvatar(), avatarUrl);
+            return avatarUrl;
+            
+        } catch (BusinessException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("更新用户头像失败", e);
+            throw new BusinessException(ResultCode.UPDATE_ERROR, "更新用户头像失败");
+        }
     }
 
     /**

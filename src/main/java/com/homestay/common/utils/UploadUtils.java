@@ -1,108 +1,91 @@
 package com.homestay.common.utils;
 
-import com.homestay.common.config.UploadConfig;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.UUID;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class UploadUtils {
 
-    private final UploadConfig uploadConfig;
+    @Value("${upload.save-path}")
+    private String savePath;
+    
+    @Value("${homestay.base-url}")
+    private String baseUrl;
 
-    /**
-     * 上传文件
-     *
-     * @param file 文件
-     * @param dir 子目录
-     * @return 文件访问URL
-     */
-    public String upload(MultipartFile file, String dir) {
-        // 校验文件
-        validateFile(file);
-
-        // 生成文件名
-        String fileName = generateFileName(file);
-
-        // 生成保存路径
-        String savePath = generateSavePath(dir, fileName);
-
+    public String upload(MultipartFile file, String directory) {
         try {
-            // 保存文件
-            File saveFile = new File(savePath);
-            if (!saveFile.getParentFile().exists()) {
-                saveFile.getParentFile().mkdirs();
+            // 检查文件是否为空
+            if (file.isEmpty()) {
+                throw new BusinessException(ResultCode.UPLOAD_FILE_EMPTY);
             }
-            file.transferTo(saveFile);
 
-            // 返回访问URL
-            return generateAccessUrl(dir, fileName);
+            // 检查文件大小（5MB）
+            if (file.getSize() > 5 * 1024 * 1024) {
+                throw new BusinessException(ResultCode.UPLOAD_FILE_SIZE_EXCEED);
+            }
+
+            // 获取文件后缀
+            String originalFilename = file.getOriginalFilename();
+            String suffix = StringUtils.getFilenameExtension(originalFilename);
+            if (suffix == null) {
+                throw new BusinessException(ResultCode.UPLOAD_FILE_TYPE_NOT_ALLOWED);
+            }
+            
+            // 检查文件类型
+            if (!isValidImageType(suffix)) {
+                throw new BusinessException(ResultCode.UPLOAD_FILE_TYPE_NOT_ALLOWED);
+            }
+
+            // 生成文件路径
+            String datePath = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+            String fileName = UUID.randomUUID().toString().replace("-", "") + "." + suffix;
+            
+            // 构建目标路径
+            Path uploadPath = Paths.get(savePath, directory, datePath);
+            Path targetPath = uploadPath.resolve(fileName);
+            
+            log.info("Upload path: {}", uploadPath);
+            log.info("Target path: {}", targetPath);
+
+            // 创建目录
+            Files.createDirectories(uploadPath);
+
+            // 保存文件
+            Files.copy(file.getInputStream(), targetPath);
+
+            // 返回完整的访问URL
+            String relativePath = String.format("/upload/%s/%s/%s", directory, datePath, fileName);
+            String fullUrl = baseUrl + relativePath;
+            log.info("File access URL: {}", fullUrl);
+            
+            return fullUrl;
+
         } catch (IOException e) {
             log.error("文件上传失败", e);
-            throw new BusinessException(ResultCode.FILE_UPLOAD_ERROR);
+            throw new BusinessException(ResultCode.UPLOAD_ERROR, "文件上传失败: " + e.getMessage());
         }
     }
 
-    /**
-     * 校验文件
-     */
-    private void validateFile(MultipartFile file) {
-        // 校验文件是否为空
-        if (file == null || file.isEmpty()) {
-            throw new BusinessException(ResultCode.FILE_UPLOAD_ERROR.getCode(), "上传文件不能为空");
-        }
-
-        // 校验文件大小
-        long size = file.getSize();
-        if (size > uploadConfig.getMaxSize() * 1024 * 1024L) {
-            throw new BusinessException(ResultCode.FILE_SIZE_EXCEED.getCode(), 
-                "文件大小不能超过" + uploadConfig.getMaxSize() + "MB");
-        }
-
-        // 校验文件类型
-        String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-        if (!StringUtils.hasText(extension) || 
-            !Arrays.asList(uploadConfig.getAllowTypes()).contains(extension.toLowerCase())) {
-            throw new BusinessException(ResultCode.FILE_FORMAT_ERROR.getCode(), 
-                "只允许上传" + Arrays.toString(uploadConfig.getAllowTypes()) + "格式的文件");
-        }
-    }
-
-    /**
-     * 生成文件名
-     */
-    private String generateFileName(MultipartFile file) {
-        String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-        return UUID.randomUUID().toString().replace("-", "") + "." + extension;
-    }
-
-    /**
-     * 生成保存路径
-     */
-    private String generateSavePath(String dir, String fileName) {
-        String datePath = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-        return uploadConfig.getSavePath() + "/" + dir + "/" + datePath + "/" + fileName;
-    }
-
-    /**
-     * 生成访问URL
-     */
-    private String generateAccessUrl(String dir, String fileName) {
-        String datePath = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-        return uploadConfig.getAccessUrl() + "/" + dir + "/" + datePath + "/" + fileName;
+    private boolean isValidImageType(String suffix) {
+        if (suffix == null) return false;
+        suffix = suffix.toLowerCase();
+        return "jpg".equals(suffix) || 
+               "jpeg".equals(suffix) || 
+               "png".equals(suffix) || 
+               "gif".equals(suffix);
     }
 } 

@@ -40,7 +40,7 @@ public class UserProfileController {
 
 
     @Operation(summary = "上传用户头像")
-    @PostMapping("/avatar")
+    @PostMapping("/avatar/upload")
     public Result<String> uploadAvatar(@RequestParam("file") MultipartFile file) {
         String avatarUrl = userProfileService.uploadAvatar(file);
         return Result.success(avatarUrl);

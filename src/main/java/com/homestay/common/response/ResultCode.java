@@ -96,7 +96,16 @@ public enum ResultCode {
     UPDATE_ERROR(3000, "更新失败"),
     DELETE_ERROR(3001, "删除失败"),
     ADD_ERROR(3002, "添加失败"),
-    QUERY_ERROR(3003, "查询失败");
+    QUERY_ERROR(3003, "查询失败"),
+    
+    /**
+     * 文件上传相关错误码 (5000-5099)
+     */
+    UPLOAD_ERROR(5000, "文件上传失败"),
+    UPLOAD_FILE_EMPTY(5001, "上传文件为空"),
+    UPLOAD_FILE_SIZE_EXCEED(5002, "文件大小超过限制"),
+    UPLOAD_FILE_TYPE_NOT_ALLOWED(5003, "文件类型不允许"),
+    UPLOAD_DIRECTORY_CREATE_FAILED(5004, "创建上传目录失败");
     
     private final Integer code;
     private final String message;

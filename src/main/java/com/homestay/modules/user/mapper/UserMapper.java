@@ -9,8 +9,14 @@ import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserMapper extends BaseMapper<UserInfo> {
-    @Update("UPDATE sys_user SET ${sqlSet} WHERE id = #{id} AND deleted = 0")
-    int updateById(@Param("et") UserInfo entity);
+    @Update("UPDATE sys_user SET " +
+            "avatar = #{avatar}, " +
+            "update_time = NOW(), " +
+            "version = version + 1 " +
+            "WHERE id = #{id} " +
+            "AND deleted = 0 " +
+            "AND version = #{version}")
+    int updateAvatar(@Param("id") Long id, @Param("avatar") String avatar, @Param("version") Integer version);
 
     @Select("SELECT * FROM sys_user WHERE email = #{email} AND deleted = 0")
     UserInfo selectByEmail(@Param("email") String email);

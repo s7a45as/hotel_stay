@@ -95,10 +95,11 @@ knife4j:
     enable-reload-cache-parameter: false
 
 upload:
-  save-path: /data/upload
-  access-url: http://localhost:8080/upload
+  save-path: ${user.dir}/upload
+  access-url: /upload
   allow-types: jpg,jpeg,png,gif
-  max-size: 10
+  max-size: 5
+  base-path: upload
 
 homestay:
   base-url: http://localhost:8080
