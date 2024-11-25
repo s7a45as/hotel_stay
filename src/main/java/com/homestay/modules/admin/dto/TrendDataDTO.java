@@ -8,9 +8,11 @@ import java.util.List;
 @Schema(description = "趋势数据")
 public class TrendDataDTO {
     
-    @Schema(description = "月份")
+    @Schema(description = "月份列表", example = "['1月', '2月', '3月', '4月', '5月', '6月']",
+           title = "最近6个月的月份标签")
     private List<String> months;
     
-    @Schema(description = "数据")
+    @Schema(description = "对应月份的数据", example = "[100, 120, 150, 180, 200, 220]",
+           title = "每个月份对应的统计数值")
     private List<Integer> data;
 } 

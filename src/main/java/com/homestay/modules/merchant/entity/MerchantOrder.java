@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("merchant_order")
+@TableName("t_order")
 @Schema(description = "商家订单信息")
 public class MerchantOrder {
 
@@ -51,10 +51,11 @@ public class MerchantOrder {
     private Integer guests;
 
     @Schema(description = "订单金额")
-    private BigDecimal amount;
+    @TableField("total_amount")
+    private BigDecimal totalAmount;
 
-    @Schema(description = "订单状态(0:待支付 1:已支付 2:已取消 3:已完成 4:退款中 5:已退款)")
-    private Integer status;
+    @Schema(description = "订单状态(PENDING:待支付 PAID:已支付 CANCELLED:已取消 COMPLETED:已完成 REFUNDING:退款中 REFUNDED:已退款)")
+    private String status;
 
     @Schema(description = "创建时间")
     @TableField(fill = FieldFill.INSERT)

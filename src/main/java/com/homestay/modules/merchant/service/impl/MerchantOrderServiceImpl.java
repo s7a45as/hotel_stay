@@ -6,6 +6,7 @@ import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.modules.merchant.dto.OrderPageDTO;
 import com.homestay.modules.merchant.entity.MerchantOrder;
+import com.homestay.modules.merchant.enums.OrderStatus;
 import com.homestay.modules.merchant.mapper.MerchantOrderMapper;
 import com.homestay.modules.merchant.service.MerchantOrderService;
 import com.homestay.common.utils.SecurityUtils;
@@ -47,12 +48,12 @@ public class MerchantOrderServiceImpl implements MerchantOrderService {
         MerchantOrder order = getOrderById(orderId);
         
         // 只能处理退款中的订单
-        if (!order.getStatus().equals(4)) {
+        if (!OrderStatus.REFUNDING.getValue().equals(order.getStatus())) {
             throw new BusinessException(ResultCode.OPERATION_FAILED.getCode(), "只能处理退款中的订单");
         }
         
         // 更新订单状态
-        order.setStatus(agree ? 5 : 1); // 5:已退款 1:已支付
+        order.setStatus(agree ? OrderStatus.REFUNDED.getValue() : OrderStatus.PAID.getValue());
         
         if (orderMapper.updateById(order) != 1) {
             throw new BusinessException(ResultCode.DATA_UPDATE_FAILED);
@@ -68,7 +69,7 @@ public class MerchantOrderServiceImpl implements MerchantOrderService {
     @Transactional(rollbackFor = Exception.class)
     public void updateOrderStatus(String orderId, Integer status) {
         MerchantOrder order = getOrderById(orderId);
-        order.setStatus(status);
+        order.setStatus(OrderStatus.getByCode(status).getValue());
         
         if (orderMapper.updateById(order) != 1) {
             throw new BusinessException(ResultCode.DATA_UPDATE_FAILED);
