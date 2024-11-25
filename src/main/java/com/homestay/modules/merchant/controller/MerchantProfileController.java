@@ -93,7 +93,7 @@ public class MerchantProfileController {
     @PostMapping("/avatar")
     public Result<String> uploadAvatar(
         @Parameter(description = "头像文件，支持jpg、png格式，大小不超过2MB", required = true) 
-        @RequestParam("avatar") MultipartFile file
+        @RequestParam("file") MultipartFile file
     ) {
         return Result.success(profileService.uploadAvatar(file));
     }
