@@ -84,7 +84,7 @@ public class MerchantProfileServiceImpl implements MerchantProfileService {
     @Transactional(rollbackFor = Exception.class)
     public String uploadAvatar(MultipartFile file) {
         // 上传文件
-        String avatarUrl = uploadUtils.upload(file, "avatar");
+        String avatarUrl = uploadUtils.upload(file, "merchant_avatar");
 
         // 更新商家头像
         Merchant merchant = merchantMapper.selectById(SecurityUtils.getCurrentUserId());

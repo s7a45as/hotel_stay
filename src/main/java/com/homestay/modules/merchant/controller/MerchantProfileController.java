@@ -54,7 +54,7 @@ public class MerchantProfileController {
         @ApiResponse(responseCode = "401", description = "未登录"),
         @ApiResponse(responseCode = "404", description = "商家信息不存在")
     })
-    @PutMapping("/profile")
+    @PostMapping("/profile")
     public Result<Void> updateProfile(
         @Parameter(description = "商家信息", required = true)
         @RequestBody MerchantProfileDTO profileDTO
@@ -93,7 +93,7 @@ public class MerchantProfileController {
     @PostMapping("/avatar")
     public Result<String> uploadAvatar(
         @Parameter(description = "头像文件，支持jpg、png格式，大小不超过2MB", required = true) 
-        @RequestParam("file") MultipartFile file
+        @RequestParam("avatar") MultipartFile file
     ) {
         return Result.success(profileService.uploadAvatar(file));
     }
