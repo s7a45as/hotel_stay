@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("merchant")
+@TableName("sys_merchant")
 @Schema(description = "商家信息")
 public class Merchant {
 
@@ -33,6 +33,7 @@ public class Merchant {
     private String email;
 
     @Schema(description = "地址")
+    @TableField("business_address")
     private String address;
 
     @Schema(description = "营业执照号")
