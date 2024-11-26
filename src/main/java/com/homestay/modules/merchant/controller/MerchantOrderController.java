@@ -3,6 +3,7 @@ package com.homestay.modules.merchant.controller;
 import com.homestay.common.response.Result;
 import com.homestay.modules.merchant.dto.MerchantOrderDetailDTO;
 import com.homestay.modules.merchant.dto.OrderPageDTO;
+import com.homestay.modules.merchant.dto.UserSearchDTO;
 import com.homestay.modules.merchant.service.MerchantOrderService;
 import com.homestay.modules.order.dto.OrderDetailDTO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +16,8 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "商家后台-订单管理", description = "提供商家订单的查询和处理功能")
 @RestController
@@ -106,5 +109,22 @@ public class MerchantOrderController {
             @PathVariable String orderId
     ){
         return Result.success(orderService.getOrderDetail(orderId));
+    }
+
+    @Operation(summary = "搜索用户", 
+              description = "根据手机号搜索下过订单的用户")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "搜索成功",
+            content = @Content(mediaType = "application/json",
+                schema = @Schema(implementation = UserSearchDTO.class))),
+        @ApiResponse(responseCode = "401", description = "未登录"),
+        @ApiResponse(responseCode = "403", description = "无权限访问")
+    })
+    @GetMapping("/users/search")
+    public Result<List<UserSearchDTO>> searchUsers(
+        @Parameter(description = "用户手机号", example = "138") 
+        @RequestParam String phone
+    ) {
+        return Result.success(orderService.searchUsersByPhone(phone));
     }
 } 

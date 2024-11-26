@@ -4094,3 +4094,792 @@ This generated password is for development use only. Your security configuration
 2024-11-26 16:36:07.385 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
 2024-11-26 16:36:07.386 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
 2024-11-26 16:36:07.387 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:38:20.345 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:38:20.347 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:36:07.374524900, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:38:20.349 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:38:20.350 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:38:20.350 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:38:20.358 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:38:20.359 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
+2024-11-26 16:38:20.361 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:38:20.394 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:38:20.396 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:38:20.348264700, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:38:20.398 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:38:20.398 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:38:20.398 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:38:20.404 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:38:20.404 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
+2024-11-26 16:38:20.405 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:39:32.648 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:39:32.650 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:38:20.397261200, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:39:32.652 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:39:32.653 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/users/search?query=1858982", parameters={masked}
+2024-11-26 16:39:32.653 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-11-26 16:39:32.655 [http-nio-8080-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2024-11-26 16:39:32.657 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-11-26 16:39:32.657 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/users/search.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-26 16:39:32.662 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:39:32.662 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-11-26 16:39:32.663 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/users/search.]
+2024-11-26 16:39:32.663 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:39:34.362 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:39:34.364 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:39:32.651453, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:39:34.365 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:39:34.365 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/users/search?query=18589827777", parameters={masked}
+2024-11-26 16:39:34.366 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-11-26 16:39:34.366 [http-nio-8080-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2024-11-26 16:39:34.366 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-11-26 16:39:34.366 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/users/search.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-26 16:39:34.367 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:39:34.367 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-11-26 16:39:34.368 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource merchant/users/search.]
+2024-11-26 16:39:34.368 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:43:04.754 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-11-26 16:43:04.756 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:43:04.882 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-11-26 16:43:04.890 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-11-26 16:43:05.022 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 4016 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-26 16:43:05.022 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-26 16:43:05.023 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-26 16:43:05.440 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-26 16:43:05.440 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-26 16:43:05.454 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2024-11-26 16:43:05.639 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-26 16:43:05.640 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-26 16:43:05.640 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-26 16:43:05.641 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:43:05.641 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-26 16:43:05.641 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-26 16:43:05.660 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:43:05.661 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 636 ms
+2024-11-26 16:43:05.721 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-26 16:43:05.722 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-26 16:43:05.722 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-26 16:43:05.896 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:43:05.897 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:43:06.402 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 653b2503-8609-4621-a404-93482800689c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:43:06.466 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 87 mappings in 'requestMappingHandlerMapping'
+2024-11-26 16:43:06.478 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-26 16:43:06.888 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-26 16:43:06.918 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@678bb470, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b1707d7, org.springframework.security.web.context.SecurityContextHolderFilter@28c25ecf, org.springframework.security.web.header.HeaderWriterFilter@4dc26bca, org.springframework.web.filter.CorsFilter@1e982b79, org.springframework.security.web.authentication.logout.LogoutFilter@66fe733d, com.homestay.common.security.JwtAuthenticationFilter@72705179, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c2e1c4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12eca23b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44c257ef, org.springframework.security.web.session.SessionManagementFilter@57133824, org.springframework.security.web.access.ExceptionTranslationFilter@73b2e747, org.springframework.security.web.access.intercept.AuthorizationFilter@72794699]
+2024-11-26 16:43:06.999 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-26 16:43:07.013 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-26 16:43:07.209 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-26 16:43:07.249 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:43:07.251 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:43:07.255 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 2.289 seconds (process running for 886.775)
+2024-11-26 16:43:07.256 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-26 16:44:02.039 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2024-11-26 16:44:02.040 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:44:02.142 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 4016 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-26 16:44:02.142 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-26 16:44:02.142 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-26 16:44:02.407 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-26 16:44:02.407 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-26 16:44:02.418 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-11-26 16:44:02.543 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-26 16:44:02.543 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-26 16:44:02.543 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-26 16:44:02.544 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:44:02.544 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-26 16:44:02.544 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-26 16:44:02.558 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:44:02.558 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 413 ms
+2024-11-26 16:44:02.597 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-26 16:44:02.598 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-26 16:44:02.598 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-26 16:44:02.698 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:44:02.698 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:44:03.087 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fa9c18d4-2be8-4158-b5ca-79213125255c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:44:03.160 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 87 mappings in 'requestMappingHandlerMapping'
+2024-11-26 16:44:03.166 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-26 16:44:03.629 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-26 16:44:03.650 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4972f7c7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49afc178, org.springframework.security.web.context.SecurityContextHolderFilter@7f3dbab3, org.springframework.security.web.header.HeaderWriterFilter@34f1f246, org.springframework.web.filter.CorsFilter@6822825f, org.springframework.security.web.authentication.logout.LogoutFilter@730e7a73, com.homestay.common.security.JwtAuthenticationFilter@563115db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f82f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b572374, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15aebb8a, org.springframework.security.web.session.SessionManagementFilter@793479a3, org.springframework.security.web.access.ExceptionTranslationFilter@35f924f, org.springframework.security.web.access.intercept.AuthorizationFilter@da4a8f3]
+2024-11-26 16:44:03.681 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-26 16:44:03.697 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-26 16:44:03.839 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-26 16:44:03.871 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:44:03.871 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:44:03.871 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 1.786 seconds (process running for 943.4)
+2024-11-26 16:44:03.871 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-26 16:45:05.254 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:45:05.278 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 9384 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-26 16:45:05.278 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-26 16:45:05.278 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-26 16:45:05.321 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-26 16:45:05.321 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-26 16:45:06.011 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-26 16:45:06.012 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-26 16:45:06.044 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-11-26 16:45:06.611 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-26 16:45:06.614 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-26 16:45:06.618 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-26 16:45:06.625 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:45:06.626 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-26 16:45:06.626 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-26 16:45:06.668 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:45:06.668 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1346 ms
+2024-11-26 16:45:06.955 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-26 16:45:06.956 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-26 16:45:06.956 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-26 16:45:07.263 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:45:07.264 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:45:07.739 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: c1892c40-0060-4e4a-b3ff-275be4df5525
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:45:07.872 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 88 mappings in 'requestMappingHandlerMapping'
+2024-11-26 16:45:07.882 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-26 16:45:08.364 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-26 16:45:08.400 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4729e02, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28e2ff6d, org.springframework.security.web.context.SecurityContextHolderFilter@24f0a7d5, org.springframework.security.web.header.HeaderWriterFilter@8bf2b3e, org.springframework.web.filter.CorsFilter@2774c65d, org.springframework.security.web.authentication.logout.LogoutFilter@1e0dba26, com.homestay.common.security.JwtAuthenticationFilter@3c220af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@232547d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f6294c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ff143b6, org.springframework.security.web.session.SessionManagementFilter@145e3ea0, org.springframework.security.web.access.ExceptionTranslationFilter@59e3c22d, org.springframework.security.web.access.intercept.AuthorizationFilter@25512dac]
+2024-11-26 16:45:08.488 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-26 16:45:08.520 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-26 16:45:08.804 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-26 16:45:08.842 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:45:08.860 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:45:08.867 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 4.0 seconds (process running for 4.541)
+2024-11-26 16:45:13.183 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-26 16:45:13.183 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-26 16:45:13.183 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-11-26 16:45:13.183 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-11-26 16:45:13.183 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-11-26 16:45:13.184 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@75dbad47
+2024-11-26 16:45:13.185 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1faf1661
+2024-11-26 16:45:13.185 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-26 16:45:13.185 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-11-26 16:45:13.208 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:45:13.208 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:45:13.218 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/merchant_avatar/2024/11/26/047cc3fb32944b0eb54327a36c4908e8.jpg", parameters={}
+2024-11-26 16:45:13.223 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-26 16:45:13.244 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:45:13.605 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:39:34.364456500, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:45:13.605 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:39:34.364456500, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:45:13.684 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:45:13.684 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:45:13.684 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:45:13.684 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/profile", parameters={}
+2024-11-26 16:45:13.685 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:45:13.685 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantProfileController#getProfile()
+2024-11-26 16:45:13.706 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-26 16:45:14.075 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4be9c3e5
+2024-11-26 16:45:14.077 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-26 16:45:14.167 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:45:14.167 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:45:14.171 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=Merchant(id=7, username=merc, password=null, nickname=Merchants, (truncated)...]
+2024-11-26 16:45:14.171 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
+2024-11-26 16:45:14.180 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:45:14.184 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:45:55.462 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:45:55.464 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:45:13.670180800, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:45:55.466 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:45:55.467 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/orders/users/search?query=13800138006", parameters={masked}
+2024-11-26 16:45:55.467 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantOrderController#searchUsers(String)
+2024-11-26 16:45:55.471 [http-nio-8080-exec-4] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public com.homestay.common.response.Result<java.util.List<com.homestay.modules.merchant.dto.UserSearchDTO>> com.homestay.modules.merchant.controller.MerchantOrderController.searchUsers(java.lang.String): Required request parameter 'phone' for method parameter type String is not present
+2024-11-26 16:45:55.472 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleMissingServletRequestParameterException(MissingServletRequestParameterException)
+2024-11-26 16:45:55.472 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 缺少请求参数: Required request parameter 'phone' for method parameter type String is not present
+2024-11-26 16:45:55.473 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:45:55.473 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=400, message=缺少必要的请求参数: phone, data=null)]
+2024-11-26 16:45:55.474 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'phone' for method parameter type String is not present]
+2024-11-26 16:45:55.474 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:46:00.623 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:46:00.626 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:45:55.465525900, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/orders/users/search?query=13800138006", parameters={masked}
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantOrderController#searchUsers(String)
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public com.homestay.common.response.Result<java.util.List<com.homestay.modules.merchant.dto.UserSearchDTO>> com.homestay.modules.merchant.controller.MerchantOrderController.searchUsers(java.lang.String): Required request parameter 'phone' for method parameter type String is not present
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleMissingServletRequestParameterException(MissingServletRequestParameterException)
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 缺少请求参数: Required request parameter 'phone' for method parameter type String is not present
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:46:00.627 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=400, message=缺少必要的请求参数: phone, data=null)]
+2024-11-26 16:46:00.632 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'phone' for method parameter type String is not present]
+2024-11-26 16:46:00.632 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:47:00.367 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:47:00.367 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:46:00.627995200, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:47:00.367 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:47:00.367 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:47:00.367 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:47:00.391 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:47:00.392 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
+2024-11-26 16:47:00.392 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:47:09.047 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/merchant_avatar/2024/11/26/047cc3fb32944b0eb54327a36c4908e8.jpg", parameters={}
+2024-11-26 16:47:09.048 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-26 16:47:09.050 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:47:09.050 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:47:09.052 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:47:09.053 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:47:00.367884, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:47:09.053 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:47:00.367884, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:47:09.055 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:47:09.055 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/profile", parameters={}
+2024-11-26 16:47:09.055 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:47:09.055 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantProfileController#getProfile()
+2024-11-26 16:47:09.055 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:47:09.055 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:47:09.061 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:47:09.061 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=Merchant(id=7, username=merc, password=null, nickname=Merchants, (truncated)...]
+2024-11-26 16:47:09.062 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:47:09.071 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:47:09.072 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=1, merchantId=7, name=开业大促, type=FULL_REDU (truncated)...]
+2024-11-26 16:47:09.074 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:47:56.515 [http-nio-8080-exec-1] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target [/merchant/orders/users/search?phone=2024-11-26+16:46:00.627+[http-nio-8080-exec-5]+ERROR+c.h.c.e.GlobalExceptionHandler+-+%E7%BC%BA%E5%B0%91%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0:+Required+request+parameter+%27phone%27+for+method+parameter+type+String+is+not+present ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:482)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:264)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-26 16:48:00.323 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:48:00.325 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:47:09.054177100, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:48:00.327 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:48:00.328 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/orders/users/search?phone=13800138006", parameters={masked}
+2024-11-26 16:48:00.328 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantOrderController#searchUsers(String)
+2024-11-26 16:48:00.488 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-11-26 16:48:00.488 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'homestay.t_order.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/homestay/modules/merchant/mapper/MerchantOrderMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,order_no,merchant_id,house_id,house_name,user_id,user_name,phone,check_in,check_out,nights,guests,total_amount,status,create_time,pay_time,update_time  FROM t_order      WHERE  (merchant_id = ? AND phone LIKE ?) GROUP BY user_id,phone,user_name limit 10
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'homestay.t_order.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy3/jdk.proxy3.$Proxy131.selectList(Unknown Source)
+	at com.homestay.modules.merchant.service.impl.MerchantOrderServiceImpl.searchUsersByPhone(MerchantOrderServiceImpl.java:134)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.homestay.modules.merchant.service.impl.MerchantOrderServiceImpl$$SpringCGLIB$$0.searchUsersByPhone(<generated>)
+	at com.homestay.modules.merchant.controller.MerchantOrderController.searchUsers(MerchantOrderController.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'homestay.t_order.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy170.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy168.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy167.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 121 common frames omitted
+2024-11-26 16:48:00.495 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:48:00.495 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-11-26 16:48:00.495 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: <EOL><EOL>### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'homestay.t_order.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by<EOL><EOL>### The error may exist in com/homestay/modules/merchant/mapper/MerchantOrderMapper.java (best guess)<EOL><EOL>### The error may involve defaultParameterMap<EOL><EOL>### The error occurred while setting parameters<EOL><EOL>### SQL: SELECT  id,order_no,merchant_id,house_id,house_name,user_id,user_name,phone,check_in,check_out,nights,guests,total_amount,status,create_time,pay_time,update_time  FROM t_order      WHERE  (merchant_id = ? AND phone LIKE ?) GROUP BY user_id,phone,user_name limit 10<EOL><EOL>### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'homestay.t_order.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by<EOL>; bad SQL grammar []]
+2024-11-26 16:48:00.495 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:49:08.936 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-26 16:49:08.936 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:49:09.081 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-26 16:49:09.081 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-26 16:49:09.190 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 9384 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-26 16:49:09.190 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-26 16:49:09.190 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-26 16:49:09.467 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-26 16:49:09.467 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-26 16:49:09.474 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-26 16:49:09.638 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-26 16:49:09.648 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:49:09.648 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 458 ms
+2024-11-26 16:49:09.696 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-26 16:49:09.696 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-26 16:49:09.696 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-26 16:49:09.822 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:49:09.822 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:49:10.188 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7668cf10-bad4-4294-9d84-2d08cb3b8e77
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:49:10.236 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 88 mappings in 'requestMappingHandlerMapping'
+2024-11-26 16:49:10.253 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-26 16:49:10.616 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-26 16:49:10.632 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@244a38a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@308731d, org.springframework.security.web.context.SecurityContextHolderFilter@5c49154e, org.springframework.security.web.header.HeaderWriterFilter@263430c, org.springframework.web.filter.CorsFilter@4a8d5a66, org.springframework.security.web.authentication.logout.LogoutFilter@28e514e4, com.homestay.common.security.JwtAuthenticationFilter@41ba8e27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53c8c3f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b2b91a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d2f8f51, org.springframework.security.web.session.SessionManagementFilter@5654335c, org.springframework.security.web.access.ExceptionTranslationFilter@24557b65, org.springframework.security.web.access.intercept.AuthorizationFilter@206d51a]
+2024-11-26 16:49:10.701 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-26 16:49:10.707 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-26 16:49:10.855 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-26 16:49:10.902 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:49:10.910 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:49:10.918 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 1.791 seconds (process running for 246.597)
+2024-11-26 16:49:10.918 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-26 16:50:08.479 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-26 16:50:08.481 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:50:08.554 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 9384 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-11-26 16:50:08.554 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-11-26 16:50:08.554 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-11-26 16:50:08.748 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-26 16:50:08.748 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-26 16:50:08.758 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-11-26 16:50:08.853 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-26 16:50:08.853 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-11-26 16:50:08.853 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-11-26 16:50:08.853 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:50:08.854 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-26 16:50:08.854 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-11-26 16:50:08.865 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:50:08.865 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 310 ms
+2024-11-26 16:50:08.897 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-11-26 16:50:08.897 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-11-26 16:50:08.897 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-11-26 16:50:08.992 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:50:08.993 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:50:09.345 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6b9b7094-d361-41a3-a929-d1194c87ce9d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:50:09.393 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 88 mappings in 'requestMappingHandlerMapping'
+2024-11-26 16:50:09.425 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-11-26 16:50:09.789 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-26 16:50:09.804 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c176941, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fe27d7e, org.springframework.security.web.context.SecurityContextHolderFilter@66d4d059, org.springframework.security.web.header.HeaderWriterFilter@1af90696, org.springframework.web.filter.CorsFilter@4eb6e661, org.springframework.security.web.authentication.logout.LogoutFilter@249ee70a, com.homestay.common.security.JwtAuthenticationFilter@215517d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61088d6f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3397fa6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d50fffc, org.springframework.security.web.session.SessionManagementFilter@4282a947, org.springframework.security.web.access.ExceptionTranslationFilter@4208ba66, org.springframework.security.web.access.intercept.AuthorizationFilter@d10bbdc]
+2024-11-26 16:50:09.836 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-26 16:50:09.836 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-26 16:50:09.973 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-26 16:50:10.000 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:50:10.012 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:50:10.015 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 1.485 seconds (process running for 305.692)
+2024-11-26 16:50:10.015 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4c22814a
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@42e576be
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-11-26 16:50:10.371 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:50:10.392 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:48:00.326631200, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:50:10.399 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:50:10.399 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/orders/users/search?phone=13800138006", parameters={masked}
+2024-11-26 16:50:10.399 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantOrderController#searchUsers(String)
+2024-11-26 16:50:10.406 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-11-26 16:50:10.435 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7254944d
+2024-11-26 16:50:10.435 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-11-26 16:50:10.442 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:50:10.446 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[UserSearchDTO(id=1, phone=13800138006, name=周八)])]
+2024-11-26 16:50:10.449 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:50:28.053 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:50:28.059 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:10.399092700, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:50:28.060 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:50:28.060 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/merchant/promotions", parameters={}
+2024-11-26 16:50:28.060 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#createPromotion(MerchantPromotionDTO)
+2024-11-26 16:50:28.087 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [MerchantPromotionDTO(name=挂科补偿, type=COMPENSATION, discount=20, threshold=0, startTime=2024-11-26T00 (truncated)...]
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=1000, message=错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无, data=null)]
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无]
+2024-11-26 16:50:28.143 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:50:41.620 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:50:41.621 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:28.060169700, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:50:41.621 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:50:41.621 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/merchant/promotions", parameters={}
+2024-11-26 16:50:41.621 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#createPromotion(MerchantPromotionDTO)
+2024-11-26 16:50:41.626 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [MerchantPromotionDTO(name=挂科补偿, type=COMPENSATION, discount=20, threshold=0, startTime=2024-11-26T00 (truncated)...]
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleBusinessException(BusinessException)
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=1000, message=错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无, data=null)]
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.homestay.common.exception.BusinessException: 错误码: 1000, 错误信息: 开始时间不能早于当前时间, 原始异常: 无]
+2024-11-26 16:50:41.628 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:50:56.389 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:50:56.390 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:41.621419500, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:50:56.390 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:50:56.390 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/merchant/promotions", parameters={}
+2024-11-26 16:50:56.390 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#createPromotion(MerchantPromotionDTO)
+2024-11-26 16:50:56.390 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [MerchantPromotionDTO(name=挂科补偿, type=COMPENSATION, discount=20, threshold=0, startTime=2024-11-27T00 (truncated)...]
+2024-11-26 16:50:56.418 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:50:56.418 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=null)]
+2024-11-26 16:50:56.418 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:50:56.444 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:50:56.448 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:56.390124200, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:50:56.450 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:50:56.451 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:50:56.451 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:50:56.489 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:50:56.505 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=52, merchantId=7, name=挂科补偿, type=COMPENSA (truncated)...]
+2024-11-26 16:50:56.530 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:51:03.115 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/merchant_avatar/2024/11/26/047cc3fb32944b0eb54327a36c4908e8.jpg", parameters={}
+2024-11-26 16:51:03.116 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
+2024-11-26 16:51:03.119 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:51:03.119 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI
+2024-11-26 16:51:03.121 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:56.449001, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:51:03.121 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-11-27T20:03:22.601266400, lastAccessTime=2024-11-26T16:50:56.449001, createTime=2024-11-25T20:03:22.601266400, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyNTM2MjAyLCJleHAiOjE3MzI2MjI2MDJ9.wRuF1-eadbJK55Ee7DZq-huwJS1MAqqFKTy2wPsCsJI}
+2024-11-26 16:51:03.122 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:51:03.123 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:51:03.123 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-26 16:51:03.124 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/promotions", parameters={}
+2024-11-26 16:51:03.124 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/profile", parameters={}
+2024-11-26 16:51:03.124 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantProfileController#getProfile()
+2024-11-26 16:51:03.124 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantPromotionController#getPromotionList()
+2024-11-26 16:51:03.131 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:51:03.132 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=Merchant(id=7, username=merc, password=null, nickname=Merchants, (truncated)...]
+2024-11-26 16:51:03.135 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-26 16:51:03.139 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-26 16:51:03.139 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[MerchantPromotion(id=52, merchantId=7, name=挂科补偿, type=COMPENSA (truncated)...]
+2024-11-26 16:51:03.142 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

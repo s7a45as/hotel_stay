@@ -6,6 +6,7 @@ import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.modules.merchant.dto.MerchantOrderDetailDTO;
 import com.homestay.modules.merchant.dto.OrderPageDTO;
+import com.homestay.modules.merchant.dto.UserSearchDTO;
 import com.homestay.modules.merchant.entity.MerchantOrder;
 import com.homestay.modules.merchant.enums.OrderStatus;
 import com.homestay.modules.merchant.mapper.MerchantOrderMapper;
@@ -21,6 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.homestay.common.utils.SecurityUtils.getCurrentUserId;
 
@@ -114,7 +118,41 @@ public class MerchantOrderServiceImpl implements MerchantOrderService {
         return orderDetail;
     }
 
-
+    @Override
+    public List<UserSearchDTO> searchUsersByPhone(String phone) {
+        // 获取当前商家ID
+        Long merchantId = getCurrentUserId();
+        
+        // 构建查询条件
+        LambdaQueryWrapper<MerchantOrder> wrapper = new LambdaQueryWrapper<MerchantOrder>()
+            .eq(MerchantOrder::getMerchantId, merchantId)
+            .like(MerchantOrder::getPhone, phone)
+            .select(
+                MerchantOrder::getUserId,
+                MerchantOrder::getPhone,
+                MerchantOrder::getUserName
+            )
+            .groupBy(
+                MerchantOrder::getUserId,
+                MerchantOrder::getPhone,
+                MerchantOrder::getUserName
+            )
+            .last("limit 10"); // 限制返回数量
+        
+        // 查询订单
+        List<MerchantOrder> orders = orderMapper.selectList(wrapper);
+        
+        // 转换为DTO
+        return orders.stream()
+            .map(order -> {
+                UserSearchDTO dto = new UserSearchDTO();
+                dto.setId(order.getUserId());
+                dto.setPhone(order.getPhone());
+                dto.setName(order.getUserName());
+                return dto;
+            })
+            .collect(Collectors.toList());
+    }
 
     /**
      * 获取订单并校验权限
