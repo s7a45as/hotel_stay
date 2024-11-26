@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.1__create_merchant_promotion_table.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.2__insert_merchant_promotion_test_data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.5__create_system_settings.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.6__create_merchant_message_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1.0.7__insert_merchant_message_test_data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/data/t_booking.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/data/t_facility.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/sql/house/data/t_favorite.sql" dialect="MySQL" />
