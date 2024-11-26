@@ -30,7 +30,7 @@ public class MerchantMessageController {
             @Parameter(description = "结束日期") @RequestParam(required = false) String endDate,
             @Parameter(description = "阅读状态") @RequestParam(required = false) String readStatus,
             @Parameter(description = "当前页码") @RequestParam(defaultValue = "1") Integer currentPage,
-            @Parameter(description = "每页条数") @RequestParam(defaultValue = "10") Integer pageSize
+            @Parameter(description = "每页条数") @RequestParam(defaultValue = "100") Integer pageSize
     ) {
         return Result.success(messageService.getMessageList(type, keyword, startDate, endDate, readStatus, currentPage, pageSize));
     }
