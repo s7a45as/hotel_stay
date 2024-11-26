@@ -1,8 +1,10 @@
 package com.homestay.modules.merchant.controller;
 
 import com.homestay.common.response.Result;
+import com.homestay.modules.merchant.dto.MerchantOrderDetailDTO;
 import com.homestay.modules.merchant.dto.OrderPageDTO;
 import com.homestay.modules.merchant.service.MerchantOrderService;
+import com.homestay.modules.order.dto.OrderDetailDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -95,5 +97,14 @@ public class MerchantOrderController {
     ) {
         orderService.updateOrderStatus(orderId, status);
         return Result.success();
+    }
+
+    @GetMapping("/{orderId}/details")
+    public Result<MerchantOrderDetailDTO> getOrderDetail(
+            @Parameter(description = "订单ID", required = true, 
+                      example = "ORDER202403150001") 
+            @PathVariable String orderId
+    ){
+        return Result.success(orderService.getOrderDetail(orderId));
     }
 } 

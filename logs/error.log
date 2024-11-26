@@ -1456,3 +1456,30 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-26 15:54:09.539 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 15:54:09.539 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 15:58:08.688 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 15:58:08.688 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:01:59.298 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:01:59.298 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:02:55.233 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:02:55.233 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:04:16.666 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:04:16.666 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:04:23.750 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 403, 错误信息: 无权访问此订单, 原始异常: 无
+2024-11-26 16:05:02.940 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:02.941 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:25.881 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:25.882 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:44.761 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:44.761 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:46.601 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 403, 错误信息: 无权访问此订单, 原始异常: 无
+2024-11-26 16:05:50.691 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:05:50.692 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:08:41.903 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-26 16:10:23.241 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:10:23.241 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:10:28.919 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-11-26 16:10:28.919 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-26 16:11:06.191 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-26 16:11:36.665 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
