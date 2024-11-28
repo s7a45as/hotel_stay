@@ -1,11 +1,12 @@
 package com.homestay.modules.merchant.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.dto.MerchantHouseDTO;
 import org.springframework.web.multipart.MultipartFile;
 
-public interface MerchantHouseService {
+public interface MerchantHouseService  extends IService<MerchantHouse> {
 
     /**
      * 分页获取商家房源列表

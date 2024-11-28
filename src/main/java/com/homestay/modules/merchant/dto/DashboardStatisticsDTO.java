@@ -9,14 +9,14 @@ import java.math.BigDecimal;
 public class DashboardStatisticsDTO {
     
     @Schema(description = "总房源数")
-    private Integer totalHouses;
+    private Long totalHouses;
     
     @Schema(description = "总订单数")
-    private Integer totalOrders;
+    private Long totalOrders;
     
     @Schema(description = "总收入")
     private BigDecimal totalIncome;
     
     @Schema(description = "待处理订单数")
-    private Integer pendingOrders;
+    private Long pendingOrders;
 } 

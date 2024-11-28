@@ -2,6 +2,7 @@ package com.homestay.modules.merchant.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.common.utils.UploadUtils;
@@ -19,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
-public class MerchantHouseServiceImpl implements MerchantHouseService {
+public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, MerchantHouse> implements MerchantHouseService {
 
     private final MerchantHouseMapper houseMapper;
     private final UploadUtils uploadUtils;
