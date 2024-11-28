@@ -2,7 +2,9 @@ package com.homestay.modules.merchant.controller;
 
 import com.homestay.common.response.Result;
 import com.homestay.modules.merchant.dto.DashboardStatisticsDTO;
+import com.homestay.modules.merchant.dto.MerchantRecentActivitiesDTO;
 import com.homestay.modules.merchant.dto.TrendDataDTO;
+import com.homestay.modules.merchant.entity.MerchantPromotion;
 import com.homestay.modules.merchant.service.MerchantDashboardService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -15,6 +17,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @Tag(name = "商家后台-仪表盘", description = "提供商家仪表盘数据，包括统计数据和趋势分析")
 @RestController
@@ -65,5 +69,21 @@ public class MerchantDashboardController {
     @GetMapping("/income-trend")
     public Result<TrendDataDTO> getIncomeTrend() {
         return Result.success(dashboardService.getIncomeTrend());
+    }
+
+    @Operation(summary = "获取优惠活动列表",
+            description = "获取商家的所有优惠活动,用于在控制台展示")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "获取成功",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = MerchantPromotion.class))),
+            @ApiResponse(responseCode = "401", description = "未登录"),
+            @ApiResponse(responseCode = "403", description = "无权限访问")
+    })
+    @GetMapping("/recent-activities")
+    public Result<List<MerchantRecentActivitiesDTO>>getRecentActivities(){
+
+        return Result.success(dashboardService.getPromotionList());
+
     }
 } 

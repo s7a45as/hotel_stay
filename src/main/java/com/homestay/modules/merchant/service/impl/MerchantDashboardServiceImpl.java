@@ -2,19 +2,20 @@ package com.homestay.modules.merchant.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.homestay.common.utils.SecurityUtil;
+import com.homestay.common.utils.SecurityUtils;
 import com.homestay.modules.merchant.dto.DashboardStatisticsDTO;
+import com.homestay.modules.merchant.dto.MerchantRecentActivitiesDTO;
 import com.homestay.modules.merchant.dto.TrendDataDTO;
 import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.entity.MerchantIncome;
 import com.homestay.modules.merchant.entity.MerchantOrder;
-import com.homestay.modules.merchant.mapper.MerchantHouseMapper;
-import com.homestay.modules.merchant.mapper.MerchantIncomeMapper;
-import com.homestay.modules.merchant.mapper.MerchantMapper;
-import com.homestay.modules.merchant.mapper.MerchantOrderMapper;
+import com.homestay.modules.merchant.entity.MerchantPromotion;
+import com.homestay.modules.merchant.mapper.*;
 import com.homestay.modules.merchant.service.MerchantDashboardService;
 import com.homestay.modules.merchant.service.MerchantHouseService;
 import com.homestay.modules.order.enums.OrderStatusEnum;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ public class MerchantDashboardServiceImpl implements MerchantDashboardService {
 
     private final MerchantHouseMapper merchantHouseMapper;
 
-
+    private final MerchantPromotionMapper promotionMapper;
     private final MerchantOrderMapper merchantOrderMapper;
 
     private final SecurityUtil securityUtil;
@@ -90,6 +91,30 @@ public class MerchantDashboardServiceImpl implements MerchantDashboardService {
         trend.setMonths(getLast6Months());
         trend.setData(List.of(5000, 6500, 5800, 7200, 6000, 8500));
         return trend;
+    }
+
+
+
+    @Override
+    public List<MerchantRecentActivitiesDTO> getPromotionList() {
+        List<MerchantPromotion> merchantPromotion = promotionMapper.selectList(
+                new LambdaQueryWrapper<MerchantPromotion>()
+                        .eq(MerchantPromotion::getMerchantId, SecurityUtils.getCurrentUserId())
+                        .eq(MerchantPromotion::getStatus, '0')//0---进行中  1---已结束  2---未开始
+                        .orderByDesc(MerchantPromotion::getCreateTime)
+                        .last("limit 5")
+        );
+
+        List<MerchantRecentActivitiesDTO> merchantRecentActivitiesDTO = new ArrayList<>();
+
+        // 使用 BeanUtils 将 MerchantPromotion 转换为 MerchantRecentActivitiesDTO
+        for (MerchantPromotion promotion : merchantPromotion) {
+            MerchantRecentActivitiesDTO dto = new MerchantRecentActivitiesDTO();
+            BeanUtils.copyProperties(promotion, dto);  // 将所有属性拷贝到 DTO 对象
+            merchantRecentActivitiesDTO.add(dto);
+        }
+
+        return merchantRecentActivitiesDTO;
     }
 
     /**
