@@ -1,9 +1,11 @@
 package com.homestay.modules.merchant.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.Result;
 import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.dto.MerchantHouseDTO;
+import com.homestay.modules.merchant.enums.HouseCategory;
 import com.homestay.modules.merchant.service.MerchantHouseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -16,6 +18,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Tag(name = "商家后台-房源管理", description = "提供商家房源的增删改查功能")
 @RestController
@@ -68,6 +73,15 @@ public class MerchantHouseController {
         @Parameter(description = "房源信息", required = true) 
         @RequestBody MerchantHouseDTO houseDTO
     ) {
+        // 验证房源分类
+        if (!HouseCategory.contains(houseDTO.getCategory())) {
+            throw new BusinessException("无效的房源分类，可选值：" +
+                Arrays.stream(HouseCategory.values())
+                    .map(category -> category.name() + "(" + category.getDescription() + ")")
+                    .collect(Collectors.joining(", "))
+            );
+        }
+        
         houseService.createHouse(houseDTO);
         return Result.success();
     }
