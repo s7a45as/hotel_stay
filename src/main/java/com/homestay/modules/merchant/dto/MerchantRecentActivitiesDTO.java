@@ -35,4 +35,8 @@ public class MerchantRecentActivitiesDTO {
 
     @Schema(description = "活动描述")
     private String description;
+
+    @Schema(description = "目标用户")
+    private String targetUsers ;
+
 }

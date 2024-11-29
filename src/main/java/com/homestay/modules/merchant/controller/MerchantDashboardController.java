@@ -3,7 +3,8 @@ package com.homestay.modules.merchant.controller;
 import com.homestay.common.response.Result;
 import com.homestay.modules.merchant.dto.DashboardStatisticsDTO;
 import com.homestay.modules.merchant.dto.MerchantRecentActivitiesDTO;
-import com.homestay.modules.merchant.dto.TrendDataDTO;
+import com.homestay.modules.merchant.dto.TrendIncomeDataDTO;
+import com.homestay.modules.merchant.dto.TrendOrderDataDTO;
 import com.homestay.modules.merchant.entity.MerchantPromotion;
 import com.homestay.modules.merchant.service.MerchantDashboardService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -48,12 +49,12 @@ public class MerchantDashboardController {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "获取成功",
             content = @Content(mediaType = "application/json",
-                schema = @Schema(implementation = TrendDataDTO.class))),
+                schema = @Schema(implementation = TrendIncomeDataDTO.class))),
         @ApiResponse(responseCode = "401", description = "未登录"),
         @ApiResponse(responseCode = "403", description = "无权限访问")
     })
     @GetMapping("/order-trend")
-    public Result<TrendDataDTO> getOrderTrend() {
+    public Result<TrendOrderDataDTO> getOrderTrend() {
         return Result.success(dashboardService.getOrderTrend());
     }
 
@@ -62,12 +63,12 @@ public class MerchantDashboardController {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "获取成功",
             content = @Content(mediaType = "application/json",
-                schema = @Schema(implementation = TrendDataDTO.class))),
+                schema = @Schema(implementation = TrendIncomeDataDTO.class))),
         @ApiResponse(responseCode = "401", description = "未登录"),
         @ApiResponse(responseCode = "403", description = "无权限访问")
     })
     @GetMapping("/income-trend")
-    public Result<TrendDataDTO> getIncomeTrend() {
+    public Result<TrendIncomeDataDTO> getIncomeTrend() {
         return Result.success(dashboardService.getIncomeTrend());
     }
 

@@ -5,18 +5,13 @@ import com.homestay.common.utils.SecurityUtil;
 import com.homestay.common.utils.SecurityUtils;
 import com.homestay.modules.merchant.dto.DashboardStatisticsDTO;
 import com.homestay.modules.merchant.dto.MerchantRecentActivitiesDTO;
-import com.homestay.modules.merchant.dto.TrendDataDTO;
-import com.homestay.modules.merchant.entity.MerchantHouse;
-import com.homestay.modules.merchant.entity.MerchantIncome;
-import com.homestay.modules.merchant.entity.MerchantOrder;
-import com.homestay.modules.merchant.entity.MerchantPromotion;
+import com.homestay.modules.merchant.dto.TrendIncomeDataDTO;
+import com.homestay.modules.merchant.dto.TrendOrderDataDTO;
+import com.homestay.modules.merchant.entity.*;
 import com.homestay.modules.merchant.mapper.*;
 import com.homestay.modules.merchant.service.MerchantDashboardService;
-import com.homestay.modules.merchant.service.MerchantHouseService;
-import com.homestay.modules.order.enums.OrderStatusEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,6 +19,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -39,6 +35,8 @@ public class MerchantDashboardServiceImpl implements MerchantDashboardService {
     private final SecurityUtil securityUtil;
 
     private final MerchantIncomeMapper merchantIncomeMapper;
+
+    private final  MerchantTrendDataMapper merchantTrendDataMapper;
     @Override
     public DashboardStatisticsDTO getStatistics() {
 
@@ -76,21 +74,77 @@ public class MerchantDashboardServiceImpl implements MerchantDashboardService {
     }
 
     @Override
-    public TrendDataDTO getOrderTrend() {
-        // TODO: 实现从数据库获取实际订单趋势数据
-        TrendDataDTO trend = new TrendDataDTO();
-        trend.setMonths(getLast6Months());
-        trend.setData(List.of(25, 32, 28, 36, 30, 42));
-        return trend;
+    public TrendOrderDataDTO getOrderTrend() {
+        // 1. 获取当前商家ID
+        Long merchantId = securityUtil.getCurrentUserId();
+
+        // 2. 使用 LambdaQueryWrapper 构建查询条件，查找符合商家ID的订单趋势数据
+        LambdaQueryWrapper<MerchantTrendData> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(MerchantTrendData::getMerchantId, merchantId);
+
+        // 3. 从数据库获取该商家的订单趋势数据
+        List<MerchantTrendData> trendDataList = merchantTrendDataMapper.selectList(queryWrapper);
+
+        // 4. 提取年份、月份和订单数据
+        List<String> years = trendDataList.stream()
+                .map(MerchantTrendData::getYears)
+                .distinct()
+                .collect(Collectors.toList());
+
+        List<String> months = trendDataList.stream()
+                .map(MerchantTrendData::getMonths)
+                .distinct()
+                .collect(Collectors.toList());
+
+        List<Long> orderData = trendDataList.stream()
+                .map(MerchantTrendData::getAllOrder)
+                .collect(Collectors.toList());
+
+        // 5. 封装为 TrendOrderDataDTO
+        TrendOrderDataDTO trendOrderDataDTO = new TrendOrderDataDTO();
+        trendOrderDataDTO.setYears(years);
+        trendOrderDataDTO.setMonths(months);
+        trendOrderDataDTO.setData(orderData);
+
+        // 6. 返回封装好的 TrendOrderDataDTO
+        return trendOrderDataDTO;
     }
 
     @Override
-    public TrendDataDTO getIncomeTrend() {
-        // TODO: 实现从数据库获取实际收入趋势数据
-        TrendDataDTO trend = new TrendDataDTO();
-        trend.setMonths(getLast6Months());
-        trend.setData(List.of(5000, 6500, 5800, 7200, 6000, 8500));
-        return trend;
+    public TrendIncomeDataDTO getIncomeTrend() {
+        // 1. 获取当前商家ID
+        Long merchantId = securityUtil.getCurrentUserId();
+
+        // 2. 使用 LambdaQueryWrapper 构建查询条件，查找符合商家ID的收入趋势数据
+        LambdaQueryWrapper<MerchantTrendData> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(MerchantTrendData::getMerchantId, merchantId);
+
+        // 3. 从数据库获取该商家的收入趋势数据
+        List<MerchantTrendData> trendDataList = merchantTrendDataMapper.selectList(queryWrapper);
+
+        // 4. 提取年份、月份和收入数据
+        List<String> years = trendDataList.stream()
+                .map(MerchantTrendData::getYears)
+                .distinct()
+                .collect(Collectors.toList());
+
+        List<String> months = trendDataList.stream()
+                .map(MerchantTrendData::getMonths)
+                .distinct()
+                .collect(Collectors.toList());
+
+        List<BigDecimal> incomeData = trendDataList.stream()
+                .map(MerchantTrendData::getAllPrice)
+                .collect(Collectors.toList());
+
+        // 5. 封装为 TrendIncomeDataDTO
+        TrendIncomeDataDTO trendIncomeDataDTO = new TrendIncomeDataDTO();
+        trendIncomeDataDTO.setYears(years);
+        trendIncomeDataDTO.setMonths(months);
+        trendIncomeDataDTO.setData(incomeData);
+
+        // 6. 返回封装好的 TrendIncomeDataDTO
+        return trendIncomeDataDTO;
     }
 
 
@@ -125,7 +179,7 @@ public class MerchantDashboardServiceImpl implements MerchantDashboardService {
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M月");
         
-        for (int i = 5; i >= 0; i--) {
+        for (int i = 12; i >= 0; i--) {
             LocalDate month = date.minusMonths(i);
             months.add(month.format(formatter));
         }
