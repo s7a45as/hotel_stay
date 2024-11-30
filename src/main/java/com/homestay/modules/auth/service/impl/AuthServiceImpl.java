@@ -73,7 +73,7 @@ public class AuthServiceImpl implements AuthService {
                 validateMerchantStatus(authMerchant);
                 loginVO = createLoginResponse(authMerchant, CommonConstants.System.MERCHANT_ROLE);
                 // 存储token到Redis
-                storeTokenInRedis(loginVO.getToken(), authMerchant.getId());
+                storeTokenInRedis(loginVO.getToken(), authMerchant.getId(),loginDTO.getType());
                 log.info("商家登录");
             }
             case "admin" -> {
@@ -82,7 +82,7 @@ public class AuthServiceImpl implements AuthService {
                 validateLogin(admin, loginDTO.getPassword());
                 loginVO = createLoginResponse(admin, CommonConstants.System.ADMIN_ROLE);
                 // 存储token到Redis
-                storeTokenInRedis(loginVO.getToken(), admin.getId());
+                storeTokenInRedis(loginVO.getToken(), admin.getId(),loginDTO.getType());
                 log.info("管理员登录");
             }
             case "user" -> {
@@ -91,7 +91,7 @@ public class AuthServiceImpl implements AuthService {
                 validateLogin(user, loginDTO.getPassword());
                 loginVO = createLoginResponse(user, CommonConstants.System.DEFAULT_ROLE);
                 // 存储token到Redis
-                storeTokenInRedis(loginVO.getToken(), user.getId());
+                storeTokenInRedis(loginVO.getToken(), user.getId(),loginDTO.getType());
                 log.info("普通用户登录");
             }
             default -> throw new BusinessException(ResultCode.INVALID_LOGIN_TYPE);
@@ -262,6 +262,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     private void validateLogin(BaseUser user, String password) {
+        log.info("用于获取密码"+passwordEncoder.encode(password));
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BusinessException(ResultCode.USERNAME_OR_PASSWORD_ERROR);
         }
@@ -285,7 +286,7 @@ public class AuthServiceImpl implements AuthService {
 
     private LoginVO createLoginResponse(BaseUser user, String role) {
         LoginVO loginVO = new LoginVO();
-        loginVO.setToken(jwtUtil.generateToken(user.getId()));
+        loginVO.setToken(jwtUtil.generateToken(user.getId(),role));
         
         LoginVO.UserInfo userInfo = new LoginVO.UserInfo();
         BeanUtils.copyProperties(user, userInfo);
@@ -566,9 +567,9 @@ public class AuthServiceImpl implements AuthService {
      * @param token JWT token
      * @param userId 用户ID
      */
-    private void storeTokenInRedis(String token, Long userId) {
+    private void storeTokenInRedis(String token, Long userId,String type) {
         // 使用userId作为key的一部分，便于按用户查看
-        String userTokenKey = String.format("token:user:%d", userId);
+        String userTokenKey = String.format("token:%s:%d", type,userId);
         String tokenKey = String.format("token:auth:%s", token);
         
         // token基本信息
