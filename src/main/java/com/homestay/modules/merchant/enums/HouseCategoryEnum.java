@@ -2,18 +2,17 @@ package com.homestay.modules.merchant.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Getter
-
 public enum HouseCategoryEnum {
     BOUTIQUE("精品房源"),
     ECONOMIC("经济型"),
     LUXURY("豪华型"),
     FAMILY("家庭型"),
     BUSINESS("商务型"),
-    // 新增房源类型
     VILLA("别墅"),
     APARTMENT("公寓"),
     RESORT("度假村"),
@@ -45,6 +44,16 @@ public enum HouseCategoryEnum {
         return description;
     }
 
+    // 根据 category 获取对应的 description
+    public static String getDescriptionByCategory(String category) {
+        try {
+            HouseCategoryEnum categoryEnum = HouseCategoryEnum.valueOf(category.toUpperCase());
+            return categoryEnum.getDescription();
+        } catch (IllegalArgumentException e) {
+            return null; // 如果没有找到对应的枚举值，可以返回 null 或者其他默认值
+        }
+    }
+
     public static boolean contains(String category) {
         try {
             valueOf(category.toUpperCase());
@@ -54,3 +63,4 @@ public enum HouseCategoryEnum {
         }
     }
 }
+

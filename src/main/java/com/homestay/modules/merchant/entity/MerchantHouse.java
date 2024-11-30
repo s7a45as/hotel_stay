@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @TableName(value = "t_house", autoResultMap = true)
 @Schema(description = "商家房源信息")
+
 public class MerchantHouse {
 
 
@@ -91,6 +92,6 @@ public class MerchantHouse {
     private LocalDateTime updateTime;
 
     @Schema(description = "是否删除")
-    @TableLogic
+//    @TableLogic// 使用逻辑删除
     private Integer deleted;
 } 

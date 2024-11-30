@@ -6,6 +6,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.common.utils.UploadUtils;
+import com.homestay.modules.comUtils.entity.City;
+import com.homestay.modules.comUtils.entity.District;
+import com.homestay.modules.comUtils.mapper.CityMapper;
+import com.homestay.modules.comUtils.mapper.DistrictMapper;
 import com.homestay.modules.merchant.entity.Merchant;
 import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.dto.MerchantHouseDTO;
@@ -37,6 +41,8 @@ public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, M
     private final MerchantHouseMapper houseMapper;
     private final UploadUtils uploadUtils;
     private  final MerchantMapper merchantMapper;
+    private  final CityMapper cityMapper;
+    private  final DistrictMapper districtMapper;
 
     @Override
     public Page<MerchantHouse> getHouseList(Integer currentPage, Integer pageSize, String name, String type, Integer status) {
@@ -48,7 +54,7 @@ public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, M
             .eq(StringUtils.hasText(type), MerchantHouse::getType, type)
             .eq(status != null, MerchantHouse::getStatus, status)
             .orderByDesc(MerchantHouse::getCreateTime);
-            
+
         return houseMapper.selectPage(page, wrapper);
     }
 
@@ -75,21 +81,36 @@ public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, M
         }
 
         try {
+
+            LambdaQueryWrapper<City> wrapper=new LambdaQueryWrapper<City>()
+                    .eq(City::getCode,houseDTO.getCity());
+            LambdaQueryWrapper<District> wrapper1 =new LambdaQueryWrapper<District>()
+                    .eq(District::getCode,houseDTO.getDistrict());
+
+            City city=cityMapper.selectOne(wrapper);
+            District district=districtMapper.selectOne(wrapper1);
+
+
+
             // 4. DTO转换为实体
             MerchantHouse house = new MerchantHouse();
             BeanUtils.copyProperties(houseDTO, house);
-
             // 5. 设置其他必要字段
             house.setMerchantId(merchantId);
             house.setMerchantName(merchant.getUsername());
             house.setStatus(HouseStatusEnum.ON_SHELF.getCode()); // 默认上架
             house.setRating(0.0);
             house.setReviewCount(0);
+            // TODO：只是将编号改成中文存入数据库，可能会存在一定的问题，但是我不想该前端的渲染了
+            house.setCity(city.getName());
+            house.setDistrict(district.getName());
+            house.setCategory(HouseCategoryEnum.getDescriptionByCategory(house.getCategory()));
+            house.setType(HouseTypeEnum.getDescriptionByCode(house.getType()));
 
             // 6. 构建完整地址
             String fullAddress = String.format("%s%s%s",
-                    houseDTO.getCity(),
-                    houseDTO.getDistrict(),
+                    city.getName(),
+                    district.getName(),
                     houseDTO.getLocation()
             );
             house.setAddress(fullAddress);
