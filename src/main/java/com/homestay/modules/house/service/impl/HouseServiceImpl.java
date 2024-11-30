@@ -20,6 +20,7 @@ import com.homestay.modules.house.service.HouseService;
 import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,6 +39,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements HouseService {
 
     private final HouseImageMapper houseImageMapper;
@@ -51,69 +53,73 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
+
+        log.info("getHouseList: {}", query);
+
         // 构建查询条件
         LambdaQueryWrapper<House> wrapper = new LambdaQueryWrapper<>();
-        //先将代码转成中文先
-        LambdaQueryWrapper<City> wrapper1 =new LambdaQueryWrapper<City>()
-                .eq(City::getCode,query.getCity())
+
+        // 获取城市名称
+        LambdaQueryWrapper<City> wrapper1 = new LambdaQueryWrapper<City>()
+                .eq(City::getCode, query.getCity())
                 .select(City::getName);
-        String cityName =cityMapper.selectOne(wrapper1).getName();
+        String cityName = cityMapper.selectOne(wrapper1).getName();
         if (cityName != null && cityName.length() > 2) {
             cityName = cityName.substring(0, 2); // 取前两个字
         }
-
         query.setCity(cityName);
 
-
-        // 城市筛选 - 标准化处理
+        // 城市筛选
         if (query.getCity() != null) {
-            // 移除引号，去除首尾空格
             String city = query.getCity().replaceAll("[\"']", "").trim();
             wrapper.like(House::getCity, city);
         }
 
         // 价格范围筛选
         wrapper.ge(query.getMinPrice() != null, House::getPrice, query.getMinPrice())
-              .le(query.getMaxPrice() != null, House::getPrice, query.getMaxPrice());
+                .le(query.getMaxPrice() != null, House::getPrice, query.getMaxPrice());
 
         // 入住人数筛选
         wrapper.ge(query.getGuestCount() != null, House::getMaxGuests, query.getGuestCount());
 
         // 房型筛选
         if (query.getRoomTypes() != null && !query.getRoomTypes().isEmpty()) {
-            // 标准化处理房型字符串
             String cleanRoomTypes = query.getRoomTypes().replaceAll("[\"']", "");
             List<String> roomTypeList = Arrays.asList(cleanRoomTypes.split(","));
             wrapper.in(House::getType, roomTypeList);
         }
 
-        // 设施筛选
+        // 设施筛选 - 使用 JSON_CONTAINS 检查是否包含指定设施
         if (query.getAmenities() != null && !query.getAmenities().isEmpty()) {
-            // 标准化处理设施字符串
             String cleanAmenities = query.getAmenities().replaceAll("[\"']", "");
             List<String> amenityList = Arrays.asList(cleanAmenities.split(","));
-            wrapper.exists("SELECT 1 FROM house_facility hf WHERE hf.house_id = house.id AND hf.name IN (" +
-                String.join(",", Collections.nCopies(amenityList.size(), "?")) + ")",
-                amenityList.toArray());
+            if (!amenityList.isEmpty()) {
+                // 遍历设施列表，使用 JSON_CONTAINS 来检查每项设施是否存在于数据库的 JSON 数组中
+                for (String amenity : amenityList) {
+                    wrapper.and(wrapper2 -> wrapper2.like(House::getFacilities, amenity));
+                }
+            }
         }
 
-        // 标签筛选
+        // 标签筛选 - 使用 JSON_CONTAINS 检查是否包含指定标签
         if (query.getTags() != null && !query.getTags().isEmpty()) {
-            // 标准化处理标签符串
             String cleanTags = query.getTags().replaceAll("[\"']", "");
             List<String> tagList = Arrays.asList(cleanTags.split(","));
-            wrapper.exists("SELECT 1 FROM house_tag ht WHERE ht.house_id = house.id AND ht.name IN (" +
-                String.join(",", Collections.nCopies(tagList.size(), "?")) + ")",
-                tagList.toArray());
+            if (!tagList.isEmpty()) {
+                // 遍历标签列表，使用 JSON_CONTAINS 来检查每个标签是否存在于数据库的 JSON 数组中
+                for (String tag : tagList) {
+                    wrapper.and(wrapper2 -> wrapper2.like(House::getFeatures, tag));
+                }
+            }
         }
 
         // 日期可用性筛选
         if (query.getCheckInDate() != null && query.getCheckOutDate() != null) {
             wrapper.notExists(
-                "SELECT 1 FROM house_booking hb WHERE hb.house_id = house.id " +
-                "AND hb.status != -1 " + // 排除已取消的订单
-                "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() +
-                "' OR hb.check_in_time >= '" + query.getCheckOutDate() + "')"
+                    "SELECT 1 FROM house_booking hb WHERE hb.house_id = house.id " +
+                            "AND hb.status != -1 " + // 排除已取消的订单
+                            "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() +
+                            "' OR hb.check_in_time >= '" + query.getCheckOutDate() + "')"
             );
         }
 
