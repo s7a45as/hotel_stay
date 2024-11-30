@@ -2574,3 +2574,36 @@ This generated password is for development use only. Your security configuration
 2024-11-30 13:00:34.627 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/upload/house/2024/11/30/01d0a0108b2449f3b32beb8e6b63427b.jpg", parameters={}
 2024-11-30 13:00:34.629 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [URL [file:C:/Users/45732/Code/Java/hotel_stay/upload/]]
 2024-11-30 13:00:34.632 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-30 13:01:53.712 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE
+2024-11-30 13:01:53.714 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T11:42:07.298545700, lastAccessTime=2024-11-30T13:00:34.584510700, createTime=2024-11-30T11:42:07.298545700, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE}
+2024-11-30 13:01:53.716 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-30 13:01:53.716 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/common/districts?cityCode=%E5%8C%97%E4%BA%AC%E5%B8%82", parameters={masked}
+2024-11-30 13:01:53.716 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.comUtils.controller.ComUtilsController#getDistrictList(String)
+2024-11-30 13:01:53.720 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-30 13:01:53.721 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[])]
+2024-11-30 13:01:53.721 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-30 13:02:09.751 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE
+2024-11-30 13:02:09.753 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T11:42:07.298545700, lastAccessTime=2024-11-30T13:01:53.715161700, createTime=2024-11-30T11:42:07.298545700, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE}
+2024-11-30 13:02:09.755 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-30 13:02:09.755 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/common/districts?cityCode=BJ", parameters={masked}
+2024-11-30 13:02:09.755 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.comUtils.controller.ComUtilsController#getDistrictList(String)
+2024-11-30 13:02:09.761 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-30 13:02:09.761 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{value=BJ-CP, label=昌平区, code=BJ-CP}, {value=BJ-HD, label=海淀区,  (truncated)...]
+2024-11-30 13:02:09.761 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-30 13:02:11.811 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE
+2024-11-30 13:02:11.813 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T11:42:07.298545700, lastAccessTime=2024-11-30T13:02:09.753905200, createTime=2024-11-30T11:42:07.298545700, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE}
+2024-11-30 13:02:11.816 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-30 13:02:11.817 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/merchant/houses/18", parameters={}
+2024-11-30 13:02:11.817 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantHouseController#updateHouse(Long, MerchantHouseDTO)
+2024-11-30 13:02:11.819 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [MerchantHouseDTO(id=18, title=你好, name=你非常好, type=基础类型, category=精品房源, city=BJ, district=BJ-CP, loca (truncated)...]
+2024-11-30 13:02:11.842 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-30 13:02:11.843 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=null)]
+2024-11-30 13:02:11.844 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-11-30 13:02:11.868 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE
+2024-11-30 13:02:11.869 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T11:42:07.298545700, lastAccessTime=2024-11-30T13:02:11.814724700, createTime=2024-11-30T11:42:07.298545700, userId=7, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3IiwiaWF0IjoxNzMyOTM4MTI3LCJleHAiOjE3MzMwMjQ1Mjd9.WISn5VXqTDGaDpqSXsRAZLZdGMvWICBZZt_wp02kvWE}
+2024-11-30 13:02:11.871 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 7
+2024-11-30 13:02:11.871 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/merchant/houses?currentPage=1&pageSize=10", parameters={masked}
+2024-11-30 13:02:11.872 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.merchant.controller.MerchantHouseController#getHouseList(Integer, Integer, String, String, Integer)
+2024-11-30 13:02:11.888 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-11-30 13:02:11.889 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=com.baomidou.mybatisplus.extension.plugins.pagination.Page@48709 (truncated)...]
+2024-11-30 13:02:11.890 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
