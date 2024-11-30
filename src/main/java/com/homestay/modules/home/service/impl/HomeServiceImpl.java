@@ -86,6 +86,7 @@ public class HomeServiceImpl implements HomeService {
         // 创建分页参数
         Page<House> pageParam = new Page<>(page, size);
         
+        
         // 执行分页查询
         Page<House> pageResult = homeMapper.searchHouses(pageParam, keyword, city, type, 
                                                        minPrice, maxPrice);
