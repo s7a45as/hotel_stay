@@ -1,7 +1,7 @@
 package com.homestay.modules.house.dto;
 
 import com.homestay.common.shareentity.House;
-import com.homestay.modules.house.entity.Facility;
+import com.homestay.modules.house.entity.HouseFacility;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,7 @@ public class HouseDetailDTO {
     private House house;
     
     @Schema(description = "设施详情列表")
-    private List<Facility> facilityDetails;
+    private List<HouseFacility> facilityDetails;
     
     @Schema(description = "是否已收藏")
     private boolean isFavorite;
