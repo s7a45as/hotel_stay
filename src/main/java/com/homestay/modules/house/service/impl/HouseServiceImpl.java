@@ -71,14 +71,14 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
             String city = query.getCity().replaceAll("[\"']", "").trim();
             wrapper.like(House::getCity, city);
         }
-        
+
         // 价格范围筛选
         wrapper.ge(query.getMinPrice() != null, House::getPrice, query.getMinPrice())
               .le(query.getMaxPrice() != null, House::getPrice, query.getMaxPrice());
-        
+
         // 入住人数筛选
         wrapper.ge(query.getGuestCount() != null, House::getMaxGuests, query.getGuestCount());
-        
+
         // 房型筛选
         if (query.getRoomTypes() != null && !query.getRoomTypes().isEmpty()) {
             // 标准化处理房型字符串
@@ -86,41 +86,41 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
             List<String> roomTypeList = Arrays.asList(cleanRoomTypes.split(","));
             wrapper.in(House::getType, roomTypeList);
         }
-        
+
         // 设施筛选
         if (query.getAmenities() != null && !query.getAmenities().isEmpty()) {
             // 标准化处理设施字符串
             String cleanAmenities = query.getAmenities().replaceAll("[\"']", "");
             List<String> amenityList = Arrays.asList(cleanAmenities.split(","));
-            wrapper.exists("SELECT 1 FROM house_facility hf WHERE hf.house_id = house.id AND hf.name IN (" + 
-                String.join(",", Collections.nCopies(amenityList.size(), "?")) + ")", 
+            wrapper.exists("SELECT 1 FROM house_facility hf WHERE hf.house_id = house.id AND hf.name IN (" +
+                String.join(",", Collections.nCopies(amenityList.size(), "?")) + ")",
                 amenityList.toArray());
         }
-        
+
         // 标签筛选
         if (query.getTags() != null && !query.getTags().isEmpty()) {
             // 标准化处理标签符串
             String cleanTags = query.getTags().replaceAll("[\"']", "");
             List<String> tagList = Arrays.asList(cleanTags.split(","));
-            wrapper.exists("SELECT 1 FROM house_tag ht WHERE ht.house_id = house.id AND ht.name IN (" + 
-                String.join(",", Collections.nCopies(tagList.size(), "?")) + ")", 
+            wrapper.exists("SELECT 1 FROM house_tag ht WHERE ht.house_id = house.id AND ht.name IN (" +
+                String.join(",", Collections.nCopies(tagList.size(), "?")) + ")",
                 tagList.toArray());
         }
-        
+
         // 日期可用性筛选
         if (query.getCheckInDate() != null && query.getCheckOutDate() != null) {
             wrapper.notExists(
                 "SELECT 1 FROM house_booking hb WHERE hb.house_id = house.id " +
                 "AND hb.status != -1 " + // 排除已取消的订单
-                "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() + 
+                "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() +
                 "' OR hb.check_in_time >= '" + query.getCheckOutDate() + "')"
             );
         }
-        
+
         // 分页查询
         Page<House> page = new Page<>(query.getPage(), query.getPageSize());
         Page<House> result = houseMapper.selectPage(page, wrapper);
-        
+
         // 转换为 DTO
         List<HouseItemDTO> houseDTOList = result.getRecords().stream()
                 .map(house -> {
@@ -133,21 +133,21 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
                             .rating(house.getRating())
                             .reviewCount(house.getReviewCount())
                             .build();
-                    
+
                     // 设置封面图
                     HouseImage coverImage = houseImageMapper.selectCoverImage(house.getId());
                     if (coverImage != null) {
                         dto.setCoverImage(coverImage.getUrl());
                     }
-                    
+
                     // 设置标签
                     List<TagDTO> tags = getHouseTags(house.getId());
                     dto.setTags(tags);
-                    
+
                     return dto;
                 })
                 .collect(Collectors.toList());
-        
+
         return HouseListDTO.builder()
                 .list(houseDTOList)
                 .total(result.getTotal())
