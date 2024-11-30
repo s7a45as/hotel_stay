@@ -5,7 +5,7 @@ import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.Result;
 import com.homestay.modules.merchant.entity.MerchantHouse;
 import com.homestay.modules.merchant.dto.MerchantHouseDTO;
-import com.homestay.modules.merchant.enums.HouseCategory;
+import com.homestay.modules.merchant.enums.HouseCategoryEnum;
 import com.homestay.modules.merchant.service.MerchantHouseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -16,6 +16,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/merchant/houses")
 @RequiredArgsConstructor
 @SecurityRequirement(name = "Bearer")
+@Slf4j
 public class MerchantHouseController {
 
     private final MerchantHouseService houseService;
@@ -73,15 +75,17 @@ public class MerchantHouseController {
         @Parameter(description = "房源信息", required = true) 
         @RequestBody MerchantHouseDTO houseDTO
     ) {
+
         // 验证房源分类
-        if (!HouseCategory.contains(houseDTO.getCategory())) {
+        if (!HouseCategoryEnum.contains(houseDTO.getCategory())) {
+            log.info("houseDTO2:"+ houseDTO);
             throw new BusinessException("无效的房源分类，可选值：" +
-                Arrays.stream(HouseCategory.values())
+                Arrays.stream(HouseCategoryEnum.values())
                     .map(category -> category.name() + "(" + category.getDescription() + ")")
                     .collect(Collectors.joining(", "))
             );
         }
-        
+        log.info("houseDTO:"+ houseDTO);
         houseService.createHouse(houseDTO);
         return Result.success();
     }
