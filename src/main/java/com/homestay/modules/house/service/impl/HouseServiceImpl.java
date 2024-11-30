@@ -7,6 +7,8 @@ import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.common.shareentity.House;
 import com.homestay.common.utils.SecurityUtil;
+import com.homestay.modules.comUtils.entity.City;
+import com.homestay.modules.comUtils.mapper.CityMapper;
 import com.homestay.modules.house.dto.*;
 import com.homestay.modules.house.entity.Favorite;
 import com.homestay.modules.house.entity.HouseImage;
@@ -45,16 +47,29 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     private final HouseMapper houseMapper;
     private  final OrderMapper  orderMapper; // 用于创建预订单
 
+    private final CityMapper cityMapper;
+
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
         // 构建查询条件
         LambdaQueryWrapper<House> wrapper = new LambdaQueryWrapper<>();
-        
+        //先将代码转成中文先
+        LambdaQueryWrapper<City> wrapper1 =new LambdaQueryWrapper<City>()
+                .eq(City::getCode,query.getCity())
+                .select(City::getName);
+        String cityName =cityMapper.selectOne(wrapper1).getName();
+        if (cityName != null && cityName.length() > 2) {
+            cityName = cityName.substring(0, 2); // 取前两个字
+        }
+
+        query.setCity(cityName);
+
+
         // 城市筛选 - 标准化处理
         if (query.getCity() != null) {
             // 移除引号，去除首尾空格
             String city = query.getCity().replaceAll("[\"']", "").trim();
-            wrapper.eq(House::getCity, city);
+            wrapper.like(House::getCity, city);
         }
         
         // 价格范围筛选
