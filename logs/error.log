@@ -429,3 +429,9 @@ Caused by: java.lang.ClassNotFoundException: com.homestay.modules.merchant.enums
 2024-11-30 12:59:10.608 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
 2024-11-30 12:59:18.513 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
 2024-11-30 12:59:18.514 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-11-30 13:03:32.638 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-30 13:03:35.780 [http-nio-8080-exec-3] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-30 13:03:51.919 [http-nio-8080-exec-2] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-30 13:06:56.446 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-30 13:07:30.841 [http-nio-8080-exec-9] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
+2024-11-30 13:07:34.641 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 6002, 错误信息: 订单详情不存在, 原始异常: 无
