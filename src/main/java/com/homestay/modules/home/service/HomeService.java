@@ -2,7 +2,7 @@ package com.homestay.modules.home.service;
 
 import com.homestay.modules.home.dto.HousePageDTO;
 import com.homestay.modules.home.entity.homeCity;
-import com.homestay.modules.home.entity.Destination;
+import com.homestay.modules.home.entity.homeDistricts;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public interface HomeService {
     /**
      * 获取热门目的地
      */
-    List<Destination> getPopularDestinations();
+    List<homeDistricts> getPopularDestinations();
     
     /**
      * 搜索房源

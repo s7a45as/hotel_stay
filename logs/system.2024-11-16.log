@@ -4522,7 +4522,7 @@ Caused by: org.springframework.core.serializer.support.SerializationFailedExcept
 	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
 	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:92)
 	... 123 common frames omitted
-Caused by: java.io.NotSerializableException: com.homestay.modules.home.entity.Destination
+Caused by: java.io.NotSerializableException: com.homestay.modules.home.entity.homeDistricts
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1201)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:359)
 	at java.base/java.util.ArrayList.writeObject(ArrayList.java:949)
@@ -4668,7 +4668,7 @@ Caused by: org.springframework.core.serializer.support.SerializationFailedExcept
 	at org.springframework.core.serializer.support.SerializingConverter.convert(SerializingConverter.java:33)
 	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.serialize(JdkSerializationRedisSerializer.java:92)
 	... 123 common frames omitted
-Caused by: java.io.NotSerializableException: com.homestay.modules.home.entity.Destination
+Caused by: java.io.NotSerializableException: com.homestay.modules.home.entity.homeDistricts
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1201)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:359)
 	at java.base/java.util.ArrayList.writeObject(ArrayList.java:949)

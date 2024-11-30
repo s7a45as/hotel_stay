@@ -3,7 +3,7 @@ package com.homestay.modules.home.controller;
 import com.homestay.common.response.Result;
 import com.homestay.modules.home.dto.HousePageDTO;
 import com.homestay.modules.home.entity.homeCity;
-import com.homestay.modules.home.entity.Destination;
+import com.homestay.modules.home.entity.homeDistricts;
 import com.homestay.modules.home.service.HomeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -64,10 +64,10 @@ public class HomeController {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "获取成功",
             content = @Content(mediaType = "application/json",
-                schema = @Schema(implementation = Destination.class)))
+                schema = @Schema(implementation = homeDistricts.class)))
     })
     @GetMapping("/popular-destinations")
-    public Result<List<Destination>> getPopularDestinations() {
+    public Result<List<homeDistricts>> getPopularDestinations() {
         return Result.success(homeService.getPopularDestinations());
     }
     

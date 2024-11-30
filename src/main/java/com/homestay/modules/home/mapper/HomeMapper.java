@@ -3,7 +3,7 @@ package com.homestay.modules.home.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.modules.home.entity.homeCity;
-import com.homestay.modules.home.entity.Destination;
+import com.homestay.modules.home.entity.homeDistricts;
 import com.homestay.common.shareentity.House;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -13,13 +13,13 @@ import java.util.List;
 
 @Mapper
 public interface HomeMapper extends BaseMapper<House> {
-    
-    @Select("SELECT value, label FROM t_homecity WHERE status = 1")
+
+    @Select("SELECT code, name FROM t_cities WHERE status = 1 ")
     List<homeCity> selectCityList();
-    
-    @Select("SELECT * FROM t_destination WHERE status = 1 ORDER BY id")
-    List<Destination> selectPopularDestinations();
-    
+
+    @Select("SELECT * FROM t_districts WHERE status = 1 ORDER BY id limit 10")
+    List<homeDistricts> selectPopularDestinations();
+
     /**
      * 搜索房源
      */
@@ -29,4 +29,4 @@ public interface HomeMapper extends BaseMapper<House> {
                            @Param("type") String type,
                            @Param("minPrice") Integer minPrice,
                            @Param("maxPrice") Integer maxPrice);
-} 
+}
