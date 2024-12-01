@@ -74,6 +74,9 @@ public class HouseCommentController {
     public Result<THouseRatingStats> getRatingStats(
             @Parameter(description = "房源ID") @PathVariable Long houseId
     ) {
+
+
+
         return Result.success(commentService.getRatingStats(houseId));
     }
 

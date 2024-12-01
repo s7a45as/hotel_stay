@@ -4,7 +4,12 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.homestay.common.handler.JsonTypeHandler;
+import com.homestay.common.json.JsonListDeserializer;
+import com.homestay.common.json.JsonListSerializer;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -58,6 +63,8 @@ public class THouseComment implements Serializable {
      * 评论图片列表
      */
     @TableField(value = "images", typeHandler = JsonTypeHandler.class)
+    @JsonSerialize(using = JsonListSerializer.class)
+    @JsonDeserialize(using = JsonListDeserializer.class)
     private List<String> images = new ArrayList<>();
 
     /**
@@ -70,6 +77,7 @@ public class THouseComment implements Serializable {
      * 回复时间
      */
     @TableField(value = "reply_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date reply_time;
 
     /**
@@ -82,12 +90,14 @@ public class THouseComment implements Serializable {
      * 创建时间
      */
     @TableField(value = "create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date create_time;
 
     /**
      * 更新时间
      */
     @TableField(value = "update_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date update_time;
 
     @TableField(exist = false)

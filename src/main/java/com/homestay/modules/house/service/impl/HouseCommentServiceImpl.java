@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.utils.SecurityUtil;
 import com.homestay.common.utils.SecurityUtils;
+import com.homestay.common.utils.UploadUtils;
 import com.homestay.modules.house.entity.*;
 import com.homestay.modules.house.mapper.*;
 import com.homestay.modules.house.service.THouseCommentService;
@@ -17,10 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -36,6 +40,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     private final THouseRatingStatsMapper ratingStatsMapper;
     private final SecurityUtil securityUtil; // 用于获取当前登录用户
     private final OrderMapper orderMapper;
+    private final UploadUtils uploadUtils;
     public IPage<THouseComment> getCommentList(Long houseId, Integer page, Integer pageSize, Integer rating) {
         LambdaQueryWrapper<THouseComment> wrapper = new LambdaQueryWrapper<THouseComment>()
                 .eq(THouseComment::getHouse_id, houseId)
@@ -49,31 +54,41 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void addComment(THouseComment comment) {
+        // 1. 基础参数验证
+        if (comment == null) {
+            throw new BusinessException("评论信息不能为空");
+        }
         if (comment.getHouse_id() == null) {
             throw new BusinessException("房源ID不能为空");
         }
-        if (comment.getRating() == null) {
-            throw new BusinessException("评分不能为空");
+        if (comment.getRating() == null || comment.getRating() < 1 || comment.getRating() > 5) {
+            throw new BusinessException("评分必须在1-5之间");
         }
         if (StringUtils.isBlank(comment.getContent())) {
             throw new BusinessException("评论内容不能为空");
         }
+        if (comment.getContent().length() > 1000) {
+            throw new BusinessException("评论内容不能超过1000字");
+        }
 
+        // 2. 获取当前用户ID
         Long userId = securityUtil.getCurrentUserId();
+        if (userId == null) {
+            throw new BusinessException("用户未登录");
+        }
         Long houseId = comment.getHouse_id();
 
-        // 检查是否已经评论过
+        // 3. 检查是否已经评论过
         Long existingComment = baseMapper.selectCount(
                 new LambdaQueryWrapper<THouseComment>()
                         .eq(THouseComment::getUser_id, userId)
                         .eq(THouseComment::getHouse_id, houseId)
         );
-
         if (existingComment > 0) {
             throw new BusinessException("您已经评论过该房源");
         }
 
-        // 查询用户对该房源的订单
+        // 4. 查询并验证订单
         UserOrder order = orderMapper.selectOne(
                 new LambdaQueryWrapper<UserOrder>()
                         .eq(UserOrder::getUserId, userId)
@@ -82,19 +97,48 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
                         .orderByDesc(UserOrder::getCreateTime)
                         .last("LIMIT 1")
         );
-
         if (order == null) {
             throw new BusinessException("您没有该房源的已完成订单，无法评价");
         }
 
+// 5. 处理图片列表
+List<String> imageUrls = new ArrayList<>();
+if (comment.getImages() != null && !comment.getImages().isEmpty()) {
+    if (comment.getImages().size() > 9) {
+        throw new BusinessException("最多只能上传9张图片");
+    }
+    
+    for (Object img : comment.getImages()) {
+        if (img instanceof MultipartFile) {
+            // 使用UploadUtils上传图片
+            String url = uploadUtils.upload((MultipartFile) img, "comment");
+            imageUrls.add(url);
+        } else {
+            throw new BusinessException("无效的图片格式，请上传正确的图片文件");
+        }
+    }
+}
+comment.setImages(imageUrls);
+
+
+
+        // 6. 设置评论基本信息
         comment.setOrder_id(Long.valueOf(order.getId()));
         comment.setUser_id(userId);
-        comment.setStatus(1);//1：正常 0：删除
-        comment.setCreate_time(new Date());
-        comment.setUpdate_time(new Date());
+        comment.setStatus(0); // 待审核状态
+        Date now = new Date();
+        comment.setCreate_time(now);
+        comment.setUpdate_time(now);
 
-        save(comment);
-        updateRatingStats(comment.getHouse_id());
+        try {
+            // 7. 保存评论
+            save(comment);
+            // 8. 更新房源评分统计
+            updateRatingStats(comment.getHouse_id());
+        } catch (Exception e) {
+            log.error("保存评论失败", e);
+            throw new BusinessException("评论保存失败，请稍后重试");
+        }
     }
     @Transactional(rollbackFor = Exception.class)
     public boolean toggleLike(Long commentId, Long userId) {
@@ -123,7 +167,24 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     }
 
     public THouseRatingStats getRatingStats(Long houseId) {
-        return ratingStatsMapper.selectById(houseId);
+        THouseRatingStats stats = ratingStatsMapper.selectById(houseId);
+        log.debug("查询到的评分统计: {}", stats); // 添加调试日志
+        
+        if (stats == null) {
+            log.info("创建评分统计对象");
+            stats = new THouseRatingStats();
+            stats.setHouse_id(houseId);
+            stats.setTotal_rating(0);
+            stats.setAverage_rating(BigDecimal.ZERO);
+            stats.setRating_1_count(0);
+            stats.setRating_2_count(0);
+            stats.setRating_3_count(0);
+            stats.setRating_4_count(0);
+            stats.setRating_5_count(0);
+            stats.setUpdate_time(new Date());
+            ratingStatsMapper.insert(stats);
+        }
+        return stats;
     }
 
     @Transactional(rollbackFor = Exception.class)

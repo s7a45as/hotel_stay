@@ -13,7 +13,7 @@ import lombok.Data;
  * 房源评分统计表
  * @TableName t_house_rating_stats
  */
-@TableName(value ="t_house_rating_stats")
+@TableName(value ="t_house_rating_stats",autoResultMap = true)
 @Data
 public class THouseRatingStats implements Serializable {
     /**
