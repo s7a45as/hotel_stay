@@ -10,6 +10,8 @@ import com.homestay.common.utils.SecurityUtils;
 import com.homestay.modules.house.entity.*;
 import com.homestay.modules.house.mapper.*;
 import com.homestay.modules.house.service.THouseCommentService;
+import com.homestay.modules.order.entity.UserOrder;
+import com.homestay.modules.order.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -33,6 +35,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     private final THouseCommentReportMapper reportMapper;
     private final THouseRatingStatsMapper ratingStatsMapper;
     private final SecurityUtil securityUtil; // 用于获取当前登录用户
+    private final OrderMapper orderMapper;
     public IPage<THouseComment> getCommentList(Long houseId, Integer page, Integer pageSize, Integer rating) {
         LambdaQueryWrapper<THouseComment> wrapper = new LambdaQueryWrapper<THouseComment>()
                 .eq(THouseComment::getHouse_id, houseId)
@@ -44,8 +47,8 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void addComment(THouseComment comment) {
-        // 验证必填字段
         if (comment.getHouse_id() == null) {
             throw new BusinessException("房源ID不能为空");
         }
@@ -55,20 +58,44 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         if (StringUtils.isBlank(comment.getContent())) {
             throw new BusinessException("评论内容不能为空");
         }
-        
-        // 设置默认值
-        comment.setUser_id(securityUtil.getCurrentUserId());
-        comment.setStatus(0);  // 0-待审核
+
+        Long userId = securityUtil.getCurrentUserId();
+        Long houseId = comment.getHouse_id();
+
+        // 检查是否已经评论过
+        Long existingComment = baseMapper.selectCount(
+                new LambdaQueryWrapper<THouseComment>()
+                        .eq(THouseComment::getUser_id, userId)
+                        .eq(THouseComment::getHouse_id, houseId)
+        );
+
+        if (existingComment > 0) {
+            throw new BusinessException("您已经评论过该房源");
+        }
+
+        // 查询用户对该房源的订单
+        UserOrder order = orderMapper.selectOne(
+                new LambdaQueryWrapper<UserOrder>()
+                        .eq(UserOrder::getUserId, userId)
+                        .eq(UserOrder::getHouseId, houseId)
+                        .eq(UserOrder::getStatus, 3)
+                        .orderByDesc(UserOrder::getCreateTime)
+                        .last("LIMIT 1")
+        );
+
+        if (order == null) {
+            throw new BusinessException("您没有该房源的已完成订单，无法评价");
+        }
+
+        comment.setOrder_id(Long.valueOf(order.getId()));
+        comment.setUser_id(userId);
+        comment.setStatus(0);
         comment.setCreate_time(new Date());
         comment.setUpdate_time(new Date());
-        
-        // 保存评论
+
         save(comment);
-        
-        // 更新房源评分统计
         updateRatingStats(comment.getHouse_id());
     }
-
     @Transactional(rollbackFor = Exception.class)
     public boolean toggleLike(Long commentId, Long userId) {
         THouseCommentLike like = likeMapper.selectOne(
