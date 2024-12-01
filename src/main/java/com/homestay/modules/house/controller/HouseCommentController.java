@@ -36,12 +36,14 @@ public class HouseCommentController {
     }
 
     @Operation(summary = "添加评论")
-    @PostMapping
-    public Result<?> addComment(
+    @PostMapping("/{houseId}")
+    public Result<Void> addComment(
             @Parameter(description = "评论信息") @RequestBody @Valid THouseComment comment,
-            @Parameter(hidden = true) @AuthenticationPrincipal Long userId
+            @Parameter(hidden = true) @AuthenticationPrincipal Long userId,
+            @Parameter(description = "房源ID") @PathVariable Long houseId
     ) {
         comment.setUser_id(userId);
+        comment.setHouse_id(houseId);
         commentService.addComment(comment);
         return Result.success();
     }

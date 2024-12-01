@@ -5,27 +5,34 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.homestay.common.exception.BusinessException;
+import com.homestay.common.utils.SecurityUtil;
+import com.homestay.common.utils.SecurityUtils;
 import com.homestay.modules.house.entity.*;
 import com.homestay.modules.house.mapper.*;
+import com.homestay.modules.house.service.THouseCommentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Date;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, THouseComment> {
+@Transactional(rollbackFor = Exception.class)
+public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, THouseComment> 
+    implements THouseCommentService {
 
     private final THouseCommentLikeMapper likeMapper;
     private final THouseCommentReportMapper reportMapper;
     private final THouseRatingStatsMapper ratingStatsMapper;
-
+    private final SecurityUtil securityUtil; // 用于获取当前登录用户
     public IPage<THouseComment> getCommentList(Long houseId, Integer page, Integer pageSize, Integer rating) {
         LambdaQueryWrapper<THouseComment> wrapper = new LambdaQueryWrapper<THouseComment>()
                 .eq(THouseComment::getHouse_id, houseId)
@@ -36,17 +43,29 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         return this.page(new Page<>(page, pageSize), wrapper);
     }
 
-    @Transactional(rollbackFor = Exception.class)
+    @Override
     public void addComment(THouseComment comment) {
-        // 验证评分范围
-        if (comment.getRating() < 1 || comment.getRating() > 5) {
-            throw new BusinessException("评分必须在1-5之间");
+        // 验证必填字段
+        if (comment.getHouse_id() == null) {
+            throw new BusinessException("房源ID不能为空");
+        }
+        if (comment.getRating() == null) {
+            throw new BusinessException("评分不能为空");
+        }
+        if (StringUtils.isBlank(comment.getContent())) {
+            throw new BusinessException("评论内容不能为空");
         }
         
-        // 保存评论
-        this.save(comment);
+        // 设置默认值
+        comment.setUser_id(securityUtil.getCurrentUserId());
+        comment.setStatus(0);  // 0-待审核
+        comment.setCreate_time(new Date());
+        comment.setUpdate_time(new Date());
         
-        // 更新评分统计
+        // 保存评论
+        save(comment);
+        
+        // 更新房源评分统计
         updateRatingStats(comment.getHouse_id());
     }
 
