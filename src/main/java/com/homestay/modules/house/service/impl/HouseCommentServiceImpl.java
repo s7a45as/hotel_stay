@@ -89,7 +89,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
 
         comment.setOrder_id(Long.valueOf(order.getId()));
         comment.setUser_id(userId);
-        comment.setStatus(0);
+        comment.setStatus(1);//1：正常 0：删除
         comment.setCreate_time(new Date());
         comment.setUpdate_time(new Date());
 

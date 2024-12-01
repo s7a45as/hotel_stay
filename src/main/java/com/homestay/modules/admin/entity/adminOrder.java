@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.LocalDate;
 
 @Data
-@TableName("t_order")
+@TableName("t_all_order")
 public class adminOrder {
     
     @TableId(type = IdType.ASSIGN_ID)

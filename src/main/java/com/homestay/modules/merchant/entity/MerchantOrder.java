@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("t_order")
+@TableName("t_all_order")
 @Schema(description = "商家订单信息")
 public class MerchantOrder {
 
