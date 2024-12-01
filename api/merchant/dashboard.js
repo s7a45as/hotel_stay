@@ -43,3 +43,14 @@ export function getIncomeTrend() {
     method: 'get',
   })
 }
+
+/**
+ * 获取最近的活动
+ * 使用优惠活动的接口
+ * */
+export function getRecentActivities() {
+  return request({
+    url: '/merchant/dashboard/recent-activities',
+    method: 'get',
+  })
+}

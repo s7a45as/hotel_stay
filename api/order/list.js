@@ -39,3 +39,15 @@ export function exportOrderList(params) {
     responseType: 'blob',
   })
 }
+
+/**
+ * 申请退款
+ * @param {Object} data - 退款数据
+ */
+export function applyRefund(data) {
+  return request({
+    url: '/order/refund/apply',
+    method: 'post',
+    data
+  })
+}

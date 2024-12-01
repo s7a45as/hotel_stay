@@ -1,9 +1,0 @@
-{
-  "code": 200,
-  "data": [
-    { "label": "单人间", "value": "1" },
-    { "label": "双人间", "value": "2" },
-    { "label": "家庭房", "value": "3" },
-    { "label": "别墅", "value": "4" }
-  ]
-}

@@ -18,7 +18,7 @@ export function getMerchantProfile() {
 export function updateMerchantProfile(data) {
   return request({
     url: '/merchant/profile',
-    method: 'put',
+    method: 'post',
     data,
   })
 }
@@ -30,22 +30,23 @@ export function updateMerchantProfile(data) {
 export function updateMerchantPassword(data) {
   return request({
     url: '/merchant/password',
-    method: 'put',
+    method: 'post',
     data,
   })
 }
 
 /**
  * 上传商家头像
- * @param {FormData} data - 头像数据
+ * @param {FormData} data 包含文件的 FormData 对象，文件参数名为 'file'
+ * @returns {Promise<{url: string}>} 返回上传后的头像URL
  */
 export function uploadMerchantAvatar(data) {
   return request({
     url: '/merchant/avatar',
     method: 'post',
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
     data,
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
   })
 }

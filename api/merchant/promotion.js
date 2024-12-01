@@ -33,3 +33,14 @@ export function deletePromotion(id) {
     method: 'delete',
   })
 }
+
+// 搜索用户
+export function searchUsers(phone) {
+  return request({
+    url: '/merchant/orders/users/search',
+    method: 'get',
+    params: {
+      phone
+    }
+  })
+}

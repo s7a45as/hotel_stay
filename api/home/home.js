@@ -16,7 +16,21 @@ export function searchHouses(params) {
 /**
  * 获取城市房源列表
  * @param {string} cityCode - 城市代码
- * @returns {Promise<Object>}
+ * @returns {Promise<{
+ *   data: {
+ *     list: Array<{
+ *       id: number,
+ *       name: string,
+ *       image: string,
+ *       price: number,
+ *       rating: number,
+ *       tags: string[],
+ *       location: string,
+ *       cityCode: string
+ *     }>,
+ *     total: number
+ *   }
+ * }>}
  */
 export function getCityHouses(cityCode) {
   return request({

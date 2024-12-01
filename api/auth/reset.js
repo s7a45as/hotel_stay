@@ -29,3 +29,10 @@ export function verifyResetToken(params) {
     params,
   })
 }
+export function sendVerifyCode(params) {
+  return request({})
+}
+
+export function verifyCode(params) {
+  return request({})
+}

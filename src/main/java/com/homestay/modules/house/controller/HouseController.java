@@ -102,7 +102,7 @@ public class HouseController {
         @Parameter(description = "房源ID", required = true, example = "1") 
         @PathVariable Long id
     ) {
-        log.info(id.toString());
+        log.info("/detail/{id}"+id.toString());
         return Result.success(houseService.getHouseDetail(id));
     }
 

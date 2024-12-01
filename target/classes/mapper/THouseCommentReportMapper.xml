@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.house.mapper.THouseCommentReportMapper">
+
+    <resultMap id="BaseResultMap" type="com.homestay.modules.house.entity.THouseCommentReport">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="comment_id" column="comment_id" jdbcType="BIGINT"/>
+            <result property="user_id" column="user_id" jdbcType="BIGINT"/>
+            <result property="reason" column="reason" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="handle_note" column="handle_note" jdbcType="VARCHAR"/>
+            <result property="handle_time" column="handle_time" jdbcType="TIMESTAMP"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,comment_id,user_id,
+        reason,description,status,
+        handle_note,handle_time,create_time
+    </sql>
+</mapper>

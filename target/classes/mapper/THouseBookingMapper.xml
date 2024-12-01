@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.house.mapper.THouseBookingMapper">
+
+    <resultMap id="BaseResultMap" type="com.homestay.modules.house.entity.THouseBooking">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="house_id" column="house_id" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="booking_start" column="booking_start" jdbcType="TIMESTAMP"/>
+            <result property="booking_end" column="booking_end" jdbcType="TIMESTAMP"/>
+            <result property="user_name" column="user_name" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="created_at" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updated_at" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,house_id,status,
+        booking_start,booking_end,user_name,
+        phone,email,created_at,
+        updated_at
+    </sql>
+</mapper>

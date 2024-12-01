@@ -51,3 +51,17 @@ export function deleteHouse(id) {
     method: 'delete',
   })
 }
+
+/**
+ * 导出房源数据
+ * @param {Object} params - 导出参数
+ * @returns {Promise<Blob>} - 返回文件流
+ */
+export function exportHouses(params) {
+  return request({
+    url: '/admin/houses/export',
+    method: 'get',
+    params,
+    responseType: 'blob' // 指定响应类型为 blob
+  })
+}
