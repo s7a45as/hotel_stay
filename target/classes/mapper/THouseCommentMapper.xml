@@ -11,7 +11,8 @@
             <result property="order_id" column="order_id" jdbcType="BIGINT"/>
             <result property="rating" column="rating" jdbcType="TINYINT"/>
             <result property="content" column="content" jdbcType="VARCHAR"/>
-            <result property="images" column="images" jdbcType="OTHER"/>
+            <result property="images" column="images" jdbcType="OTHER" 
+                    typeHandler="com.homestay.common.handler.JsonTypeHandler"/>
             <result property="reply" column="reply" jdbcType="VARCHAR"/>
             <result property="reply_time" column="reply_time" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="TINYINT"/>

@@ -4,15 +4,18 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.homestay.common.handler.JsonTypeHandler;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import lombok.Data;
 
 /**
  * 房源评论表
  * @TableName t_house_comment
  */
-@TableName(value ="t_house_comment")
+@TableName(value ="t_house_comment", autoResultMap = true)
 @Data
 public class THouseComment implements Serializable {
     /**
@@ -54,8 +57,8 @@ public class THouseComment implements Serializable {
     /**
      * 评论图片列表
      */
-    @TableField(value = "images")
-    private Object images;
+    @TableField(value = "images", typeHandler = JsonTypeHandler.class)
+    private List<String> images = new ArrayList<>();
 
     /**
      * 商家回复

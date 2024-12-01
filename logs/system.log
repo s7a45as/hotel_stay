@@ -19299,3 +19299,1182 @@ This generated password is for development use only. Your security configuration
 2024-12-01 14:40:58.417 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2024-12-01 14:40:58.435 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
 2024-12-01 14:40:58.442 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 5.167 seconds (process running for 5.95)
+2024-12-01 14:41:49.485 [http-nio-8080-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-01 14:41:49.486 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-01 14:41:49.487 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-12-01 14:41:49.487 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-12-01 14:41:49.487 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-12-01 14:41:49.490 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@142dd975
+2024-12-01 14:41:49.491 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@72cf5a46
+2024-12-01 14:41:49.492 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-01 14:41:49.492 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2024-12-01 14:41:49.537 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:49.537 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:49.537 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:49.966 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:32:15.948104, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:49.966 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:32:15.948104, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:49.966 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:32:15.948104, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:50.078 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:50.078 [http-nio-8080-exec-3] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:50.078 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:50.082 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/common/cities", parameters={}
+2024-12-01 14:41:50.083 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/list?page=1&pageSize=10&city=BJ&guestCount=2&minPrice=0&maxPrice=2000", parameters={masked}
+2024-12-01 14:41:50.083 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/common/districts?cityCode=BJ", parameters={masked}
+2024-12-01 14:41:50.084 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.comUtils.controller.ComUtilsController#getCityList()
+2024-12-01 14:41:50.084 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.comUtils.controller.ComUtilsController#getDistrictList(String)
+2024-12-01 14:41:50.084 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseList(Integer, Integer, String, Integer, String, String, Integer, Integer, String, String, String)
+2024-12-01 14:41:50.103 [http-nio-8080-exec-3] INFO  c.h.m.h.s.impl.HouseServiceImpl - getHouseList: HouseQueryDTO(page=1, pageSize=10, city=BJ, guestCount=2, checkInDate=null, checkOutDate=null, minPrice=0, maxPrice=2000, roomTypes=null, amenities=null, tags=null)
+2024-12-01 14:41:50.127 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-01 14:41:50.593 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d3a5945
+2024-12-01 14:41:50.596 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-01 14:41:50.715 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:50.715 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:50.717 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{value=BJ-CP, label=昌平区, code=BJ-CP}, {value=BJ-HD, label=海淀区,  (truncated)...]
+2024-12-01 14:41:50.717 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{value=BJ, label=北京市, code=BJ}, {value=SH, label=上海市, code=SH}, (truncated)...]
+2024-12-01 14:41:50.726 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:50.726 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:50.781 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:50.783 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=HouseListDTO(list=[HouseItemDTO(id=5, title=null, coverImage=nul (truncated)...]
+2024-12-01 14:41:50.789 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:50.798 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:50.801 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:50.059293, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:50.803 [http-nio-8080-exec-2] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:50.804 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/list?page=1&pageSize=10&city=BJ&guestCount=2&minPrice=0&maxPrice=2000", parameters={masked}
+2024-12-01 14:41:50.804 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseList(Integer, Integer, String, Integer, String, String, Integer, Integer, String, String, String)
+2024-12-01 14:41:50.805 [http-nio-8080-exec-2] INFO  c.h.m.h.s.impl.HouseServiceImpl - getHouseList: HouseQueryDTO(page=1, pageSize=10, city=BJ, guestCount=2, checkInDate=null, checkOutDate=null, minPrice=0, maxPrice=2000, roomTypes=null, amenities=null, tags=null)
+2024-12-01 14:41:50.835 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:50.835 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=HouseListDTO(list=[HouseItemDTO(id=5, title=null, coverImage=nul (truncated)...]
+2024-12-01 14:41:50.836 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:54.733 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:54.734 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:50.802609600, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:54.738 [http-nio-8080-exec-9] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:54.739 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/detail/5", parameters={}
+2024-12-01 14:41:54.739 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseDetail(Long)
+2024-12-01 14:41:54.740 [http-nio-8080-exec-9] INFO  c.h.m.h.controller.HouseController - /detail/{id}5
+2024-12-01 14:41:54.745 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:54.750 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=HouseDetailDTO(house=House(id=5, title=null, name=故宫旁四合院, type=四 (truncated)...]
+2024-12-01 14:41:54.758 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:55.689 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:55.689 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:55.689 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:55.691 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:54.736237100, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:55.691 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:54.736237100, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:55.691 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:54.736237100, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:55.694 [http-nio-8080-exec-8] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:55.694 [http-nio-8080-exec-6] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:55.694 [http-nio-8080-exec-7] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:55.694 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/common/cities", parameters={}
+2024-12-01 14:41:55.694 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/detail/5", parameters={}
+2024-12-01 14:41:55.695 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/list?page=1&pageSize=10&guestCount=2&minPrice=0&maxPrice=2000", parameters={masked}
+2024-12-01 14:41:55.695 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.comUtils.controller.ComUtilsController#getCityList()
+2024-12-01 14:41:55.695 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseList(Integer, Integer, String, Integer, String, String, Integer, Integer, String, String, String)
+2024-12-01 14:41:55.695 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseDetail(Long)
+2024-12-01 14:41:55.696 [http-nio-8080-exec-6] INFO  c.h.m.h.controller.HouseController - /detail/{id}5
+2024-12-01 14:41:55.696 [http-nio-8080-exec-8] INFO  c.h.m.h.s.impl.HouseServiceImpl - getHouseList: HouseQueryDTO(page=1, pageSize=10, city=null, guestCount=2, checkInDate=null, checkOutDate=null, minPrice=0, maxPrice=2000, roomTypes=null, amenities=null, tags=null)
+2024-12-01 14:41:55.704 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:55.704 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=HouseDetailDTO(house=House(id=5, title=null, name=故宫旁四合院, type=四 (truncated)...]
+2024-12-01 14:41:55.705 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-12-01 14:41:55.705 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:55.705 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:55.705 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{value=BJ, label=北京市, code=BJ}, {value=SH, label=上海市, code=SH}, (truncated)...]
+2024-12-01 14:41:55.707 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:55.705 [http-nio-8080-exec-8] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+java.lang.NullPointerException: Cannot invoke "com.homestay.modules.comUtils.entity.City.getName()" because the return value of "com.homestay.modules.comUtils.mapper.CityMapper.selectOne(com.baomidou.mybatisplus.core.conditions.Wrapper)" is null
+	at com.homestay.modules.house.service.impl.HouseServiceImpl.getHouseList(HouseServiceImpl.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.homestay.modules.house.service.impl.HouseServiceImpl$$SpringCGLIB$$0.getHouseList(<generated>)
+	at com.homestay.modules.house.controller.HouseController.getHouseList(HouseController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-01 14:41:55.711 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:55.711 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-12-01 14:41:55.712 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.homestay.modules.comUtils.entity.City.getName()" because the return value of "com.homestay.modules.comUtils.mapper.CityMapper.selectOne(com.baomidou.mybatisplus.core.conditions.Wrapper)" is null]
+2024-12-01 14:41:55.713 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:56.022 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:56.022 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:56.031 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:55.692049900, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:56.031 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:55.692049900, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:56.038 [http-nio-8080-exec-5] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:56.038 [http-nio-8080-exec-10] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:56.039 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/comments?houseId=5&page=1&pageSize=10", parameters={masked}
+2024-12-01 14:41:56.039 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/rating-stats/5", parameters={}
+2024-12-01 14:41:56.043 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-12-01 14:41:56.043 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-12-01 14:41:56.053 [http-nio-8080-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2024-12-01 14:41:56.053 [http-nio-8080-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2024-12-01 14:41:56.059 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-12-01 14:41:56.059 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-12-01 14:41:56.059 [http-nio-8080-exec-10] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource house/rating-stats/5.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-01 14:41:56.059 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource house/comments.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-01 14:41:56.065 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:56.065 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:56.065 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-12-01 14:41:56.065 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-12-01 14:41:56.066 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource house/rating-stats/5.]
+2024-12-01 14:41:56.066 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource house/comments.]
+2024-12-01 14:41:56.067 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:56.067 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:41:56.100 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:41:56.102 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:56.033112, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:41:56.105 [http-nio-8080-exec-4] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:41:56.106 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/house/list?page=1&pageSize=10&guestCount=2&minPrice=0&maxPrice=2000", parameters={masked}
+2024-12-01 14:41:56.106 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseController#getHouseList(Integer, Integer, String, Integer, String, String, Integer, Integer, String, String, String)
+2024-12-01 14:41:56.107 [http-nio-8080-exec-4] INFO  c.h.m.h.s.impl.HouseServiceImpl - getHouseList: HouseQueryDTO(page=1, pageSize=10, city=null, guestCount=2, checkInDate=null, checkOutDate=null, minPrice=0, maxPrice=2000, roomTypes=null, amenities=null, tags=null)
+2024-12-01 14:41:56.110 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-12-01 14:41:56.110 [http-nio-8080-exec-4] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+java.lang.NullPointerException: Cannot invoke "com.homestay.modules.comUtils.entity.City.getName()" because the return value of "com.homestay.modules.comUtils.mapper.CityMapper.selectOne(com.baomidou.mybatisplus.core.conditions.Wrapper)" is null
+	at com.homestay.modules.house.service.impl.HouseServiceImpl.getHouseList(HouseServiceImpl.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.homestay.modules.house.service.impl.HouseServiceImpl$$SpringCGLIB$$0.getHouseList(<generated>)
+	at com.homestay.modules.house.controller.HouseController.getHouseList(HouseController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-01 14:41:56.112 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:41:56.112 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-12-01 14:41:56.113 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.homestay.modules.comUtils.entity.City.getName()" because the return value of "com.homestay.modules.comUtils.mapper.CityMapper.selectOne(com.baomidou.mybatisplus.core.conditions.Wrapper)" is null]
+2024-12-01 14:41:56.114 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:42:19.782 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - 收到的token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs
+2024-12-01 14:42:19.784 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Redis中的token信息: {expireTime=2024-12-02T18:56:54.620926300, lastAccessTime=2024-12-01T14:41:56.103648500, createTime=2024-11-30T18:56:54.620926300, userId=5000001, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDAwMDAxdXNlciIsImlhdCI6MTczMjk2NDIxNCwiZXhwIjoxNzMzMDUwNjE0fQ.XbPjaU-MGMtnjytSj6Tvhhh-318HuDkhpkWi_njzEvs}
+2024-12-01 14:42:19.785 [http-nio-8080-exec-1] INFO  c.h.c.s.JwtAuthenticationFilter - Token验证成功，用户ID: 5000001
+2024-12-01 14:42:19.786 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/house/comment", parameters={}
+2024-12-01 14:42:19.786 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.homestay.modules.house.controller.HouseCommentController#addComment(THouseComment, Long)
+2024-12-01 14:42:19.806 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [THouseComment [Hash = 1234612066, id=null, house_id=null, user_id=null, order_id=null, rating=5, con (truncated)...]
+2024-12-01 14:42:20.001 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.homestay.common.exception.GlobalExceptionHandler#handleException(Exception)
+2024-12-01 14:42:20.001 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 系统异常: 
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.
+### The error may exist in com/homestay/modules/house/mapper/THouseCommentMapper.java (best guess)
+### The error may involve com.homestay.modules.house.mapper.THouseCommentMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO t_house_comment  ( user_id,  rating, content, images )  VALUES (  ?,  ?, ?, ?  )
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.
+; Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:118)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy3/jdk.proxy3.$Proxy130.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:60)
+	at com.homestay.modules.house.service.impl.HouseCommentServiceImpl.addComment(HouseCommentServiceImpl.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.homestay.modules.house.service.impl.HouseCommentServiceImpl$$SpringCGLIB$$0.addComment(<generated>)
+	at com.homestay.modules.house.controller.HouseCommentController.addComment(HouseCommentController.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.homestay.common.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy181.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy179.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:106)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy178.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 129 common frames omitted
+2024-12-01 14:42:20.005 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-01 14:42:20.005 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=系统异常，请联系管理员, data=null)]
+2024-12-01 14:42:20.005 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: <EOL><EOL>### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.<EOL><EOL>### The error may exist in com/homestay/modules/house/mapper/THouseCommentMapper.java (best guess)<EOL><EOL>### The error may involve com.homestay.modules.house.mapper.THouseCommentMapper.insert-Inline<EOL><EOL>### The error occurred while setting parameters<EOL><EOL>### SQL: INSERT INTO t_house_comment  ( user_id,  rating, content, images )  VALUES (  ?,  ?, ?, ?  )<EOL><EOL>### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.<EOL>; Data truncation: Cannot create a JSON value from a string with CHARACTER SET 'binary'.]
+2024-12-01 14:42:20.005 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-01 14:43:37.125 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-01 14:43:37.135 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:43:37.274 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-01 14:43:37.282 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-01 14:43:37.385 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 23308 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:43:37.385 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:43:37.385 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:43:37.704 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:43:37.704 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:43:37.724 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:43:37.905 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:43:37.911 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:43:37.911 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:43:37.911 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:43:37.911 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:43:37.911 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:43:37.925 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:43:37.925 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 537 ms
+2024-12-01 14:43:37.995 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:43:37.995 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:43:37.995 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:43:38.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-01 14:43:38.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-01 14:43:38.835 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 22e846d5-85bf-48d6-9738-df020f4b7e8e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-01 14:43:38.902 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 99 mappings in 'requestMappingHandlerMapping'
+2024-12-01 14:43:38.905 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-12-01 14:43:39.345 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-01 14:43:39.395 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70101a4a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38d3eed0, org.springframework.security.web.context.SecurityContextHolderFilter@49fcb6d8, org.springframework.security.web.header.HeaderWriterFilter@5c8a3c5e, org.springframework.web.filter.CorsFilter@56238379, org.springframework.security.web.authentication.logout.LogoutFilter@4d7b73b2, com.homestay.common.security.JwtAuthenticationFilter@2e96330f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75da283c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@783f8215, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c27c8f5, org.springframework.security.web.session.SessionManagementFilter@309535d8, org.springframework.security.web.access.ExceptionTranslationFilter@1df42dc6, org.springframework.security.web.access.intercept.AuthorizationFilter@66e013c7]
+2024-12-01 14:43:39.455 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-01 14:43:39.465 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-01 14:43:39.627 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-01 14:43:39.674 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:43:39.675 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-12-01 14:43:39.675 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 2.33 seconds (process running for 167.189)
+2024-12-01 14:43:39.683 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-12-01 14:44:20.337 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-01 14:44:20.339 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:20.432 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 23308 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:44:20.432 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:44:20.432 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:44:20.730 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:44:20.730 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:44:20.747 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:44:20.904 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:44:20.904 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:44:20.905 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:44:20.905 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:20.905 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:44:20.905 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:44:20.928 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:44:20.928 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 494 ms
+2024-12-01 14:44:21.000 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:44:21.000 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:44:21.000 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:44:21.185 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-01 14:44:21.185 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-01 14:44:22.046 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d0b9d8c5-108f-47ff-b409-a7d8aca08167
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-01 14:44:22.128 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 99 mappings in 'requestMappingHandlerMapping'
+2024-12-01 14:44:22.140 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-12-01 14:44:22.617 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-01 14:44:22.662 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@49dfee48, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5aefda8e, org.springframework.security.web.context.SecurityContextHolderFilter@15d9e233, org.springframework.security.web.header.HeaderWriterFilter@6886d6ff, org.springframework.web.filter.CorsFilter@8d33809, org.springframework.security.web.authentication.logout.LogoutFilter@331406e3, com.homestay.common.security.JwtAuthenticationFilter@62e36e50, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a259245, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@344a80d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73c3240, org.springframework.security.web.session.SessionManagementFilter@6ba6d6fd, org.springframework.security.web.access.ExceptionTranslationFilter@f0e01ac, org.springframework.security.web.access.intercept.AuthorizationFilter@15c94f12]
+2024-12-01 14:44:22.725 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-01 14:44:22.737 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-01 14:44:22.929 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-01 14:44:22.971 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:22.974 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-12-01 14:44:22.979 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 2.586 seconds (process running for 210.486)
+2024-12-01 14:44:22.980 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-12-01 14:44:30.207 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-01 14:44:30.209 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:30.326 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 23308 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:44:30.326 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:44:30.326 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:44:30.692 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:44:30.692 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:44:30.711 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:44:30.875 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:44:30.875 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:44:30.875 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:44:30.875 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:30.885 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:44:30.885 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:44:30.902 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:44:30.902 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 572 ms
+2024-12-01 14:44:30.957 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:44:30.957 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:44:30.958 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:44:31.157 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-01 14:44:31.158 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-01 14:44:31.815 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 05796372-5ccc-4106-9eaa-60aac9de1b29
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-01 14:44:31.905 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 99 mappings in 'requestMappingHandlerMapping'
+2024-12-01 14:44:31.928 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-12-01 14:44:32.351 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-01 14:44:32.377 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e99fbe3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@560efe25, org.springframework.security.web.context.SecurityContextHolderFilter@52d86277, org.springframework.security.web.header.HeaderWriterFilter@4a0a81c0, org.springframework.web.filter.CorsFilter@24a65214, org.springframework.security.web.authentication.logout.LogoutFilter@5d94bf7a, com.homestay.common.security.JwtAuthenticationFilter@3be25df5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ae2440b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2478d616, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50a0dea9, org.springframework.security.web.session.SessionManagementFilter@62014bec, org.springframework.security.web.access.ExceptionTranslationFilter@69602649, org.springframework.security.web.access.intercept.AuthorizationFilter@17d4da10]
+2024-12-01 14:44:32.435 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-01 14:44:32.440 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-01 14:44:32.593 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-01 14:44:32.630 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:44:32.635 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-12-01 14:44:32.640 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 2.381 seconds (process running for 220.148)
+2024-12-01 14:44:32.641 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-12-01 14:44:59.499 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 14:44:59.550 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 21120 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:44:59.550 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:44:59.551 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:44:59.626 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-01 14:44:59.627 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-01 14:45:00.414 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:45:00.416 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:45:00.467 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:45:01.101 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:45:01.105 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:45:01.109 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:45:01.116 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:45:01.118 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:45:01.118 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:45:01.162 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:45:01.162 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1534 ms
+2024-12-01 14:45:01.483 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:45:01.483 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:45:01.483 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:45:01.813 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\controller\AdminAuditController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+2024-12-01 14:45:01.824 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-12-01 14:45:01.833 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-01 14:45:01.848 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\controller\AdminAuditController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1500)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 61 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:564)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:437)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 62 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property images
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:127)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:562)
+	... 68 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property images
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:153)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:352)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:403)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:286)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:261)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:253)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	... 70 common frames omitted
+2024-12-01 14:45:48.557 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 14:45:48.590 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 15328 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:45:48.590 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:45:48.591 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:45:48.645 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-01 14:45:48.646 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-01 14:45:51.456 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:45:51.458 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:45:51.511 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:45:52.126 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:45:52.128 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:45:52.133 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:45:52.141 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:45:52.143 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:45:52.143 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:45:52.191 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:45:52.191 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3545 ms
+2024-12-01 14:45:52.520 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:45:52.520 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:45:52.520 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:45:52.933 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\controller\AdminAuditController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+2024-12-01 14:45:52.944 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-12-01 14:45:52.955 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-01 14:45:52.971 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditController' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\controller\AdminAuditController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.homestay.HomestayApplication.main(HomestayApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminAuditServiceImpl' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\admin\service\impl\AdminAuditServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminMapper' defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\auth\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:643)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1500)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 61 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:564)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:437)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 62 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\45732\Code\Java\hotel_stay\target\classes\mapper\THouseCommentMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property images
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:127)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:562)
+	... 68 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property images
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:153)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:352)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:403)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:286)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:261)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:253)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	... 70 common frames omitted
+2024-12-01 14:47:49.780 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 14:47:49.809 [restartedMain] INFO  com.homestay.HomestayApplication - Starting HomestayApplication using Java 23 with PID 10116 (C:\Users\45732\Code\Java\hotel_stay\target\classes started by 45732 in C:\Users\45732\Code\Java\hotel_stay)
+2024-12-01 14:47:49.809 [restartedMain] DEBUG com.homestay.HomestayApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-01 14:47:49.810 [restartedMain] INFO  com.homestay.HomestayApplication - The following 1 profile is active: "dev"
+2024-12-01 14:47:49.872 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-01 14:47:49.872 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-01 14:47:50.672 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 14:47:50.675 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 14:47:50.708 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-12-01 14:47:50.839 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'adminHouseMapper' and 'com.homestay.modules.admin.mapper.AdminHouseMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.839 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'adminOrderMapper' and 'com.homestay.modules.admin.mapper.AdminOrderMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.839 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'systemSettingMapper' and 'com.homestay.modules.admin.mapper.SystemSettingMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'trendDataMapper' and 'com.homestay.modules.admin.mapper.TrendDataMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'adminMapper' and 'com.homestay.modules.auth.mapper.AdminMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'authMerchantMapper' and 'com.homestay.modules.auth.mapper.AuthMerchantMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'normalUserMapper' and 'com.homestay.modules.auth.mapper.NormalUserMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'cityMapper' and 'com.homestay.modules.comUtils.mapper.CityMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'districtMapper' and 'com.homestay.modules.comUtils.mapper.DistrictMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'homeMapper' and 'com.homestay.modules.home.mapper.HomeMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'favoriteMapper' and 'com.homestay.modules.house.mapper.FavoriteMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'houseFacilityMapper' and 'com.homestay.modules.house.mapper.HouseFacilityMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'houseImageMapper' and 'com.homestay.modules.house.mapper.HouseImageMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'houseMapper' and 'com.homestay.modules.house.mapper.HouseMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'THouseBookingMapper' and 'com.homestay.modules.house.mapper.THouseBookingMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'THouseCommentLikeMapper' and 'com.homestay.modules.house.mapper.THouseCommentLikeMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'THouseCommentMapper' and 'com.homestay.modules.house.mapper.THouseCommentMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.840 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'THouseCommentReportMapper' and 'com.homestay.modules.house.mapper.THouseCommentReportMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'THouseRatingStatsMapper' and 'com.homestay.modules.house.mapper.THouseRatingStatsMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantHouseMapper' and 'com.homestay.modules.merchant.mapper.MerchantHouseMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantIncomeMapper' and 'com.homestay.modules.merchant.mapper.MerchantIncomeMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantMapper' and 'com.homestay.modules.merchant.mapper.MerchantMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantMessageMapper' and 'com.homestay.modules.merchant.mapper.MerchantMessageMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantOrderMapper' and 'com.homestay.modules.merchant.mapper.MerchantOrderMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantPromotionMapper' and 'com.homestay.modules.merchant.mapper.MerchantPromotionMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'merchantTrendDataMapper' and 'com.homestay.modules.merchant.mapper.MerchantTrendDataMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'orderMapper' and 'com.homestay.modules.order.mapper.OrderMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'orderPaymentMapper' and 'com.homestay.modules.order.mapper.OrderPaymentMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'paymentMapper' and 'com.homestay.modules.payment.mapper.PaymentMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.homestay.modules.user.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userPrivacyMapper' and 'com.homestay.modules.user.mapper.UserPrivacyMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.841 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userSettingsMapper' and 'com.homestay.modules.user.mapper.UserSettingsMapper' mapperInterface. Bean already defined with the same name!
+2024-12-01 14:47:50.844 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.homestay.modules.*.mapper]' package. Please check your configuration.
+2024-12-01 14:47:51.382 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-12-01 14:47:51.384 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-01 14:47:51.388 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-01 14:47:51.394 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:47:51.395 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 14:47:51.395 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-01 14:47:51.439 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 14:47:51.439 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1566 ms
+2024-12-01 14:47:51.712 [restartedMain] DEBUG c.h.c.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2024-12-01 14:47:51.712 [restartedMain] DEBUG o.s.w.s.r.ResourceUrlEncodingFilter - Filter 'resourceUrlEncodingFilter' configured for use
+2024-12-01 14:47:51.712 [restartedMain] DEBUG o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2024-12-01 14:47:52.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-01 14:47:52.178 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-01 14:47:52.909 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3feda1fa-d906-4dd7-b481-6111a176ace7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-12-01 14:47:53.092 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 99 mappings in 'requestMappingHandlerMapping'
+2024-12-01 14:47:53.102 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/admin/audit/**] in 'viewControllerHandlerMapping'
+2024-12-01 14:47:53.636 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui/**, /templates/**, /upload/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-01 14:47:53.687 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33e6ecba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66dce46d, org.springframework.security.web.context.SecurityContextHolderFilter@2734c676, org.springframework.security.web.header.HeaderWriterFilter@47513b38, org.springframework.web.filter.CorsFilter@7efadca6, org.springframework.security.web.authentication.logout.LogoutFilter@20b4c6f7, com.homestay.common.security.JwtAuthenticationFilter@264fc913, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24b66373, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58e7a50e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f51c3da, org.springframework.security.web.session.SessionManagementFilter@77e28688, org.springframework.security.web.access.ExceptionTranslationFilter@1e2ffffa, org.springframework.security.web.access.intercept.AuthorizationFilter@7ce5215a]
+2024-12-01 14:47:53.837 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-01 14:47:53.871 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-01 14:47:54.275 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-01 14:47:54.322 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-01 14:47:54.342 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-12-01 14:47:54.350 [restartedMain] INFO  com.homestay.HomestayApplication - Started HomestayApplication in 4.995 seconds (process running for 5.657)
