@@ -46,6 +46,7 @@ public class HouseController {
         
         @Parameter(description = "城市代码", example = "BJ") 
         @RequestParam(required = false) String city,
+
         
         @Parameter(description = "入住人数", example = "2") 
         @RequestParam(required = false) Integer guestCount,
