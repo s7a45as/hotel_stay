@@ -101,31 +101,31 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
             throw new BusinessException("您没有该房源的已完成订单，无法评价");
         }
 
-// 5. 处理图片列表
-List<String> imageUrls = new ArrayList<>();
-if (comment.getImages() != null && !comment.getImages().isEmpty()) {
-    if (comment.getImages().size() > 9) {
-        throw new BusinessException("最多只能上传9张图片");
-    }
-    
-    for (Object img : comment.getImages()) {
-        if (img instanceof MultipartFile) {
-            // 使用UploadUtils上传图片
-            String url = uploadUtils.upload((MultipartFile) img, "comment");
-            imageUrls.add(url);
-        } else {
-            throw new BusinessException("无效的图片格式，请上传正确的图片文件");
+        // 5. 验证图片列表
+        List<String> images = comment.getImages();
+        if (images != null) {
+            // 验证图片数量
+            if (images.size() > 9) {
+                throw new BusinessException("最多只能上传9张图片");
+            }
+            
+            // 验证图片URL格式
+            for (String imageUrl : images) {
+                if (StringUtils.isBlank(imageUrl)) {
+                    throw new BusinessException("图片地址不能为空");
+                }
+                // 可以添加更多的URL格式验证
+                if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://") 
+                    && !imageUrl.startsWith("/comment/")) {
+                    throw new BusinessException("无效的图片地址格式");
+                }
+            }
         }
-    }
-}
-comment.setImages(imageUrls);
-
-
 
         // 6. 设置评论基本信息
         comment.setOrder_id(order.getId());
         comment.setUser_id(String.valueOf(userId));
-        comment.setStatus(0); // 待审核状态
+        comment.setStatus(1); // 先不需要审核，默认为已通过
         Date now = new Date();
         comment.setCreate_time(now);
         comment.setUpdate_time(now);
@@ -135,8 +135,13 @@ comment.setImages(imageUrls);
             save(comment);
             // 8. 更新房源评分统计
             updateRatingStats(Long.valueOf(comment.getHouse_id()));
+            
+            log.info("评论保存成功 - 用户ID: {}, 房源ID: {}, 评分: {}, 图片数量: {}", 
+                userId, houseId, comment.getRating(), 
+                images != null ? images.size() : 0);
+                
         } catch (Exception e) {
-            log.error("保存评论失败", e);
+            log.error("保存评论失败 - 用户ID: {}, 房源ID: {}", userId, houseId, e);
             throw new BusinessException("评论保存失败，请稍后重试");
         }
     }

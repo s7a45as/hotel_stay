@@ -1,7 +1,9 @@
 package com.homestay.modules.house.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.Result;
+import com.homestay.common.utils.UploadUtils;
 import com.homestay.modules.house.entity.THouseComment;
 import com.homestay.modules.house.entity.THouseCommentReport;
 import com.homestay.modules.house.entity.THouseRatingStats;
@@ -14,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Tag(name = "房源评论", description = "房源评论相关接口")
 @RestController
@@ -23,7 +26,7 @@ import org.springframework.web.bind.annotation.*;
 public class HouseCommentController {
 
     private final HouseCommentServiceImpl commentService;
-
+    private final UploadUtils uploadUtils;
     @Operation(summary = "获取房源评论列表")
     @GetMapping("/list")
     public Result<IPage<THouseComment>> getComments(
@@ -100,4 +103,18 @@ public class HouseCommentController {
         commentService.updateComment(comment, userId);
         return Result.success("修改成功");
     }
+
+
+    @Operation(summary = "上传评论图片")
+@PostMapping("/upload-image")
+public Result<String> uploadImage(
+        @Parameter(description = "图片文件") @RequestParam("file") MultipartFile file,
+        @Parameter(hidden = true) @AuthenticationPrincipal Long userId
+) {
+    if (file == null || file.isEmpty()) {
+        throw new BusinessException("请选择要上传的图片");
+    }
+    String url = uploadUtils.upload(file, "comment");
+    return Result.success(url);
+}
 } 
