@@ -96,11 +96,11 @@ public class HouseCommentController {
     @PutMapping("/{commentId}")
     public Result<?> updateComment(
             @Parameter(description = "评论ID") @PathVariable Long commentId,
-            @Parameter(description = "评论信息") @RequestBody @Valid THouseComment comment,
-            @Parameter(hidden = true) @AuthenticationPrincipal Long userId
+            @Parameter(description = "评论信息") @RequestBody @Valid THouseComment comment
     ) {
         comment.setId(commentId);
-        commentService.updateComment(comment, userId);
+        log.debug("修改的评论: {}", comment);
+        commentService.updateComment(comment);
         return Result.success("修改成功");
     }
 

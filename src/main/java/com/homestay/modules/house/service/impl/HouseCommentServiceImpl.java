@@ -211,24 +211,90 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void updateComment(THouseComment comment, Long userId) {
+    public void updateComment(THouseComment comment) {
+        // 1. 获取并验证原评论
         THouseComment oldComment = this.getById(comment.getId());
+        log.debug("修改前的评论: {}", oldComment);
         if (oldComment == null) {
             throw new BusinessException("评论不存在");
         }
-        if (!oldComment.getUser_id().equals(userId)) {
+        
+        // 2. 验证权限
+        if (!oldComment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
             throw new BusinessException("无权修改他人评论");
         }
         
-        this.updateById(comment);
-        updateRatingStats(Long.valueOf(comment.getHouse_id()));
+        // 3. 创建更新对象，初始化为原评论数据
+        THouseComment updateComment = new THouseComment();
+        updateComment.setId(comment.getId());
+        updateComment.setHouse_id(oldComment.getHouse_id());
+        updateComment.setUser_id(oldComment.getUser_id());
+        updateComment.setOrder_id(oldComment.getOrder_id());
+        updateComment.setStatus(oldComment.getStatus());
+        updateComment.setCreate_time(oldComment.getCreate_time());
+        updateComment.setRating(oldComment.getRating());
+        updateComment.setContent(oldComment.getContent());
+        updateComment.setImages(oldComment.getImages());
+        
+        // 4. 根据传入的数据进行更新
+        if (comment.getRating() != null) {
+            if (comment.getRating() < 1 || comment.getRating() > 5) {
+                throw new BusinessException("评分必须在1-5之间");
+            }
+            updateComment.setRating(comment.getRating());
+        }
+        
+        if (StringUtils.isNotBlank(comment.getContent())) {
+            if (comment.getContent().length() > 1000) {
+                throw new BusinessException("评论内容不能超过1000字");
+            }
+            updateComment.setContent(comment.getContent());
+        }
+        
+        if (comment.getImages() != null) {
+            if (comment.getImages().size() > 9) {
+                throw new BusinessException("最多只能上传9张图片");
+            }
+            for (String imageUrl : comment.getImages()) {
+                if (StringUtils.isBlank(imageUrl)) {
+                    throw new BusinessException("图片地址不能为空");
+                }
+                if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://") 
+                    && !imageUrl.startsWith("/comment/")) {
+                    throw new BusinessException("无效的图片地址格式");
+                }
+            }
+            updateComment.setImages(comment.getImages());
+        }
+        
+        // 5. 更新修改时间
+        updateComment.setUpdate_time(new Date());
+        
+        // 6. 更新评论
+        this.updateById(updateComment);
+        
+        // 7. 更新房源评分统计
+        updateRatingStats(Long.valueOf(updateComment.getHouse_id()));
+        
+        log.info("评论更新成功 - 评论ID: {}, 用户ID: {}, 房源ID: {}, 更新字段: {}", 
+            comment.getId(), updateComment.getUser_id(), updateComment.getHouse_id(),
+            getUpdatedFields(comment));
+    }
+
+    // 辅助方法：获取更新了哪些字段
+    private String getUpdatedFields(THouseComment comment) {
+        List<String> updatedFields = new ArrayList<>();
+        if (comment.getRating() != null) updatedFields.add("rating");
+        if (StringUtils.isNotBlank(comment.getContent())) updatedFields.add("content");
+        if (comment.getImages() != null) updatedFields.add("images");
+        return String.join(", ", updatedFields);
     }
 
     private void updateRatingStats(Long houseId) {
         // 统计各评分数量
         Map<Integer, Integer> ratingCounts = this.list(
             new LambdaQueryWrapper<THouseComment>()
-                .eq(THouseComment::getHouse_id, houseId)
+                .eq(THouseComment::getHouse_id, String.valueOf(houseId))
                 .eq(THouseComment::getStatus, 1)
         ).stream().collect(
             Collectors.groupingBy(
