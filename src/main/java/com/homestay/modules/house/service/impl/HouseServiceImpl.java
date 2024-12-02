@@ -11,10 +11,8 @@ import com.homestay.modules.comUtils.entity.City;
 import com.homestay.modules.comUtils.mapper.CityMapper;
 import com.homestay.modules.house.dto.*;
 import com.homestay.modules.house.entity.Favorite;
-import com.homestay.modules.house.entity.HouseImage;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.mapper.FavoriteMapper;
-import com.homestay.modules.house.mapper.HouseImageMapper;
 import com.homestay.modules.house.mapper.HouseFacilityMapper;
 import com.homestay.modules.house.service.HouseService;
 import com.homestay.modules.order.entity.UserOrder;
@@ -30,7 +28,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +39,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements HouseService {
 
-    private final HouseImageMapper houseImageMapper;
     private final HouseFacilityMapper houseFacilityMapper;
     private final FavoriteMapper favoriteMapper;
     private final SecurityUtil securityUtil; // 用于获取当前登录用户
@@ -137,14 +133,11 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
                             .city(house.getCity())
                             .type(house.getType())
                             .rating(house.getRating())
+                            .coverImage(house.getImage())
                             .reviewCount(house.getReviewCount())
                             .build();
 
-                    // 设置封面图
-                    HouseImage coverImage = houseImageMapper.selectCoverImage(house.getId());
-                    if (coverImage != null) {
-                        dto.setCoverImage(coverImage.getUrl());
-                    }
+
 
                     // 设置标签
                     List<TagDTO> tags = getHouseTags(house.getId());
@@ -181,34 +174,24 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         if (house == null) {
             throw new BusinessException(ResultCode.DATA_NOT_EXIST);
         }
-//        // 2. 获取房源图片
-//        List<HouseImage> images = houseImageMapper.selectByHouseId(id);
-//        house.setImages(images.stream().map(HouseImage::getUrl).collect(Collectors.toList()));
-//
-//        // 3. 获取房源设施
-//        List<Facility> facilities = houseFacilityMapper.selectFacilitiesByHouseId(id);
-//        // 将Facility对象转换为设施名称列表
-//        house.setFacilities(facilities.stream()
-//                .map(Facility::getName)  // 假设Facility类有getName()方法
-//                .collect(Collectors.toList()));
-//
-//        // 4. 获取当前用户ID
-//        Long currentUserId = securityUtil.getCurrentUserId();
-//
-//        // 5. ��询是否已收藏
-//        boolean isFavorite = false;
-//        if (currentUserId != null) {
-//            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
-//        }
-//
-//        // 6. 获取收藏数量
-//        int favoriteCount = favoriteMapper.getFavoriteCount(id);
-        
-        return HouseDetailDTO.builder()
+        Long currentUserId = securityUtil.getCurrentUserId();
+
+        // 5. 是否已收藏
+        boolean isFavorite = false;
+        if (currentUserId != null) {
+            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
+        }
+
+        // 6. 获取收藏数量
+        int favoriteCount = favoriteMapper.getFavoriteCount(id);
+        log.debug("收藏数量：{}", favoriteCount);
+        HouseDetailDTO houseDetailDTO= HouseDetailDTO.builder()
                 .house(house)
-//                .isFavorite(isFavorite)
-//                .favoriteCount(favoriteCount)
+                .isFavorite(isFavorite)
+                .favoriteCount(favoriteCount)
                 .build();
+        log.debug("房源详情：{}", houseDetailDTO);
+        return houseDetailDTO;
     }
 
     @Override

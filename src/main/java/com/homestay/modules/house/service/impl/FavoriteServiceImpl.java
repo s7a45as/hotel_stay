@@ -6,10 +6,8 @@ import com.homestay.common.utils.SecurityUtil;
 import com.homestay.modules.house.dto.HouseItemDTO;
 import com.homestay.modules.house.dto.HouseListDTO;
 import com.homestay.modules.house.dto.TagDTO;
-import com.homestay.modules.house.entity.HouseImage;
 import com.homestay.modules.house.entity.Tag;
 import com.homestay.modules.house.mapper.FavoriteMapper;
-import com.homestay.modules.house.mapper.HouseImageMapper;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.service.FavoriteService;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +22,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 
     private final FavoriteMapper favoriteMapper;
     private final HouseMapper houseMapper;
-    private final HouseImageMapper houseImageMapper;
+
     private final SecurityUtil securityUtil;
 
     @Override
@@ -45,14 +43,11 @@ public class FavoriteServiceImpl implements FavoriteService {
                             .city(house.getCity())
                             .type(house.getType())
                             .rating(house.getRating())
+                            .coverImage(house.getImage())
                             .reviewCount(house.getReviewCount())
                             .build();
                     
-                    // 设置封面图
-                    HouseImage coverImage = houseImageMapper.selectCoverImage(house.getId());
-                    if (coverImage != null) {
-                        dto.setCoverImage(coverImage.getUrl());
-                    }
+
                     
                     // 设置标签
                     List<Tag> tags = houseMapper.selectHouseTags(house.getId());
