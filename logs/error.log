@@ -15189,3 +15189,4 @@ java.lang.NullPointerException: Cannot invoke "com.homestay.modules.comUtils.ent
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-02 19:40:15.267 [http-nio-8080-exec-8] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 500, 错误信息: 您没有该房源的已完成订单，无法评价, 原始异常: 无
