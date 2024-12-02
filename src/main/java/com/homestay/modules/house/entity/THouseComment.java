@@ -33,19 +33,19 @@ public class THouseComment implements Serializable {
      * 房源ID
      */
     @TableField(value = "house_id")
-    private Long house_id;
+    private String house_id;
 
     /**
      * 用户ID
      */
     @TableField(value = "user_id")
-    private Long user_id;
+    private String user_id;
 
     /**
      * 订单ID
      */
     @TableField(value = "order_id")
-    private Long order_id;
+    private String order_id;
 
     /**
      * 评分(1-5星)

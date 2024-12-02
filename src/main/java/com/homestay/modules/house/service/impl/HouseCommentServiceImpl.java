@@ -76,7 +76,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         if (userId == null) {
             throw new BusinessException("用户未登录");
         }
-        Long houseId = comment.getHouse_id();
+        Long houseId = Long.valueOf(comment.getHouse_id());
 
         // 3. 检查是否已经评论过
         Long existingComment = baseMapper.selectCount(
@@ -123,8 +123,8 @@ comment.setImages(imageUrls);
 
 
         // 6. 设置评论基本信息
-        comment.setOrder_id(Long.valueOf(order.getId()));
-        comment.setUser_id(userId);
+        comment.setOrder_id(order.getId());
+        comment.setUser_id(String.valueOf(userId));
         comment.setStatus(0); // 待审核状态
         Date now = new Date();
         comment.setCreate_time(now);
@@ -134,7 +134,7 @@ comment.setImages(imageUrls);
             // 7. 保存评论
             save(comment);
             // 8. 更新房源评分统计
-            updateRatingStats(comment.getHouse_id());
+            updateRatingStats(Long.valueOf(comment.getHouse_id()));
         } catch (Exception e) {
             log.error("保存评论失败", e);
             throw new BusinessException("评论保存失败，请稍后重试");
@@ -198,7 +198,7 @@ comment.setImages(imageUrls);
         }
         
         this.removeById(commentId);
-        updateRatingStats(comment.getHouse_id());
+        updateRatingStats(Long.valueOf(comment.getHouse_id()));
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -212,7 +212,7 @@ comment.setImages(imageUrls);
         }
         
         this.updateById(comment);
-        updateRatingStats(comment.getHouse_id());
+        updateRatingStats(Long.valueOf(comment.getHouse_id()));
     }
 
     private void updateRatingStats(Long houseId) {
