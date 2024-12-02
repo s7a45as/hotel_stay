@@ -188,12 +188,16 @@ comment.setImages(imageUrls);
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void deleteComment(Long commentId, Long userId) {
+    public void deleteComment(Long commentId) {
         THouseComment comment = this.getById(commentId);
         if (comment == null) {
             throw new BusinessException("评论不存在");
         }
-        if (!comment.getUser_id().equals(userId)) {
+        log.debug("删除的评论ID: {}", commentId);
+        log.debug("删除的用户ID1: {}", comment.getUser_id());
+        log.debug("删除的用户ID2: {}", securityUtil.getCurrentUserId());
+        //comment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()) 类型和数据需要都一样
+        if (!comment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
             throw new BusinessException("无权删除他人评论");
         }
         

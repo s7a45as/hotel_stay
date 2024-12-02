@@ -83,10 +83,9 @@ public class HouseCommentController {
     @Operation(summary = "删除评论", description = "仅评论作者可删除")
     @DeleteMapping("/{commentId}")
     public Result<?> deleteComment(
-            @Parameter(description = "评论ID") @PathVariable Long commentId,
-            @Parameter(hidden = true) @AuthenticationPrincipal Long userId
+            @Parameter(description = "评论ID") @PathVariable Long commentId
     ) {
-        commentService.deleteComment(commentId, userId);
+        commentService.deleteComment(commentId);
         return Result.success("删除成功");
     }
 

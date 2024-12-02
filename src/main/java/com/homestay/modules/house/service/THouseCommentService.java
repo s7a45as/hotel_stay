@@ -17,6 +17,6 @@ public interface THouseCommentService extends IService<THouseComment> {
     boolean toggleLike(Long commentId, Long userId);
     void reportComment(THouseCommentReport report);
     THouseRatingStats getRatingStats(Long houseId);
-    void deleteComment(Long commentId, Long userId);
+    void deleteComment(Long commentId);
     void updateComment(THouseComment comment, Long userId);
 }
