@@ -68,6 +68,7 @@ public class HouseCommentController {
             @Parameter(hidden = true) @AuthenticationPrincipal Long userId
     ) {
         report.setUser_id(userId);
+        log.debug("举报信息: {}", report);
         commentService.reportComment(report);
         return Result.success("举报成功");
     }

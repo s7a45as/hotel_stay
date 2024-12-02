@@ -168,7 +168,25 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     }
 
     public void reportComment(THouseCommentReport report) {
-        reportMapper.insert(report);
+        // 1. 验证必填字段
+        if (report.getComment_id() == null) {
+            throw new BusinessException("评论ID不能为空");
+        }
+        if (StringUtils.isBlank(report.getReason())) {
+            throw new BusinessException("举报原因不能为空");
+        }
+        
+        // 2. 设置额外字段
+        report.setUser_id(securityUtil.getCurrentUserId());
+        report.setStatus(0); // 待处理
+        report.setCreate_time(new Date());
+        
+        try {
+            reportMapper.insert(report);
+        } catch (Exception e) {
+            log.error("保存举报信息失败 - 评论ID: {}, 用户ID: {}", report.getComment_id(), report.getUser_id(), e);
+            throw new BusinessException("举报失败，请稍后重试");
+        }
     }
 
     public THouseRatingStats getRatingStats(Long houseId) {
