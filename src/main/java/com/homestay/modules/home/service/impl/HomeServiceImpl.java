@@ -6,6 +6,7 @@ import com.homestay.common.constant.CommonConstants;
 import com.homestay.modules.comUtils.entity.City;
 import com.homestay.modules.comUtils.mapper.CityMapper;
 import com.homestay.modules.home.dto.HousePageDTO;
+import com.homestay.modules.home.entity.Promotion;
 import com.homestay.modules.home.entity.homeCity;
 import com.homestay.modules.home.entity.homeDistricts;
 import com.homestay.common.shareentity.House;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -96,5 +98,11 @@ public class HomeServiceImpl implements HomeService {
                 .list(pageResult.getRecords())
                 .total(pageResult.getTotal())
                 .build();
+    }
+
+    @Override
+    @Cacheable(value = "promotions", key = "#type?:'all'", unless = "#result == null")
+    public List<Promotion> getPromotions(String type) {
+        return homeMapper.selectPromotions(type);
     }
 } 

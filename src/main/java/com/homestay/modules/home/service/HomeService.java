@@ -3,6 +3,7 @@ package com.homestay.modules.home.service;
 import com.homestay.modules.home.dto.HousePageDTO;
 import com.homestay.modules.home.entity.homeCity;
 import com.homestay.modules.home.entity.homeDistricts;
+import com.homestay.modules.home.entity.Promotion;
 
 import java.util.List;
 
@@ -32,4 +33,11 @@ public interface HomeService {
     HousePageDTO searchHouses(String keyword, String city, String type, 
                             Integer minPrice, Integer maxPrice, 
                             Integer page, Integer size);
+    
+    /**
+     * 获取优惠活动列表
+     * @param type 活动类型
+     * @return 优惠活动列表
+     */
+    List<Promotion> getPromotions(String type);
 } 

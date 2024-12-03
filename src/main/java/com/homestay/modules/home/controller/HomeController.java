@@ -4,6 +4,7 @@ import com.homestay.common.response.Result;
 import com.homestay.modules.home.dto.HousePageDTO;
 import com.homestay.modules.home.entity.homeCity;
 import com.homestay.modules.home.entity.homeDistricts;
+import com.homestay.modules.home.entity.Promotion;
 import com.homestay.modules.home.service.HomeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -103,5 +104,20 @@ public class HomeController {
             @RequestParam(defaultValue = "10") Integer size
     ) {
         return Result.success(homeService.searchHouses(keyword, city, type, minPrice, maxPrice, page, size));
+    }
+    
+    @Operation(summary = "获取优惠活动列表",
+              description = "获取当前正在进行的优惠活动列表")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "获取成功",
+            content = @Content(mediaType = "application/json",
+                schema = @Schema(implementation = Promotion.class)))
+    })
+    @GetMapping("/promotions")
+    public Result<List<Promotion>> getPromotions(
+            @Parameter(description = "活动类型：DISCOUNT-折扣, COUPON-优惠券") 
+            @RequestParam(required = false) String type
+    ) {
+        return Result.success(homeService.getPromotions(type));
     }
 } 
