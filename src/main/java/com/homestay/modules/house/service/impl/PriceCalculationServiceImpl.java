@@ -1,5 +1,6 @@
 package com.homestay.modules.house.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.homestay.modules.house.entity.AppliedPromotion;
 import com.homestay.modules.house.entity.PriceCalculationResult;
 import com.homestay.modules.house.service.PriceCalculationService;
@@ -11,12 +12,14 @@ import com.homestay.modules.house.entity.PromotionUsage;
 import com.homestay.modules.house.mapper.PromotionUsageMapper;
 import com.homestay.modules.house.service.MerchantService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -24,6 +27,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PriceCalculationServiceImpl implements PriceCalculationService {
 
     private final MerchantPromotionService merchantPromotionService;
@@ -44,6 +48,10 @@ public class PriceCalculationServiceImpl implements PriceCalculationService {
         // 获取房源所属商家ID
         Long merchantId = merchantService.getMerchantIdByHouseId(houseId);
         
+        // 计算总价（原始价格 * 天数）
+        long days = ChronoUnit.DAYS.between(checkInTime.toLocalDate(), checkOutTime.toLocalDate());
+        BigDecimal totalOriginalPrice = originalPrice.multiply(BigDecimal.valueOf(days));
+        
         // 获取商家优惠活动
         List<MerchantPromotion> merchantPromotions = merchantPromotionService
             .getValidPromotions(merchantId, checkInTime, checkOutTime);
@@ -54,81 +62,75 @@ public class PriceCalculationServiceImpl implements PriceCalculationService {
 
         // 计算所有可用优惠
         List<AppliedPromotion> appliedPromotions = new ArrayList<>();
-        BigDecimal finalPrice = originalPrice;
+        BigDecimal finalPrice = totalOriginalPrice;
 
         // 应用商家优惠
         for (MerchantPromotion promotion : merchantPromotions) {
-            BigDecimal discountAmount = calculateDiscountAmount(promotion, originalPrice);
+            // 检查用户是否已使用过此优惠
+            if (hasUsedPromotion(userId, promotion.getId(), "MERCHANT")) {
+                log.debug("MERCHANT：" + promotion.getName());
+                continue;
+            }
+
+            BigDecimal discountAmount = calculateDiscountAmount(promotion, totalOriginalPrice);
             if (discountAmount.compareTo(BigDecimal.ZERO) > 0) {
                 appliedPromotions.add(AppliedPromotion.builder()
-                    .id(promotion.getId())
-                    .name(promotion.getName())
-                    .type(promotion.getType())
-                    .discountAmount(discountAmount)
-                    .build());
+                        .id(promotion.getId())
+                        .name(promotion.getName())
+                        .type("MERCHANT")
+                        .discountAmount(discountAmount)
+                        .build());
                 finalPrice = finalPrice.subtract(discountAmount);
-                
-                // 记录优惠使用
-                if (orderId != null) {
-                    savePromotionUsage(userId, orderId, promotion.getId(), "MERCHANT",
-                        promotion.getName(), discountAmount, originalPrice, finalPrice);
-                }
             }
         }
-
         // 应用系统优惠
         for (Promotion promotion : systemPromotions) {
-            BigDecimal discountAmount = calculateSystemDiscountAmount(promotion, originalPrice);
+            // 检查用户是否已使用过此优惠
+            if (hasUsedPromotion(userId, promotion.getId(), "SYSTEM")) {
+                log.debug("SYSTEM用户已使用过此优惠：" + promotion.getTitle());
+                continue;
+            }
+
+            BigDecimal discountAmount = calculateSystemDiscountAmount(promotion, totalOriginalPrice);
             if (discountAmount.compareTo(BigDecimal.ZERO) > 0) {
                 appliedPromotions.add(AppliedPromotion.builder()
-                    .id(promotion.getId())
-                    .name(promotion.getTitle())
-                    .type(promotion.getType())
-                    .discountAmount(discountAmount)
-                    .build());
+                        .id(promotion.getId())
+                        .name(promotion.getTitle())
+                        .type("SYSTEM")
+                        .discountAmount(discountAmount)
+                        .build());
                 finalPrice = finalPrice.subtract(discountAmount);
-                
-                // 记录优惠使用
-                if (orderId != null) {
-                    savePromotionUsage(userId, orderId, promotion.getId(), "SYSTEM",
-                        promotion.getTitle(), discountAmount, originalPrice, finalPrice);
-                }
             }
         }
-
         // 按优惠金额排序
         appliedPromotions.sort((a, b) -> b.getDiscountAmount().compareTo(a.getDiscountAmount()));
-
         return PriceCalculationResult.builder()
-            .originalPrice(originalPrice)
+            .originalPrice(totalOriginalPrice)
             .finalPrice(finalPrice)
-            .discountAmount(originalPrice.subtract(finalPrice))
+            .discountAmount(totalOriginalPrice.subtract(finalPrice))
             .appliedPromotions(appliedPromotions)
             .build();
     }
-
     /**
-     * 保存优惠活动使用记录
+     * 检查用户是否已使用过某个优惠
+     * @param userId 用户ID
+     * @param promotionId 优惠ID
+     * @param promotionType 优惠类型（MERCHANT/SYSTEM）
+     * @return 是否已使用
      */
-    private void savePromotionUsage(
-            Long userId, String orderId, Long promotionId, String promotionType,
-            String promotionName, BigDecimal discountAmount,
-            BigDecimal originalAmount, BigDecimal finalAmount) {
-        PromotionUsage usage = PromotionUsage.builder()
-            .userId(userId)
-            .orderId(orderId)
-            .promotionId(promotionId)
-            .promotionType(promotionType)
-            .promotionName(promotionName)
-            .discountAmount(discountAmount)
-            .originalAmount(originalAmount)
-            .finalAmount(finalAmount)
-            .useTime(LocalDateTime.now())
-            .status(1)
-            .build();
-        promotionUsageMapper.insert(usage);
-    }
+    private boolean hasUsedPromotion(Long userId, Long promotionId, String promotionType) {
+        if (userId == null || promotionId == null) {
+            return false;
+        }
 
+        LambdaQueryWrapper<PromotionUsage> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(PromotionUsage::getUserId, userId)
+                .eq(PromotionUsage::getPromotionId, promotionId)
+                .eq(PromotionUsage::getPromotionType, promotionType)
+                .eq(PromotionUsage::getStatus, 1);  // 1表示已使用
+
+        return promotionUsageMapper.selectCount(wrapper) > 0;
+    }
     private BigDecimal calculateDiscountAmount(MerchantPromotion promotion, BigDecimal originalPrice) {
         switch (promotion.getType()) {
             case "DISCOUNT":

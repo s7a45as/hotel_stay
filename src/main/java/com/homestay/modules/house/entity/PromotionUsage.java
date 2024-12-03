@@ -19,7 +19,7 @@ public class PromotionUsage {
     
     private Long userId;
     
-    private String orderId;
+    private String houseId;
     
     private Long promotionId;
     

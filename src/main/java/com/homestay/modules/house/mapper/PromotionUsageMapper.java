@@ -17,9 +17,9 @@ public interface PromotionUsageMapper extends BaseMapper<PromotionUsage> {
     List<PromotionUsage> findByUserId(Long userId);
     
     /**
-     * 查询订单的优惠活动使用记录
+     * 查询房源的优惠活动使用记录
      */
-    @Select("SELECT * FROM t_promotion_usage WHERE order_id = #{orderId}")
+    @Select("SELECT * FROM t_promotion_usage WHERE house_id = #{houseId}")
     List<PromotionUsage> findByOrderId(String orderId);
     
     /**
