@@ -361,4 +361,13 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
         return categories;
     }
+
+    @Override
+    public Long getMerchantIdByHouseId(Long houseId) {
+        House house = houseMapper.selectById(houseId);
+        if (house == null) {
+            throw new BusinessException(ResultCode.DATA_NOT_EXIST.getCode(), "房源不存在");
+        }
+        return house.getMerchantId();
+    }
 } 

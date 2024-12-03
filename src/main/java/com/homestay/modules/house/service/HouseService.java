@@ -37,4 +37,11 @@ public interface HouseService extends IService<House> {
      * 获取房源分类
      */
     Object getCategories();
+
+    /**
+     * 根据房源ID获取商家ID
+     * @param houseId 房源ID
+     * @return 商家ID
+     */
+    Long getMerchantIdByHouseId(Long houseId);
 } 

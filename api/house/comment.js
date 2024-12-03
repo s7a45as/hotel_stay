@@ -10,9 +10,14 @@ import request from '@/utils/request'
  */
 export function getComments(params) {
   return request({
-    url: '/house/comments',
+    url: '/house/comment/list',
     method: 'get',
-    params
+    params: {
+      houseId: params.houseId,
+      page: params.page || 1,
+      pageSize: params.pageSize || 10,
+      rating: params.rating
+    }
   })
 }
 
@@ -20,16 +25,20 @@ export function getComments(params) {
  * 添加评论
  * @param {Object} data
  * @param {number} data.houseId - 房源ID
- * @param {number} data.orderId - 订单ID 
  * @param {number} data.rating - 评分(1-5)
  * @param {string} data.content - 评论内容
  * @param {string[]} [data.images] - 图片列表
  */
 export function addComment(data) {
+  const { houseId, ...commentData } = data
   return request({
-    url: '/house/comment',
+    url: `/house/comment/${houseId}`,
     method: 'post',
-    data
+    data: {
+      ...commentData,
+      user_id: null, // 由后端通过 @AuthenticationPrincipal 注入
+      house_id: houseId
+    }
   })
 }
 
@@ -65,7 +74,49 @@ export function reportComment(data) {
  */
 export function getRatingStats(houseId) {
   return request({
-    url: `/house/rating-stats/${houseId}`,
+    url: `/house/comment/rating-stats/${houseId}`,
     method: 'get'
+  })
+}
+
+/**
+ * 删除评论
+ * @param {number} commentId - 评论ID
+ */
+export function deleteComment(commentId) {
+  return request({
+    url: `/house/comment/${commentId}`,
+    method: 'delete'
+  })
+}
+
+/**
+ * 修改评论
+ * @param {number} comment_id - 评论ID
+ * @param {Object} data
+ * @param {number} data.rating - 评分(1-5)
+ * @param {string} data.content - 评论内容
+ * @param {string[]} [data.images] - 图片列表
+ */
+export function updateComment(comment_id, data) {
+  return request({
+    url: `/house/comment/${comment_id}`,
+    method: 'put',
+    data: {
+      ...data,
+      id: comment_id // 确保包含评论ID
+    }
+  })
+}
+
+// 上传评论图片
+export function uploadCommentImage(data) {
+  return request({
+    url: '/house/comment/upload-image',
+    method: 'post',
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    },
+    data
   })
 }

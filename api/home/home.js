@@ -61,3 +61,14 @@ export function getCities() {
     method: 'get',
   })
 }
+
+/**
+ * 获取优惠活动列表
+ * @returns {Promise<Object>}
+ */
+export function getPromotions() {
+  return request({
+    url: '/home/promotions',
+    method: 'get'
+  })
+}

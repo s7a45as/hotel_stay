@@ -114,4 +114,17 @@ public class MerchantPromotionServiceImpl implements MerchantPromotionService {
             return 1; // 进行中
         }
     }
+
+    @Override
+    public List<MerchantPromotion> getValidPromotions(Long merchantId, LocalDateTime startTime, LocalDateTime endTime) {
+        // 构建查询条件
+        LambdaQueryWrapper<MerchantPromotion> queryWrapper = new LambdaQueryWrapper<MerchantPromotion>()
+            .eq(MerchantPromotion::getMerchantId, merchantId)
+            .eq(MerchantPromotion::getStatus, 1) // 活动状态为进行中
+            .le(MerchantPromotion::getStartTime, endTime) // 活动开始时间早于预订结束时间
+            .ge(MerchantPromotion::getEndTime, startTime) // 活动结束时间晚于预订开始时间
+            .orderByDesc(MerchantPromotion::getDiscount); // 按优惠值降序排序
+
+        return promotionMapper.selectList(queryWrapper);
+    }
 } 

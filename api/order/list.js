@@ -51,3 +51,14 @@ export function applyRefund(data) {
     data
   })
 }
+
+/**
+ * 删除订单
+ * @param {string} orderId - 订单ID
+ */
+export function deleteOrder(orderId) {
+  return request({
+    url: `/order/${orderId}`,
+    method: 'delete',
+  })
+}
