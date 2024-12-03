@@ -1,0 +1,7 @@
+{
+    "db_name": "homestay",
+    "db_user": "root",
+    "db_password": "123456",
+    "backup_dir": "C:\\Users\\45732\\Code\\Java\\hotel_stay\\src\\main\\resources\\db\\backups",
+    "keep_days": 7
+}
