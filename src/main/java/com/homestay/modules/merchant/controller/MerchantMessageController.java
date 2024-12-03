@@ -58,8 +58,8 @@ public class MerchantMessageController {
 
     @Operation(summary = "删除消息")
     @DeleteMapping
-    public Result<Void> deleteMessages(@RequestBody List<Long> messageIds) {
-        messageService.deleteMessages(messageIds);
+    public Result<Void> deleteMessages(@RequestBody MessageIdsRequest request) {
+        messageService.deleteMessages(request.getMessageIds());
         return Result.success();
     }
 
