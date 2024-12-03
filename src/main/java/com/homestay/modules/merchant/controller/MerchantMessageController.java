@@ -2,6 +2,7 @@ package com.homestay.modules.merchant.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.homestay.common.response.Result;
+import com.homestay.modules.merchant.dto.MessageIdsRequest;
 import com.homestay.modules.merchant.dto.MessageStatsDTO;
 import com.homestay.modules.merchant.entity.MerchantMessage;
 import com.homestay.modules.merchant.service.MerchantMessageService;
@@ -43,8 +44,8 @@ public class MerchantMessageController {
 
     @Operation(summary = "标记消息为已读")
     @PostMapping("/read")
-    public Result<Void> markMessageRead(@RequestBody List<Long> messageIds) {
-        messageService.markMessageRead(messageIds);
+    public Result<Void> markMessageRead(@RequestBody MessageIdsRequest request) {
+        messageService.markMessageRead(request.getMessageIds());
         return Result.success();
     }
 

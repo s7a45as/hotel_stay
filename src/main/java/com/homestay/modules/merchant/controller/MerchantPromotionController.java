@@ -1,8 +1,10 @@
 package com.homestay.modules.merchant.controller;
 
 import com.homestay.common.response.Result;
+import com.homestay.modules.merchant.dto.MessageIdsRequest;
 import com.homestay.modules.merchant.entity.MerchantPromotion;
 import com.homestay.modules.merchant.dto.MerchantPromotionDTO;
+import com.homestay.modules.merchant.service.MerchantMessageService;
 import com.homestay.modules.merchant.service.MerchantPromotionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -13,6 +15,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
@@ -23,10 +26,11 @@ import java.util.List;
 @RequestMapping("/merchant/promotions")
 @RequiredArgsConstructor
 @SecurityRequirement(name = "Bearer")
+@Slf4j
 public class MerchantPromotionController {
 
     private final MerchantPromotionService promotionService;
-
+    private final MerchantMessageService messageService;
     @Operation(summary = "获取优惠活动列表", 
               description = "获取商家的所有优惠活动")
     @ApiResponses(value = {
@@ -93,6 +97,14 @@ public class MerchantPromotionController {
         @PathVariable Long id
     ) {
         promotionService.deletePromotion(id);
+        return Result.success();
+    }
+
+    @Operation(summary = "标记消息为已读")
+    @PostMapping("/read")
+    public Result<Void> markMessageRead(@RequestBody MessageIdsRequest request) {
+        log.debug("Mark message read: {}", request);
+        messageService.markMessageRead(request.getMessageIds());
         return Result.success();
     }
 } 
