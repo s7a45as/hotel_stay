@@ -123,9 +123,8 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         // 日期可用性筛选（使用EXISTS子查询优化性能）
         if (StringUtils.isNotBlank(query.getCheckInDate()) && StringUtils.isNotBlank(query.getCheckOutDate())) {
             wrapper.notExists(String.format(
-                "SELECT 1 FROM t_house_booking b WHERE b.house_id = house.id " +
+                "SELECT 1 FROM t_house_booking b WHERE b.house_id = t_house.id " +
                 "AND b.status = 1 " + // 1表示已预订状态
-                "AND b.deleted = 0 " + // 未删除的预订
                 "AND NOT (b.booking_end <= '%s' OR b.booking_start >= '%s')",
                 query.getCheckInDate(), query.getCheckOutDate()
             ));

@@ -86,14 +86,17 @@ public class HouseController {
         // 日期格式验证
         if (StringUtils.isNotBlank(checkInDate) && StringUtils.isNotBlank(checkOutDate)) {
             try {
+                log.debug("入住日期:{}", checkInDate);
+                log.debug("当前时间:{}", LocalDateTime.now());
                 LocalDateTime checkIn = LocalDate.parse(checkInDate).atStartOfDay();
                 LocalDateTime checkOut = LocalDate.parse(checkOutDate).atStartOfDay();
                 
                 if (checkIn.isAfter(checkOut)) {
                     return Result.error(ResultCode.PARAM_ERROR.getCode(), "退房日期必须晚于入住日期");
                 }
-                
+
                 if (checkIn.isBefore(LocalDateTime.now())) {
+
                     return Result.error(ResultCode.PARAM_ERROR.getCode(), "入住日期不能早于今天");
                 }
             } catch (Exception e) {
