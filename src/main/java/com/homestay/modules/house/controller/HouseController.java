@@ -17,7 +17,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Tag(name = "房源管理", description = "提供房源查询、预订、收藏等功能")
 @RestController
@@ -46,7 +50,9 @@ public class HouseController {
         
         @Parameter(description = "城市代码", example = "BJ") 
         @RequestParam(required = false) String city,
-
+        
+        @Parameter(description = "地区", example = "朝阳区") 
+        @RequestParam(required = false) String district,
         
         @Parameter(description = "入住人数", example = "2") 
         @RequestParam(required = false) Integer guestCount,
@@ -72,21 +78,57 @@ public class HouseController {
         @Parameter(description = "标签，多个用逗号分隔", example = "海景,近地铁") 
         @RequestParam(required = false) String tags
     ) {
+        // 参数验证
+        if (pageSize > 50) {
+            pageSize = 50;
+        }
+        
+        // 日期格式验证
+        if (StringUtils.isNotBlank(checkInDate) && StringUtils.isNotBlank(checkOutDate)) {
+            try {
+                LocalDateTime checkIn = LocalDate.parse(checkInDate).atStartOfDay();
+                LocalDateTime checkOut = LocalDate.parse(checkOutDate).atStartOfDay();
+                
+                if (checkIn.isAfter(checkOut)) {
+                    return Result.error(ResultCode.PARAM_ERROR.getCode(), "退房日期必须晚于入住日期");
+                }
+                
+                if (checkIn.isBefore(LocalDateTime.now())) {
+                    return Result.error(ResultCode.PARAM_ERROR.getCode(), "入住日期不能早于今天");
+                }
+            } catch (Exception e) {
+                return Result.error(ResultCode.PARAM_ERROR.getCode(), "日期格式错误，请使用yyyy-MM-dd格式");
+            }
+        }
+
+        // 价格区间验证
+        if (minPrice != null && maxPrice != null && minPrice > maxPrice) {
+            return Result.error(ResultCode.PARAM_ERROR.getCode(), "最低价格不能高于最高价格");
+        }
+
         // 将参数封装到 HouseQueryDTO 中，同时进行标准化处理
         HouseQueryDTO query = new HouseQueryDTO();
         query.setPage(page);
         query.setPageSize(pageSize);
-        query.setCity(city != null ? city.replaceAll("[\"']", "").trim() : null);
+        query.setCity(StringUtils.trimToNull(city));
+        query.setDistrict(StringUtils.trimToNull(district));
         query.setGuestCount(guestCount);
         query.setCheckInDate(checkInDate);
         query.setCheckOutDate(checkOutDate);
         query.setMinPrice(minPrice);
         query.setMaxPrice(maxPrice);
-        query.setRoomTypes(roomTypes != null ? roomTypes.replaceAll("[\"']", "") : null);
-        query.setAmenities(amenities != null ? amenities.replaceAll("[\"']", "") : null);
-        query.setTags(tags != null ? tags.replaceAll("[\"']", "") : null);
+        query.setRoomTypes(StringUtils.trimToNull(roomTypes));
+        query.setAmenities(StringUtils.trimToNull(amenities));
+        query.setTags(StringUtils.trimToNull(tags));
         
-        return Result.success(houseService.getHouseList(query));
+        log.info("房源查询请求参数: {}", query);
+        
+        try {
+            return Result.success(houseService.getHouseList(query));
+        } catch (Exception e) {
+            log.error("获取房源列表失败", e);
+            return Result.error(ResultCode.ERROR.getCode(), "获取房源列表失败");
+        }
     }
 
     @Operation(summary = "获取房源详情", 

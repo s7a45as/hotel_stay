@@ -3,12 +3,17 @@ package com.homestay.modules.house.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.homestay.common.exception.BusinessException;
 import com.homestay.common.response.ResultCode;
 import com.homestay.common.shareentity.House;
 import com.homestay.common.utils.SecurityUtil;
 import com.homestay.modules.comUtils.entity.City;
+import com.homestay.modules.comUtils.entity.District;
 import com.homestay.modules.comUtils.mapper.CityMapper;
+import com.homestay.modules.comUtils.mapper.DistrictMapper;
 import com.homestay.modules.house.dto.*;
 import com.homestay.modules.house.entity.Favorite;
 import com.homestay.modules.house.mapper.HouseMapper;
@@ -19,6 +24,7 @@ import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,79 +50,85 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     private final SecurityUtil securityUtil; // 用于获取当前登录用户
     private final HouseMapper houseMapper;
     private  final OrderMapper  orderMapper; // 用于创建预订单
-
+    private final DistrictMapper districtMapper;
     private final CityMapper cityMapper;
+    private final ObjectMapper objectMapper;
 
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
-
         log.info("getHouseList: {}", query);
 
         // 构建查询条件
         LambdaQueryWrapper<House> wrapper = new LambdaQueryWrapper<>();
+        
+        // 基础条件：未删除且上架状态
+        wrapper.eq(House::getDeleted, 0)
+               .eq(House::getStatus, 1);
 
-        // 获取城市名称
-        LambdaQueryWrapper<City> wrapper1 = new LambdaQueryWrapper<City>()
-                .eq(City::getCode, query.getCity())
-                .select(City::getName);
-        String cityName = cityMapper.selectOne(wrapper1).getName();
-        if (cityName != null && cityName.length() > 2) {
-            cityName = cityName.substring(0, 2); // 取前两个字
+        // 城市和地区查询
+        if (StringUtils.isNotBlank(query.getCity())) {
+            // 获取城市名称
+            LambdaQueryWrapper<City> cityWrapper = new LambdaQueryWrapper<City>()
+                    .eq(City::getCode, query.getCity())
+                    .select(City::getName);
+            City city = cityMapper.selectOne(cityWrapper);
+            if (city != null) {
+                String cityName = city.getName();
+                if (cityName != null && cityName.length() > 2) {
+                    cityName = cityName.substring(0, 2); // 取前两个字
+                }
+                wrapper.like(House::getCity, cityName);
+                
+                // 地区查询
+                if (StringUtils.isNotBlank(query.getDistrict())) {
+                    // 使用districtMapper查询地区信息
+                    LambdaQueryWrapper<District> districtWrapper = new LambdaQueryWrapper<District>()
+                            .eq(District::getCityCode, query.getCity())  // 使用城市代码
+                            .eq(District::getCode, query.getDistrict())  // 地区代码
+                            .select(District::getName);
+                    
+                    District district = districtMapper.selectOne(districtWrapper);
+                    log.debug("district: " + district);
+                    if (district != null) {
+                        String districtName = district.getName();
+                        if (districtName != null && districtName.length() > 2) {
+                            districtName = districtName.substring(0, 2); // 取前两个字
+                        }
+                        wrapper.like(House::getDistrict, districtName);
+                    }
+                }
+            }
         }
-        query.setCity(cityName);
 
-        // 城市筛选
-        if (query.getCity() != null) {
-            String city = query.getCity().replaceAll("[\"']", "").trim();
-            wrapper.like(House::getCity, city);
-        }
-
-        // 价格范围筛选
-        wrapper.ge(query.getMinPrice() != null, House::getPrice, query.getMinPrice())
-                .le(query.getMaxPrice() != null, House::getPrice, query.getMaxPrice());
 
         // 入住人数筛选
-        wrapper.ge(query.getGuestCount() != null, House::getMaxGuests, query.getGuestCount());
+        if (query.getGuestCount() != null) {
+            wrapper.ge(House::getMaxGuests, query.getGuestCount());
+        }
+
+        // 价格区间筛选
+        if (query.getMinPrice() != null) {
+            wrapper.ge(House::getPrice, query.getMinPrice());
+        }
+        if (query.getMaxPrice() != null) {
+            wrapper.le(House::getPrice, query.getMaxPrice());
+        }
 
         // 房型筛选
-        if (query.getRoomTypes() != null && !query.getRoomTypes().isEmpty()) {
-            String cleanRoomTypes = query.getRoomTypes().replaceAll("[\"']", "");
-            List<String> roomTypeList = Arrays.asList(cleanRoomTypes.split(","));
-            wrapper.in(House::getType, roomTypeList);
+        if (StringUtils.isNotBlank(query.getRoomTypes())) {
+            List<String> types = Arrays.asList(query.getRoomTypes().split(","));
+            wrapper.in(House::getType, types);
         }
 
-        // 设施筛选 - 使用 JSON_CONTAINS 检查是否包含指定设施
-        if (query.getAmenities() != null && !query.getAmenities().isEmpty()) {
-            String cleanAmenities = query.getAmenities().replaceAll("[\"']", "");
-            List<String> amenityList = Arrays.asList(cleanAmenities.split(","));
-            if (!amenityList.isEmpty()) {
-                // 遍历设施列表，使用 JSON_CONTAINS 来检查每项设施是否存在于数据库的 JSON 数组中
-                for (String amenity : amenityList) {
-                    wrapper.and(wrapper2 -> wrapper2.like(House::getFacilities, amenity));
-                }
-            }
-        }
-
-        // 标签筛选 - 使用 JSON_CONTAINS 检查是否包含指定标签
-        if (query.getTags() != null && !query.getTags().isEmpty()) {
-            String cleanTags = query.getTags().replaceAll("[\"']", "");
-            List<String> tagList = Arrays.asList(cleanTags.split(","));
-            if (!tagList.isEmpty()) {
-                // 遍历标签列表，使用 JSON_CONTAINS 来检查每个标签是否存在于数据库的 JSON 数组中
-                for (String tag : tagList) {
-                    wrapper.and(wrapper2 -> wrapper2.like(House::getFeatures, tag));
-                }
-            }
-        }
-
-        // 日期可用性筛选
-        if (query.getCheckInDate() != null && query.getCheckOutDate() != null) {
-            wrapper.notExists(
-                    "SELECT 1 FROM house_booking hb WHERE hb.house_id = house.id " +
-                            "AND hb.status != -1 " + // 排除已取消的订单
-                            "AND NOT (hb.check_out_time <= '" + query.getCheckInDate() +
-                            "' OR hb.check_in_time >= '" + query.getCheckOutDate() + "')"
-            );
+        // 日期可用性筛选（使用EXISTS子查询优化性能）
+        if (StringUtils.isNotBlank(query.getCheckInDate()) && StringUtils.isNotBlank(query.getCheckOutDate())) {
+            wrapper.notExists(String.format(
+                "SELECT 1 FROM t_house_booking b WHERE b.house_id = house.id " +
+                "AND b.status = 1 " + // 1表示已预订状态
+                "AND b.deleted = 0 " + // 未删除的预订
+                "AND NOT (b.booking_end <= '%s' OR b.booking_start >= '%s')",
+                query.getCheckInDate(), query.getCheckOutDate()
+            ));
         }
 
         // 分页查询
@@ -129,20 +141,33 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
                     HouseItemDTO dto = HouseItemDTO.builder()
                             .id(house.getId())
                             .title(house.getTitle())
+                            .coverImage(house.getImage()) // 使用主图作为封面
                             .price(house.getPrice().intValue())
                             .city(house.getCity())
+                            .district(house.getDistrict())
                             .type(house.getType())
-                            .rating(house.getRating())
-                            .coverImage(house.getImage())
+                            .rating(house.getRating().doubleValue())
                             .reviewCount(house.getReviewCount())
                             .build();
-
-
-
-                    // 设置标签
-                    List<TagDTO> tags = getHouseTags(house.getId());
-                    dto.setTags(tags);
-
+                    
+                    // 获取房源特色标签（从JSON字段）
+                    if (house.getFeatures() != null) {
+                        try {
+                            List<TagDTO> tags = objectMapper.readValue(
+                                house.getFeatures().toString(),
+                                new TypeReference<List<Map<String, String>>>() {}
+                            ).stream()
+                            .map(tag -> TagDTO.builder()
+                                    .type(tag.get("type"))
+                                    .text(tag.get("text"))
+                                    .build())
+                            .collect(Collectors.toList());
+                            dto.setTags(tags);
+                        } catch (JsonProcessingException e) {
+                            log.error("解析房源特色标签失败: {}", e.getMessage());
+                        }
+                    }
+                    
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -151,20 +176,6 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
                 .list(houseDTOList)
                 .total(result.getTotal())
                 .build();
-    }
-
-    // 辅助方法：获取房源标签
-    private List<TagDTO> getHouseTags(Long houseId) {
-        // 这里需要实现从数据库查询房源标签的逻辑
-        // 示例实现：
-        return houseMapper.selectHouseTags(houseId).stream()
-                .map(tag -> {
-                    TagDTO tagDTO = new TagDTO();
-                    tagDTO.setType(tag.getType());
-                    tagDTO.setText(tag.getText());
-                    return tagDTO;
-                })
-                .collect(Collectors.toList());
     }
 
     @Override
@@ -216,7 +227,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         
         Favorite favorite = favoriteMapper.selectOne(wrapper);
         
-        // 4. 如果已收藏则取消收藏，否则添加收藏
+        // 4. 果已收藏则取消收藏，否则添加收藏
         if (favorite != null) {
             favoriteMapper.deleteById(favorite.getId());
         } else {

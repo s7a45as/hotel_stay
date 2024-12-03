@@ -30,6 +30,9 @@ public  class HouseItemDTO {
     @Schema(description = "城市")
     private String city;
 
+    @Schema(description = "地区")
+    private String district;
+
     @Schema(description = "房源类型")
     private String type;
 

@@ -39,4 +39,7 @@ public class HouseQueryDTO {
     
     @Schema(description = "特色标签，多个用逗号分隔")
     private String tags;
+    
+    @Schema(description = "地区")
+    private String district;
 } 
