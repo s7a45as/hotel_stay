@@ -30,4 +30,9 @@ public interface UserOrderService {
      * 申请退款
      */
     void applyRefund(String orderId);
+    
+    /**
+     * 删除订单
+     */
+    void deleteOrder(String orderId);
 } 

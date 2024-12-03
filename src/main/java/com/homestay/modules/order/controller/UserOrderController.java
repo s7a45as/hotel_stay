@@ -123,4 +123,23 @@ public class UserOrderController {
         userOrderService.applyRefund(orderId);
         return Result.success();
     }
+
+    @Operation(summary = "删除订单", 
+              description = "删除已取消或已完成的订单")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "删除成功"),
+        @ApiResponse(responseCode = "400", description = "订单状态不允许删除"),
+        @ApiResponse(responseCode = "401", description = "未登录"),
+        @ApiResponse(responseCode = "403", description = "无权操作此订单"),
+        @ApiResponse(responseCode = "404", description = "订单不存在")
+    })
+    @DeleteMapping("/{orderId}")
+    public Result<?> deleteOrder(
+        @Parameter(description = "订单ID", required = true, 
+                  example = "ORDER202403150001")
+        @PathVariable String orderId
+    ) {
+        userOrderService.deleteOrder(orderId);
+        return Result.success();
+    }
 } 

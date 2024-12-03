@@ -135,6 +135,29 @@ public class UserOrderServiceImpl implements UserOrderService {
         paymentService.applyRefund(orderId, "用户申请退款");
     }
     
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteOrder(String orderId) {
+        // 获取订单并验证所属权
+        UserOrder userOrder = getOrderById(orderId);
+        
+        // 验证订单状态是否允许删除
+        if (!isOrderDeletable(userOrder.getStatus())) {
+            throw new BusinessException("只能删除已取消或已完成的订单");
+        }
+        
+        // 执行逻辑删除
+        orderMapper.deleteById(orderId);
+    }
+
+    /**
+     * 判断订单是否可删除
+     */
+    private boolean isOrderDeletable(Integer status) {
+        return status.equals(BookingConstants.Status.CANCELLED) || 
+               status.equals(BookingConstants.Status.COMPLETED);
+    }
+    
     private UserOrder getOrderById(String orderId) {
         UserOrder userOrder = orderMapper.selectById(orderId);
         if (userOrder == null) {
