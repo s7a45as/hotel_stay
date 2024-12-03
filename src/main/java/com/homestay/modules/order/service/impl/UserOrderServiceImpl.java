@@ -146,8 +146,11 @@ public class UserOrderServiceImpl implements UserOrderService {
             throw new BusinessException("只能删除已取消或已完成的订单");
         }
         
-        // 执行逻辑删除
-        orderMapper.deleteById(orderId);
+        // 执行物理删除
+        int result = orderMapper.physicalDeleteById(orderId);
+        if (result != 1) {
+            throw new BusinessException("订单删除失败");
+        }
     }
 
     /**

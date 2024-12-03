@@ -7,10 +7,19 @@ import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.vo.OrderDetailVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Delete;
 
 @Mapper
 public interface OrderMapper extends BaseMapper<UserOrder> {
     Page<OrderListVO> selectOrderList(Page<OrderListVO> page, @Param("userId") Long userId, @Param("status") Integer status);
 
     OrderDetailVO getOrderDetail(@Param("orderId") String orderId);
+
+    /**
+     * 物理删除订单
+     * @param orderId 订单ID
+     * @return 影响的行数
+     */
+    @Delete("DELETE FROM t_user_order WHERE id = #{orderId}")
+    int physicalDeleteById(@Param("orderId") String orderId);
 } 
