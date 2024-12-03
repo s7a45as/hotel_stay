@@ -7,7 +7,7 @@
         SELECT 
             o.id,
             h.name as house_name,
-            COALESCE(hi.url, h.image) as house_image,
+            h.image as house_image,
             o.check_in,
             o.check_out,
             o.nights,
@@ -17,7 +17,6 @@
             o.create_time
         FROM t_user_order o
         LEFT JOIN t_house h ON o.house_id = h.id
-        LEFT JOIN t_house_image hi ON h.id = hi.house_id AND hi.is_cover = 1 AND hi.deleted = 0
         WHERE o.user_id = #{userId}
         <if test="status != null">
             AND o.status = #{status}
@@ -41,11 +40,10 @@
             o.special_requests,
             h.id as "house.id",
             h.name as "house.name",
-            COALESCE(hi.url, h.image) as "house.image",
+            h.image as "house.image",
             h.address as "house.address"
         FROM t_user_order o
         LEFT JOIN t_house h ON o.house_id = h.id
-        LEFT JOIN t_house_image hi ON h.id = hi.house_id AND hi.is_cover = 1 AND hi.deleted = 0
         WHERE o.id = #{orderId}
         AND o.deleted = 0
     </select>

@@ -124,7 +124,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
         if (StringUtils.isNotBlank(query.getCheckInDate()) && StringUtils.isNotBlank(query.getCheckOutDate())) {
             wrapper.notExists(String.format(
                 "SELECT 1 FROM t_house_booking b WHERE b.house_id = t_house.id " +
-                "AND b.status = 1 " + // 1表示已预订状态
+                "AND b.status = 0 " + // 0表示已预订状态
                 "AND NOT (b.booking_end <= '%s' OR b.booking_start >= '%s')",
                 query.getCheckInDate(), query.getCheckOutDate()
             ));
