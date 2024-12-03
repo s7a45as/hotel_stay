@@ -9,7 +9,7 @@ import com.homestay.modules.home.entity.Promotion;
 import com.homestay.modules.merchant.service.MerchantPromotionService;
 import com.homestay.modules.house.entity.PromotionUsage;
 import com.homestay.modules.house.mapper.PromotionUsageMapper;
-import com.homestay.modules.house.service.HouseService;
+import com.homestay.modules.house.service.MerchantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +28,7 @@ public class PriceCalculationServiceImpl implements PriceCalculationService {
 
     private final MerchantPromotionService merchantPromotionService;
     private final SystemPromotionService systemPromotionService;
-    private final HouseService houseService;
+    private final MerchantService merchantService;
     private final PromotionUsageMapper promotionUsageMapper;
 
     @Override
@@ -42,7 +42,7 @@ public class PriceCalculationServiceImpl implements PriceCalculationService {
             Long userId
     ) {
         // 获取房源所属商家ID
-        Long merchantId = houseService.getMerchantIdByHouseId(houseId);
+        Long merchantId = merchantService.getMerchantIdByHouseId(houseId);
         
         // 获取商家优惠活动
         List<MerchantPromotion> merchantPromotions = merchantPromotionService

@@ -6,6 +6,7 @@ import com.homestay.modules.house.dto.BookingDTO;
 import com.homestay.modules.house.dto.HouseDetailDTO;
 import com.homestay.modules.house.dto.HouseListDTO;
 import com.homestay.modules.house.dto.HouseQueryDTO;
+import com.homestay.modules.order.entity.UserOrder;
 
 /**
  * 房源服务接口
@@ -31,7 +32,7 @@ public interface HouseService extends IService<House> {
     *
     * 创建预订
     * */
-    boolean createBooking(BookingDTO bookingDTO);
+    UserOrder createBooking(BookingDTO bookingDTO);
     
     /**
      * 获取房源分类

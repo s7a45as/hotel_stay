@@ -16,10 +16,12 @@ import com.homestay.modules.comUtils.mapper.CityMapper;
 import com.homestay.modules.comUtils.mapper.DistrictMapper;
 import com.homestay.modules.house.dto.*;
 import com.homestay.modules.house.entity.Favorite;
+import com.homestay.modules.house.entity.PriceCalculationResult;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.mapper.FavoriteMapper;
 import com.homestay.modules.house.mapper.HouseFacilityMapper;
 import com.homestay.modules.house.service.HouseService;
+import com.homestay.modules.house.service.PriceCalculationService;
 import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
@@ -53,7 +55,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     private final DistrictMapper districtMapper;
     private final CityMapper cityMapper;
     private final ObjectMapper objectMapper;
-
+    private final PriceCalculationService priceCalculationService;
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
         log.info("getHouseList: {}", query);
@@ -239,7 +241,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean createBooking(BookingDTO bookingDTO) {
+    public UserOrder createBooking(BookingDTO bookingDTO) {
         try {
             // 1. 获取当前用户ID并验证
             Long currentUserId = securityUtil.getCurrentUserId();
@@ -290,10 +292,21 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
             // 6. 验证订单金额
             BigDecimal expectedAmount = house.getPrice().multiply(BigDecimal.valueOf(days));
-            if (expectedAmount.compareTo(bookingDTO.getAmount()) != 0) {
+            // 计算优惠后的金额
+            PriceCalculationResult priceResult = priceCalculationService.calculatePrice(
+                bookingDTO.getHouseId(),
+                expectedAmount,
+                bookingDTO.getCheckInTime(),
+                bookingDTO.getCheckOutTime(),
+                null,  // 创建订单时还没有订单ID
+                currentUserId
+            );
+
+            if (priceResult.getFinalPrice().compareTo(bookingDTO.getAmount()) != 0) {
                 throw new BusinessException(ResultCode.VALIDATE_FAILED, 
                     String.format("订单金额计算有误，期望金额：%s，实际金额：%s", 
-                        expectedAmount.toString(), bookingDTO.getAmount().toString()));
+                        priceResult.getFinalPrice().toString(), 
+                        bookingDTO.getAmount().toString()));
             }
 
             // 7. 创建订单实体
@@ -315,7 +328,9 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
             // 8. 保存订单到数据库
             int result = orderMapper.insert(userOrder);
-            return result > 0;
+            if(result>0)
+            return userOrder;
+            return null;
 
         } catch (BusinessException e) {
             // 业务异常直接抛出,由全局异常处理器处理

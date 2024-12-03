@@ -7,6 +7,7 @@ import com.homestay.modules.house.dto.HouseDetailDTO;
 import com.homestay.modules.house.dto.HouseListDTO;
 import com.homestay.modules.house.dto.HouseQueryDTO;
 import com.homestay.modules.house.service.HouseService;
+import com.homestay.modules.order.entity.UserOrder;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -176,13 +177,14 @@ public class HouseController {
         @ApiResponse(responseCode = "409", description = "所选日期已被预订")
     })
     @PostMapping("/booking")
-    public Result<?> createBooking(
+    public Result<UserOrder> createBooking(
         @Parameter(description = "预订信息", required = true) 
         @RequestBody @Valid BookingDTO booking
     ) {
         log.info("创建预订请求: {}", booking);
-        boolean success = houseService.createBooking(booking);
-        return success ? Result.success("预订创建成功") : Result.error(ResultCode.ERROR.getCode(), "预订创建失败");
+        UserOrder success = houseService.createBooking(booking);
+        return Result.success(success);
+
     }
 
     @Operation(summary = "获取房源类型列表", 

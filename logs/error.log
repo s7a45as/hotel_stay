@@ -6700,3 +6700,174 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-12-03 17:32:29.834 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
 2024-12-03 17:32:36.001 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
 2024-12-03 17:32:36.002 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 17:50:22.596 [http-nio-8080-exec-5] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 400, 错误信息: 订单金额计算有误，期望金额：18032.00，实际金额：9817.6, 原始异常: 无
+2024-12-03 17:50:51.721 [http-nio-8080-exec-7] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 400, 错误信息: 订单金额计算有误，期望金额：18032.00，实际金额：9817.6, 原始异常: 无
+2024-12-03 17:50:57.223 [http-nio-8080-exec-6] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 400, 错误信息: 订单金额计算有误，期望金额：18032.00，实际金额：9817.6, 原始异常: 无
+2024-12-03 17:53:50.970 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 17:53:50.971 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 17:54:38.095 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 17:54:38.096 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 17:54:38.507 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   houseController defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\controller\HouseController.class]
+┌─────┐
+|  houseServiceImpl defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\service\impl\HouseServiceImpl.class]
+↑     ↓
+|  priceCalculationServiceImpl defined in file [C:\Users\45732\Code\Java\hotel_stay\target\classes\com\homestay\modules\house\service\impl\PriceCalculationServiceImpl.class]
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2024-12-03 17:56:26.793 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 17:56:26.794 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 18:05:11.751 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 18:05:11.751 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 18:05:37.549 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 18:05:37.549 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 18:06:45.216 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 18:06:45.217 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 18:06:45.695 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.homestay.modules.order.service.impl.UserOrderServiceImpl required a bean of type 'com.homestay.modules.house.service.HouseService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.homestay.modules.house.service.HouseService' in your configuration.
+
+2024-12-03 18:06:49.434 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByPhone] is ignored, because it exists, maybe from xml file
+2024-12-03 18:06:49.434 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.homestay.modules.user.mapper.UserMapper.selectByEmail] is ignored, because it exists, maybe from xml file
+2024-12-03 18:07:23.270 [http-nio-8080-exec-2] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:07:23.271 [http-nio-8080-exec-2] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:07:23.272 [http-nio-8080-exec-2] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:07:23.476 [http-nio-8080-exec-6] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:07:23.476 [http-nio-8080-exec-6] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:07:23.476 [http-nio-8080-exec-6] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:11:18.359 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:11:18.360 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:11:18.360 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:11:18.617 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:11:18.617 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:11:18.617 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:11:59.127 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:11:59.128 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:11:59.128 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:11:59.401 [http-nio-8080-exec-8] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:11:59.402 [http-nio-8080-exec-8] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:11:59.402 [http-nio-8080-exec-8] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:12:02.938 [http-nio-8080-exec-2] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:12:02.939 [http-nio-8080-exec-2] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:12:03.215 [http-nio-8080-exec-7] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:12:03.215 [http-nio-8080-exec-7] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:13:02.866 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:13:02.867 [http-nio-8080-exec-5] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:13:03.053 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:13:03.053 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:19:34.628 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:19:34.629 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:19:34.629 [http-nio-8080-exec-9] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:19:34.952 [http-nio-8080-exec-1] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:19:34.953 [http-nio-8080-exec-1] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:19:34.953 [http-nio-8080-exec-1] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token 'cooking': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[cooking, scenic]"; line: 1, column: 9]
+2024-12-03 18:19:37.345 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:19:37.346 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:19:37.615 [http-nio-8080-exec-8] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:19:37.615 [http-nio-8080-exec-8] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:19:54.775 [http-nio-8080-exec-1] ERROR c.h.c.e.GlobalExceptionHandler - 业务异常: 错误码: 400, 错误信息: 所选日期已被预订, 原始异常: 无
+2024-12-03 18:24:17.433 [http-nio-8080-exec-7] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:24:17.433 [http-nio-8080-exec-7] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:24:17.589 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:24:17.589 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:24:24.813 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '海景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[海景, 泳池, 度假]"; line: 1, column: 4]
+2024-12-03 18:24:24.813 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '海景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[海景, 沙滩, 商圈]"; line: 1, column: 4]
+2024-12-03 18:24:24.813 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 美食, 休闲]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '商务': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[商务, 现代, 便利]"; line: 1, column: 4]
+2024-12-03 18:24:24.814 [http-nio-8080-exec-3] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 商务, 科技]"; line: 1, column: 4]
+2024-12-03 18:24:25.112 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '海景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[海景, 泳池, 度假]"; line: 1, column: 4]
+2024-12-03 18:24:25.112 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '海景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[海景, 沙滩, 商圈]"; line: 1, column: 4]
+2024-12-03 18:24:25.112 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 古韵, 地标]"; line: 1, column: 4]
+2024-12-03 18:24:25.112 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '时尚': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[时尚, 商圈, 交通]"; line: 1, column: 4]
+2024-12-03 18:24:25.113 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 地标, 夜景]"; line: 1, column: 4]
+2024-12-03 18:24:25.113 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文艺': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文艺, 怀旧, 特色]"; line: 1, column: 4]
+2024-12-03 18:24:25.113 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '文化': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[文化, 美食, 休闲]"; line: 1, column: 4]
+2024-12-03 18:24:25.113 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '商务': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[商务, 现代, 便利]"; line: 1, column: 4]
+2024-12-03 18:24:25.113 [http-nio-8080-exec-4] ERROR c.h.m.h.s.impl.HouseServiceImpl - 解析房源特色标签失败: Unrecognized token '江景': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"[江景, 商务, 科技]"; line: 1, column: 4]
