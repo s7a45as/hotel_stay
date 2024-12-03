@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homestay.modules.house.mapper.PromotionUsageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.homestay.modules.house.entity.PromotionUsage">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="house_id" property="houseId"/>
+        <result column="promotion_id" property="promotionId"/>
+        <result column="promotion_type" property="promotionType"/>
+        <result column="promotion_name" property="promotionName"/>
+        <result column="discount_amount" property="discountAmount"/>
+        <result column="original_amount" property="originalAmount"/>
+        <result column="final_amount" property="finalAmount"/>
+        <result column="use_time" property="useTime"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, house_id, promotion_id, promotion_type, promotion_name, 
+        discount_amount, original_amount, final_amount, use_time, status, 
+        create_time, update_time
+    </sql>
+
+    <!-- 查询用户的优惠活动使用记录 -->
+    <select id="findByUserId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_promotion_usage
+        WHERE user_id = #{userId}
+        ORDER BY use_time DESC
+    </select>
+
+    <!-- 查询房源的优惠活动使用记录 -->
+    <select id="findByOrderId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_promotion_usage
+        WHERE house_id = #{orderId}
+    </select>
+
+    <!-- 查询优惠活动的使用记录 -->
+    <select id="findByPromotion" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_promotion_usage
+        WHERE promotion_id = #{promotionId}
+        AND promotion_type = #{promotionType}
+    </select>
+
+</mapper> 
