@@ -425,7 +425,7 @@ public class AuthServiceImpl implements AuthService {
      */
     private void sendMerchantRegisterNotification(AuthMerchant merchant) {
         try {
-            String auditUrl = String.format("%s/admin/audit/merchant/%d?token=%s", 
+            String auditUrl = String.format("%s/admin/merchants/%d/audit?token=%s",
                 baseUrl, 
                 merchant.getId(), 
                 generateAuditToken(merchant.getId())
