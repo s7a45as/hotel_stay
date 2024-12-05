@@ -12,6 +12,10 @@ import com.homestay.modules.admin.mapper.SysMessageMapper;
 import com.homestay.modules.admin.service.SysMessageService;
 import com.homestay.modules.merchant.entity.MerchantMessage;
 import com.homestay.modules.merchant.mapper.MerchantMessageMapper;
+import com.homestay.modules.user.entity.UserInfo;
+import com.homestay.modules.user.entity.UserMessage;
+import com.homestay.modules.user.mapper.UserMapper;
+import com.homestay.modules.user.mapper.UserMessageMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -28,13 +32,19 @@ import java.util.stream.Collectors;
 public class SysMessageServiceImpl extends ServiceImpl<SysMessageMapper, SysMessage> 
     implements SysMessageService {
 
-    private final MerchantMessageMapper adminMerchantMessageMapper;
+    private final MerchantMessageMapper merchantMessageMapper;
     private final SysMerchantMapper merchantMapper;
+    private final UserMessageMapper userMessageMapper;
+    private final UserMapper userMapper;
 
-    public SysMessageServiceImpl(MerchantMessageMapper adminMerchantMessageMapper,
-                                 SysMerchantMapper merchantMapper) {
-        this.adminMerchantMessageMapper = adminMerchantMessageMapper;
+    public SysMessageServiceImpl(MerchantMessageMapper merchantMessageMapper,
+                               SysMerchantMapper merchantMapper,
+                               UserMessageMapper userMessageMapper,
+                               UserMapper userMapper) {
+        this.merchantMessageMapper = merchantMessageMapper;
         this.merchantMapper = merchantMapper;
+        this.userMessageMapper = userMessageMapper;
+        this.userMapper = userMapper;
     }
 
     @Override
@@ -68,6 +78,7 @@ public class SysMessageServiceImpl extends ServiceImpl<SysMessageMapper, SysMess
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void sendMessage(SysMessageDTO messageDTO) {
+        // 保存系统消息
         SysMessage message = new SysMessage();
         BeanUtils.copyProperties(messageDTO, message);
         
@@ -75,8 +86,14 @@ public class SysMessageServiceImpl extends ServiceImpl<SysMessageMapper, SysMess
             throw new BusinessException("发送消息失败");
         }
         
-        if ("MERCHANT".equals(messageDTO.getTargetType())) {
+        // 根据发送对象类型处理
+        String targetType = messageDTO.getTargetType();
+        if ("MERCHANT".equals(targetType)) {
+            // 发送给商家
             saveMerchantMessage(messageDTO, message.getId());
+        } else if ("USER".equals(targetType) || "ALL".equals(targetType)) {
+            // 发送给普通用户或所有用户
+            saveUserMessage(messageDTO, message.getId());
         }
     }
 
@@ -102,11 +119,53 @@ public class SysMessageServiceImpl extends ServiceImpl<SysMessageMapper, SysMess
                 .collect(Collectors.toList());
             
             for (MerchantMessage merchantMessage : merchantMessages) {
-                adminMerchantMessageMapper.insert(merchantMessage);
+                merchantMessageMapper.insert(merchantMessage);
             }
         } catch (Exception e) {
             log.error("保存商家消息失败", e);
             throw new BusinessException("保存商家消息失败");
+        }
+    }
+
+    /**
+     * 保存用户消息
+     */
+    private void saveUserMessage(SysMessageDTO messageDTO, Long sysMessageId) {
+        try {
+            // 查询所有有效用户
+            LambdaQueryWrapper<UserInfo> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(UserInfo::getStatus, 1)  // 状态正常的用户
+                  .eq(UserInfo::getDeleted, 0); // 未删除的用户
+            
+            List<UserInfo> users = userMapper.selectList(wrapper);
+            
+            // 批量构建用户消息
+            List<UserMessage> userMessages = users.stream()
+                .map(user -> {
+                    UserMessage userMessage = new UserMessage();
+                    userMessage.setUserId(user.getId());
+                    userMessage.setTitle(messageDTO.getTitle());
+                    userMessage.setContent(messageDTO.getContent());
+                    userMessage.setType(messageDTO.getType());
+                    userMessage.setTargetType(messageDTO.getTargetType());
+                    userMessage.setPriority(messageDTO.getPriority());
+                    userMessage.setSender("SYSTEM");
+                    userMessage.setIsRead(false);
+                    userMessage.setSysMessageId(sysMessageId);
+                    return userMessage;
+                })
+                .collect(Collectors.toList());
+            
+            // 批量保存用户消息
+            for (UserMessage userMessage : userMessages) {
+                userMessageMapper.insert(userMessage);
+            }
+            
+            log.info("成功发送消息给{}个用户", userMessages.size());
+            
+        } catch (Exception e) {
+            log.error("保存用户消息失败", e);
+            throw new BusinessException("保存用户消息失败");
         }
     }
 
