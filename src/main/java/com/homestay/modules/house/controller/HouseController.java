@@ -148,8 +148,10 @@ public class HouseController {
         @Parameter(description = "房源ID", required = true, example = "1") 
         @PathVariable Long id
     ) {
-        log.info("/detail/{id}"+id.toString());
-        return Result.success(houseService.getHouseDetail(id));
+        log.info("获取房源详情，ID: {}", id);
+        HouseDetailDTO detail = houseService.getHouseDetail(id);
+//        log.info("房源详情响应: {}", detail);
+        return Result.success(detail);
     }
 
     @Operation(summary = "收藏/取消收藏房源", 

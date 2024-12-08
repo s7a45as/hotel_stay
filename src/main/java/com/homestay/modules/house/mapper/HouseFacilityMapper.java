@@ -10,11 +10,11 @@ import java.util.List;
 public interface HouseFacilityMapper extends BaseMapper<HouseFacility> {
     
     /**
-     * 获取房源设施列表
+     * 获取房源的设施列表（包含设施详细信息）
      */
-    @Select("SELECT f.* FROM t_facility f " +
-            "INNER JOIN t_house_facility hf ON f.id = hf.facility_id " +
-            "WHERE hf.house_id = #{houseId} AND hf.deleted = 0 " +
-            "ORDER BY f.id ASC")
-    List<HouseFacility> selectFacilitiesByHouseId(Long houseId);
+    @Select("SELECT hf.*, f.name as facility_name, f.description, f.icon " +
+            "FROM t_house_facility hf " +
+            "LEFT JOIN t_facility f ON hf.facility_id = f.id " +
+            "WHERE hf.house_id = #{houseId} AND hf.deleted = 0")
+    List<HouseFacility> getFacilitiesByHouseId(Long houseId);
 } 

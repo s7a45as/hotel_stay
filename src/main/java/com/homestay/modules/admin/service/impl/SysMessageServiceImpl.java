@@ -113,7 +113,6 @@ public class SysMessageServiceImpl extends ServiceImpl<SysMessageMapper, SysMess
                     merchantMessage.setPriority(messageDTO.getPriority());
                     merchantMessage.setSender("SYSTEM");
                     merchantMessage.setIsRead(false);
-                    merchantMessage.setSender(sysMessageId.toString());
                     return merchantMessage;
                 })
                 .collect(Collectors.toList());

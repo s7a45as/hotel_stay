@@ -26,9 +26,18 @@ public class HouseFacility {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
     
-    @Version
-    private Integer version;
-    
     @TableLogic
     private Integer deleted;
+    
+    @TableField(exist = false)
+    @Schema(description = "设施名称")
+    private String facilityName;
+    
+    @TableField(exist = false)
+    @Schema(description = "设施描述")
+    private String description;
+    
+    @TableField(exist = false)
+    @Schema(description = "设施图标")
+    private String icon;
 } 

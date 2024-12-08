@@ -184,6 +184,14 @@ public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, M
     @Transactional(rollbackFor = Exception.class)
     public void updateHouse(Long id, MerchantHouseDTO houseDTO) {
         MerchantHouse house = houseMapper.selectById(id);
+        LambdaQueryWrapper<City> wrapper=new LambdaQueryWrapper<City>()
+                .eq(City::getCode,houseDTO.getCity());
+        LambdaQueryWrapper<District> wrapper1 =new LambdaQueryWrapper<District>()
+                .eq(District::getCode,houseDTO.getDistrict());
+
+        City city=cityMapper.selectOne(wrapper);
+        District district=districtMapper.selectOne(wrapper1);
+
         if (house == null) {
             throw new BusinessException(ResultCode.DATA_NOT_EXIST);
         }
@@ -191,8 +199,16 @@ public class MerchantHouseServiceImpl extends ServiceImpl<MerchantHouseMapper, M
         if (!house.getMerchantId().equals(SecurityUtils.getCurrentUserId())) {
             throw new BusinessException(ResultCode.NO_PERMISSION);
         }
-        
+
+
         BeanUtils.copyProperties(houseDTO, house);
+        if(city!=null)
+        {
+            house.setCity(city.getName());
+        }
+        if(district!=null)
+            house.setDistrict(district.getName());
+
         if (houseMapper.updateById(house) != 1) {
             throw new BusinessException(ResultCode.DATA_UPDATE_FAILED);
         }

@@ -16,6 +16,7 @@ import com.homestay.modules.comUtils.mapper.CityMapper;
 import com.homestay.modules.comUtils.mapper.DistrictMapper;
 import com.homestay.modules.house.dto.*;
 import com.homestay.modules.house.entity.Favorite;
+import com.homestay.modules.house.entity.HouseFacility;
 import com.homestay.modules.house.entity.PriceCalculationResult;
 import com.homestay.modules.house.mapper.HouseMapper;
 import com.homestay.modules.house.mapper.FavoriteMapper;
@@ -24,6 +25,8 @@ import com.homestay.modules.house.service.HouseService;
 import com.homestay.modules.house.service.PriceCalculationService;
 import com.homestay.modules.order.entity.UserOrder;
 import com.homestay.modules.order.mapper.OrderMapper;
+import com.homestay.modules.merchant.entity.Merchant;
+import com.homestay.modules.merchant.mapper.MerchantMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -56,6 +59,8 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
     private final CityMapper cityMapper;
     private final ObjectMapper objectMapper;
     private final PriceCalculationService priceCalculationService;
+    private final MerchantMapper merchantMapper;
+
     @Override
     public HouseListDTO getHouseList(HouseQueryDTO query) {
         log.info("getHouseList: {}", query);
@@ -181,29 +186,32 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
 
     @Override
     public HouseDetailDTO getHouseDetail(Long id) {
-        // 1. 获取房源基本信息
-        House house = houseMapper.selectById(id);
+        // 获取房源基本信息
+        House house = getHouseById(id);
         if (house == null) {
-            throw new BusinessException(ResultCode.DATA_NOT_EXIST);
+            throw new BusinessException("房源不存在");
         }
-        Long currentUserId = securityUtil.getCurrentUserId();
-
-        // 5. 是否已收藏
-        boolean isFavorite = false;
-        if (currentUserId != null) {
-            isFavorite = favoriteMapper.checkFavorite(currentUserId, id) > 0;
-        }
-
-        // 6. 获取收藏数量
-        int favoriteCount = favoriteMapper.getFavoriteCount(id);
-        log.debug("收藏数量：{}", favoriteCount);
-        HouseDetailDTO houseDetailDTO= HouseDetailDTO.builder()
+        
+        // 获取商家信息
+        Merchant merchant = merchantMapper.getMerchantById(house.getMerchantId());
+        log.info("获取到的商家信息: {}", merchant); // 添加日志
+        
+        // 获取设施列表
+//        List<HouseFacility> facilities = getFacilities(id);
+        
+        // 获取收藏信息
+        boolean isFavorite = checkFavorite(id);
+        int favoriteCount = getFavoriteCount(id);
+        
+        HouseDetailDTO detailDTO = HouseDetailDTO.builder()
                 .house(house)
-                .isFavorite(isFavorite)
+//                .facilityDetails(facilities)
                 .favoriteCount(favoriteCount)
+                .merchantInfo(HouseDetailDTO.MerchantInfo.fromMerchant(merchant))
                 .build();
-        log.debug("房源详情：{}", houseDetailDTO);
-        return houseDetailDTO;
+                
+        log.info("返回的房源详情: {}", detailDTO); // 添加日志
+        return detailDTO;
     }
 
     @Override
@@ -333,7 +341,7 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
             return null;
 
         } catch (BusinessException e) {
-            // 业务异常直接抛出,由全局异常处理器处理
+            // 业务异常直接抛出,由全局异常处理处理
             throw e;
         } catch (Exception e) {
             // 其他异常包装成BusinessException
@@ -384,5 +392,41 @@ public class HouseServiceImpl extends ServiceImpl<HouseMapper, House> implements
             throw new BusinessException(ResultCode.DATA_NOT_EXIST.getCode(), "房源不存在");
         }
         return house.getMerchantId();
+    }
+
+    /**
+     * 根据ID获取房源信息
+     */
+    private House getHouseById(Long id) {
+        House house = houseMapper.selectById(id);
+        if (house == null || house.getDeleted() == 1 || house.getStatus() != 1) {
+            return null;
+        }
+        return house;
+    }
+
+    /**
+     * 获取房源设施列表
+     */
+    private List<HouseFacility> getFacilities(Long houseId) {
+        return houseFacilityMapper.getFacilitiesByHouseId(houseId);
+    }
+
+    /**
+     * 检查当前用户是否已收藏该房源
+     */
+    private boolean checkFavorite(Long houseId) {
+        Long currentUserId = securityUtil.getCurrentUserId();
+        if (currentUserId == null) {
+            return false;
+        }
+        return favoriteMapper.checkFavorite(currentUserId, houseId) > 0;
+    }
+
+    /**
+     * 获取房源收藏数量
+     */
+    private int getFavoriteCount(Long houseId) {
+        return favoriteMapper.getFavoriteCount(houseId);
     }
 } 
