@@ -14,14 +14,21 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 房源评论表
  * @TableName t_house_comment
  */
-@TableName(value ="t_house_comment", autoResultMap = true)
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName(value ="t_house_comment")
 public class THouseComment implements Serializable {
     /**
      * 评论ID
@@ -33,30 +40,28 @@ public class THouseComment implements Serializable {
      * 房源ID
      */
     @TableField(value = "house_id")
-    private String house_id;
+    private String houseId;
 
     /**
      * 用户ID
      */
     @TableField(value = "user_id")
-    private String user_id;
+    private String userId;
 
     /**
      * 订单ID
      */
     @TableField(value = "order_id")
-    private String order_id;
+    private Long orderId;
 
     /**
      * 评分(1-5星)
      */
-    @TableField(value = "rating")
     private Integer rating;
 
     /**
      * 评论内容
      */
-    @TableField(value = "content")
     private String content;
 
     /**
@@ -70,7 +75,6 @@ public class THouseComment implements Serializable {
     /**
      * 商家回复
      */
-    @TableField(value = "reply")
     private String reply;
 
     /**
@@ -83,7 +87,6 @@ public class THouseComment implements Serializable {
     /**
      * 状态(0:待审核 1:已发布 2:已隐藏)
      */
-    @TableField(value = "status")
     private Integer status;
 
     /**
@@ -116,9 +119,9 @@ public class THouseComment implements Serializable {
         }
         THouseComment other = (THouseComment) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getHouse_id() == null ? other.getHouse_id() == null : this.getHouse_id().equals(other.getHouse_id()))
-            && (this.getUser_id() == null ? other.getUser_id() == null : this.getUser_id().equals(other.getUser_id()))
-            && (this.getOrder_id() == null ? other.getOrder_id() == null : this.getOrder_id().equals(other.getOrder_id()))
+            && (this.getHouseId() == null ? other.getHouseId() == null : this.getHouseId().equals(other.getHouseId()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getOrderId() == null ? other.getOrderId() == null : this.getOrderId().equals(other.getOrderId()))
             && (this.getRating() == null ? other.getRating() == null : this.getRating().equals(other.getRating()))
             && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
             && (this.getImages() == null ? other.getImages() == null : this.getImages().equals(other.getImages()))
@@ -134,9 +137,9 @@ public class THouseComment implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getHouse_id() == null) ? 0 : getHouse_id().hashCode());
-        result = prime * result + ((getUser_id() == null) ? 0 : getUser_id().hashCode());
-        result = prime * result + ((getOrder_id() == null) ? 0 : getOrder_id().hashCode());
+        result = prime * result + ((getHouseId() == null) ? 0 : getHouseId().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getOrderId() == null) ? 0 : getOrderId().hashCode());
         result = prime * result + ((getRating() == null) ? 0 : getRating().hashCode());
         result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
         result = prime * result + ((getImages() == null) ? 0 : getImages().hashCode());
@@ -155,9 +158,9 @@ public class THouseComment implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", house_id=").append(house_id);
-        sb.append(", user_id=").append(user_id);
-        sb.append(", order_id=").append(order_id);
+        sb.append(", houseId=").append(houseId);
+        sb.append(", userId=").append(userId);
+        sb.append(", orderId=").append(orderId);
         sb.append(", rating=").append(rating);
         sb.append(", content=").append(content);
         sb.append(", images=").append(images);

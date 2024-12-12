@@ -43,7 +43,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     private final UploadUtils uploadUtils;
     public IPage<THouseComment> getCommentList(Long houseId, Integer page, Integer pageSize, Integer rating) {
         LambdaQueryWrapper<THouseComment> wrapper = new LambdaQueryWrapper<THouseComment>()
-                .eq(THouseComment::getHouse_id, houseId)
+                .eq(THouseComment::getHouseId, houseId)
                 .eq(THouseComment::getStatus, 1)
                 .eq(rating != null, THouseComment::getRating, rating)
                 .orderByDesc(THouseComment::getCreate_time);
@@ -58,7 +58,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         if (comment == null) {
             throw new BusinessException("评论信息不能为空");
         }
-        if (comment.getHouse_id() == null) {
+        if (comment.getHouseId() == null) {
             throw new BusinessException("房源ID不能为空");
         }
         if (comment.getRating() == null || comment.getRating() < 1 || comment.getRating() > 5) {
@@ -76,13 +76,13 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         if (userId == null) {
             throw new BusinessException("用户未登录");
         }
-        Long houseId = Long.valueOf(comment.getHouse_id());
+        Long houseId = Long.valueOf(comment.getHouseId());
 
         // 3. 检查是否已经评论过
         Long existingComment = baseMapper.selectCount(
                 new LambdaQueryWrapper<THouseComment>()
-                        .eq(THouseComment::getUser_id, userId)
-                        .eq(THouseComment::getHouse_id, houseId)
+                        .eq(THouseComment::getUserId, userId)
+                        .eq(THouseComment::getHouseId, houseId)
         );
         if (existingComment > 0) {
             throw new BusinessException("您已经评论过该房源");
@@ -123,8 +123,8 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         }
 
         // 6. 设置评论基本信息
-        comment.setOrder_id(order.getId());
-        comment.setUser_id(String.valueOf(userId));
+        comment.setOrderId(Long.valueOf(order.getId()));
+        comment.setUserId(String.valueOf(userId));
         comment.setStatus(1); // 先不需要审核，默认为已通过
         Date now = new Date();
         comment.setCreate_time(now);
@@ -134,7 +134,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
             // 7. 保存评论
             save(comment);
             // 8. 更新房源评分统计
-            updateRatingStats(Long.valueOf(comment.getHouse_id()));
+            updateRatingStats(Long.valueOf(comment.getHouseId()));
             
             log.info("评论保存成功 - 用户ID: {}, 房源ID: {}, 评分: {}, 图片数量: {}", 
                 userId, houseId, comment.getRating(), 
@@ -149,15 +149,15 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
     public boolean toggleLike(Long commentId, Long userId) {
         THouseCommentLike like = likeMapper.selectOne(
             new LambdaQueryWrapper<THouseCommentLike>()
-                .eq(THouseCommentLike::getComment_id, commentId)
-                .eq(THouseCommentLike::getUser_id, userId)
+                .eq(THouseCommentLike::getCommentId, commentId)
+                .eq(THouseCommentLike::getUserId, userId)
         );
         
         if (like == null) {
             // 添加点赞
             like = new THouseCommentLike();
-            like.setComment_id(commentId);
-            like.setUser_id(userId);
+            like.setCommentId(commentId);
+            like.setUserId(userId);
             likeMapper.insert(like);
             return true;
         } else {
@@ -217,15 +217,15 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
             throw new BusinessException("评论不存在");
         }
         log.debug("删除的评论ID: {}", commentId);
-        log.debug("删除的用户ID1: {}", comment.getUser_id());
+        log.debug("删除的用户ID1: {}", comment.getUserId());
         log.debug("删除的用户ID2: {}", securityUtil.getCurrentUserId());
         //comment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()) 类型和数据需要都一样
-        if (!comment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
+        if (!comment.getUserId().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
             throw new BusinessException("无权删除他人评论");
         }
         
         this.removeById(commentId);
-        updateRatingStats(Long.valueOf(comment.getHouse_id()));
+        updateRatingStats(Long.valueOf(comment.getHouseId()));
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -238,16 +238,16 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         }
         
         // 2. 验证权限
-        if (!oldComment.getUser_id().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
+        if (!oldComment.getUserId().equals(String.valueOf(securityUtil.getCurrentUserId()))) {
             throw new BusinessException("无权修改他人评论");
         }
         
         // 3. 创建更新对象，初始化为原评论数据
         THouseComment updateComment = new THouseComment();
         updateComment.setId(comment.getId());
-        updateComment.setHouse_id(oldComment.getHouse_id());
-        updateComment.setUser_id(oldComment.getUser_id());
-        updateComment.setOrder_id(oldComment.getOrder_id());
+        updateComment.setHouseId(oldComment.getHouseId());
+        updateComment.setUserId(oldComment.getUserId());
+        updateComment.setOrderId(oldComment.getOrderId());
         updateComment.setStatus(oldComment.getStatus());
         updateComment.setCreate_time(oldComment.getCreate_time());
         updateComment.setRating(oldComment.getRating());
@@ -275,7 +275,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
             }
             for (String imageUrl : comment.getImages()) {
                 if (StringUtils.isBlank(imageUrl)) {
-                    throw new BusinessException("图片地址不能为空");
+                    throw new BusinessException("图���地址不能为空");
                 }
                 if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://") 
                     && !imageUrl.startsWith("/comment/")) {
@@ -292,10 +292,10 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         this.updateById(updateComment);
         
         // 7. 更新房源评分统计
-        updateRatingStats(Long.valueOf(updateComment.getHouse_id()));
+        updateRatingStats(Long.valueOf(updateComment.getHouseId()));
         
         log.info("评论更新成功 - 评论ID: {}, 用户ID: {}, 房源ID: {}, 更新字段: {}", 
-            comment.getId(), updateComment.getUser_id(), updateComment.getHouse_id(),
+            comment.getId(), updateComment.getUserId(), updateComment.getHouseId(),
             getUpdatedFields(comment));
     }
 
@@ -312,7 +312,7 @@ public class HouseCommentServiceImpl extends ServiceImpl<THouseCommentMapper, TH
         // 统计各评分数量
         Map<Integer, Integer> ratingCounts = this.list(
             new LambdaQueryWrapper<THouseComment>()
-                .eq(THouseComment::getHouse_id, String.valueOf(houseId))
+                .eq(THouseComment::getHouseId, String.valueOf(houseId))
                 .eq(THouseComment::getStatus, 1)
         ).stream().collect(
             Collectors.groupingBy(

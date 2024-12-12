@@ -2,12 +2,17 @@ package com.homestay.modules.merchant.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Data
 @TableName("sys_merchant")
 @Schema(description = "商家信息")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Merchant {
 
     @TableId(type = IdType.AUTO)

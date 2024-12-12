@@ -93,7 +93,7 @@ public class BusinessException extends RuntimeException {
     }
 
     /**
-     * 根据自定义错误码、消息和数据创建业务异常
+     * 根据自定义错误码、消息和数据创建业��异常
      *
      * @param code 自定义错误码
      * @param message 自定义错误消息

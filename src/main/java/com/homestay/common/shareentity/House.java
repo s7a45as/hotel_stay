@@ -3,7 +3,9 @@ package com.homestay.common.shareentity;
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,6 +14,8 @@ import java.util.List;
 @Data
 @Schema(description = "房源信息")
 @TableName(value = "t_house")
+@AllArgsConstructor
+@NoArgsConstructor
 public class House {
 
     @TableId(type = IdType.AUTO)

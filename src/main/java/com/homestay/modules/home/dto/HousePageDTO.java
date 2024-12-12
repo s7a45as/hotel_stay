@@ -11,8 +11,7 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Schema(description = "房源分页数据")
 public class HousePageDTO {
     

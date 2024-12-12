@@ -13,7 +13,7 @@ public enum ResultCode {
     // 通用状态码 1xx
     SUCCESS(200, "操作成功"),
     ERROR(500, "操作失败"),
-    VALIDATE_FAILED(400, "参数检验失败"),
+    VALIDATE_FAILED(404, "参数检验失败"),
     UNAUTHORIZED(401, "暂未登录或token已经过期"),
     FORBIDDEN(403, "没有相关权限"),
     NOT_FOUND(404, "请求的资源不存在"),
@@ -41,7 +41,7 @@ public enum ResultCode {
     INVALID_MERCHANT_INFO(3006, "商家信息不完整或无效"),
     MERCHANT_AUDIT_FAILED(3007, "商家审核未通过"),
     
-    // 验证码相关错误 4xxx
+    // 验证码相���错误 4xxx
     VERIFY_CODE_ERROR(4001, "验证码错误"),
     VERIFY_CODE_EXPIRED(4002, "验证码已过期"),
     VERIFY_CODE_FREQUENT(4003, "验证码发送太频繁，请稍后再试"),
@@ -72,7 +72,7 @@ public enum ResultCode {
     
     // 权限相关错误 8xxx
     NO_PERMISSION(8001, "没有操作权限"),
-    TOKEN_EXPIRED(8002, "Token已过期"),
+    TOKEN_EXPIRED(8002, "Token已过���"),
     TOKEN_INVALID(8003, "Token无效"),
     TOKEN_SIGNATURE_ERROR(8004, "Token签名错误"),
     ROLE_NOT_EXIST(8005, "角色不存在"),
@@ -101,13 +101,25 @@ public enum ResultCode {
     /**
      * 文件上传相关错误码 (5000-5099)
      */
-    UPLOAD_ERROR(5000, "文件上传失败"),
+    UPLOAD_ERROR(1002, "文件上传失败"),
     UPLOAD_FILE_EMPTY(5001, "上传文件为空"),
-    UPLOAD_FILE_SIZE_EXCEED(5002, "文件大小超过限制"),
+    UPLOAD_FILE_SIZE_EXCEED(1001, "上传文件大小超过限制"),
     UPLOAD_FILE_TYPE_NOT_ALLOWED(5003, "文件类型不允许"),
     UPLOAD_DIRECTORY_CREATE_FAILED(5004, "创建上传目录失败");
     
     private final Integer code;
     private final String message;
 
+    ResultCode(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

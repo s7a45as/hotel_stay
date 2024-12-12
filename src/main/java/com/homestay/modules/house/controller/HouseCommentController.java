@@ -45,8 +45,8 @@ public class HouseCommentController {
             @Parameter(hidden = true) @AuthenticationPrincipal Long userId,
             @Parameter(description = "房源ID") @PathVariable Long houseId
     ) {
-        comment.setUser_id(String.valueOf(userId));
-        comment.setHouse_id(String.valueOf(houseId));
+        comment.setUserId(String.valueOf(userId));
+        comment.setHouseId(String.valueOf(houseId));
         commentService.addComment(comment);
         return Result.success();
     }

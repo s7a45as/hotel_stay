@@ -4,8 +4,11 @@ import com.homestay.common.shareentity.House;
 import com.homestay.modules.house.entity.HouseFacility;
 import com.homestay.modules.merchant.entity.Merchant;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 @Data
@@ -27,8 +30,6 @@ public class HouseDetailDTO {
 
     @Schema(description = "商家信息")
     private MerchantInfo merchantInfo;
-
-    @Data
     @Builder
     @Schema(description = "商家信息")
     public static class MerchantInfo {
@@ -54,7 +55,7 @@ public class HouseDetailDTO {
         private Integer status;
 
         @Schema(description = "商家简介")
-        private String businessName;
+        private String username;
 
         public static MerchantInfo fromMerchant(Merchant merchant) {
             if (merchant == null) {
@@ -68,7 +69,7 @@ public class HouseDetailDTO {
                     .email(merchant.getEmail())
                     .address(merchant.getAddress())
                     .status(merchant.getStatus())
-                    .businessName(merchant.getUsername())
+                    .username(merchant.getUsername())
                     .build();
         }
     }
